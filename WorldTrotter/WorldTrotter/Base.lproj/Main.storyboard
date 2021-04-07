@@ -50,6 +50,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="fahrenheitFieldEditingChangedWithTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="eVI-So-7Kg"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1hO-Oc-73K"/>
                                 </connections>
                             </textField>
                         </subviews>
