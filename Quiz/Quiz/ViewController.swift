@@ -58,17 +58,29 @@ class ViewController: UIViewController {
 //                       completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>
 //        )
         
+        // 아직 처리하지 않은 레이아웃 변경을 미리 요구한다.
+        view.layoutIfNeeded()
+        
+        let screenWidth = view.frame.width
+        self.nextQuestionLabelCenterXConstraint.constant = 0
+        self.currentQuestionLabelCenterXConstraint.constant += screenWidth
         
         UIView.animate(withDuration: 0.5,
                        delay: 0,
                        options: [],
                        animations: {
-                        self.currentQuestionLabel.alpha = 0
+                        self.currentQuestionLabel.alpha = 1
                         self.nextQuestionLabel.alpha = 1
+                        // 최근 제약 조건을 기준으로 하위 뷰들을 배치하도록 요구한다.
+                        self.view.layoutIfNeeded()
                        },
                        completion: { _ in
                         swap(&self.currentQuestionLabel,
                              &self.nextQuestionLabel)
+                        swap(&self.currentQuestionLabelCenterXConstraint,
+                             &self.nextQuestionLabelCenterXConstraint)
+                        
+                        self.updateOffScreenLabel()
                        }
         )
     }
