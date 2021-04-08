@@ -67,7 +67,8 @@ class ViewController: UIViewController {
         
         UIView.animate(withDuration: 0.5,
                        delay: 0,
-                       options: [],
+                       // 애니메이션은 기본적으로 이지-인/이지-아웃을 사용, 옵션에서 변경 할 수 있다.
+                       options: [.curveLinear],
                        animations: {
                         self.currentQuestionLabel.alpha = 1
                         self.nextQuestionLabel.alpha = 1
