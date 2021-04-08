@@ -18,6 +18,14 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nextQuestionLabel.alpha = 0
+        
+        // 애니메이션을 위한 라벨위치 이동
+        updateOffScreenLabel()
+    }
+    
+    func updateOffScreenLabel() {
+        let screenWidth = view.frame.width
+        nextQuestionLabelCenterXConstraint.constant = -screenWidth
     }
     
     
@@ -33,18 +41,45 @@ class ViewController: UIViewController {
 
     func animateLabelTransitions() {
         // 실행만 시킬뿐, 종료를 기다리지 않는다.
+        // 완료되는 시점에 무언가 하고싶다면, completion인자에 클로저를 전달한다.
+        /*
         UIView.animate(withDuration:1.5, animations:  {
-            // 애니메이션이 1 > 0 > 1 순으로 일어나게 하려면?
             self.currentQuestionLabel.alpha = 0
             self.nextQuestionLabel.alpha = 1
         })
+        */
+        
+//        UIView.animate(withDuration: <#T##TimeInterval#>,
+//                       delay: <#T##TimeInterval#>,
+//                       usingSpringWithDamping: <#T##CGFloat#>,
+//                       initialSpringVelocity: <#T##CGFloat#>,
+//                       options: <#T##UIView.AnimationOptions#>,
+//                       animations: <#T##() -> Void#>,
+//                       completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>
+//        )
+        
+        
+        UIView.animate(withDuration: 0.5,
+                       delay: 0,
+                       options: [],
+                       animations: {
+                        self.currentQuestionLabel.alpha = 0
+                        self.nextQuestionLabel.alpha = 1
+                       },
+                       completion: { _ in
+                        swap(&self.currentQuestionLabel,
+                             &self.nextQuestionLabel)
+                       }
+        )
     }
     
     
     
 //    @IBOutlet var questionLabel: UILabel!
     // 한 라벨이 두 UILbael을 가리키고 있는데, 어떤식으로 작동하는지?
+    @IBOutlet var currentQuestionLabelCenterXConstraint: NSLayoutConstraint!
     @IBOutlet var currentQuestionLabel: UILabel!
+    @IBOutlet var nextQuestionLabelCenterXConstraint: NSLayoutConstraint!
     @IBOutlet var nextQuestionLabel: UILabel!
     @IBOutlet var answerLabel: UILabel!
     
