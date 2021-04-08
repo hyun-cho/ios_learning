@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXF-ge-zg4">
+                                <rect key="frame" x="189.5" y="103" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcx-Lm-gaP">
+                                <rect key="frame" x="175.5" y="147" width="63" height="30"/>
+                                <state key="normal" title="next quiz"/>
+                                <connections>
+                                    <action selector="showNextQuiz:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EUL-os-R3I"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Win-Oe-ApO">
+                                <rect key="frame" x="178.5" y="292" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2D-mc-KcI">
+                                <rect key="frame" x="162.5" y="336" width="89" height="30"/>
+                                <state key="normal" title="show answer"/>
+                                <connections>
+                                    <action selector="showCurrentAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7VL-9G-sft"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7n-Cw-3Wz">
+                                <rect key="frame" x="189.5" y="103" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Z7n-Cw-3Wz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Du1-dT-giw"/>
+                            <constraint firstItem="Win-Oe-ApO" firstAttribute="top" secondItem="Mcx-Lm-gaP" secondAttribute="bottom" constant="115" id="EMe-Yu-3lW"/>
+                            <constraint firstItem="AXF-ge-zg4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I32-2o-sBi"/>
+                            <constraint firstItem="Win-Oe-ApO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L76-8B-eVf"/>
+                            <constraint firstItem="Y2D-mc-KcI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LKy-R7-NAr"/>
+                            <constraint firstItem="AXF-ge-zg4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="59" id="TNS-yQ-6Re"/>
+                            <constraint firstItem="Z7n-Cw-3Wz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="59" id="aGD-lw-RDW"/>
+                            <constraint firstItem="Y2D-mc-KcI" firstAttribute="top" secondItem="Win-Oe-ApO" secondAttribute="bottom" constant="23" id="dAe-eJ-Jpx"/>
+                            <constraint firstItem="Mcx-Lm-gaP" firstAttribute="top" secondItem="AXF-ge-zg4" secondAttribute="bottom" constant="23" id="l7X-ox-4ea"/>
+                            <constraint firstItem="Mcx-Lm-gaP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v9a-Uz-gIN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="Win-Oe-ApO" id="JIq-PB-wbd"/>
+                        <outlet property="currentQuestionLabel" destination="AXF-ge-zg4" id="eEA-RU-j3j"/>
+                        <outlet property="nextQuestionLabel" destination="Z7n-Cw-3Wz" id="3LS-Pi-PbF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="119"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
