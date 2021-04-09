@@ -70,7 +70,7 @@ class ViewController: UIViewController {
                        // 애니메이션은 기본적으로 이지-인/이지-아웃을 사용, 옵션에서 변경 할 수 있다.
                        options: [.curveLinear],
                        animations: {
-                        self.currentQuestionLabel.alpha = 1
+                        self.currentQuestionLabel.alpha = 0
                         self.nextQuestionLabel.alpha = 1
                         // 최근 제약 조건을 기준으로 하위 뷰들을 배치하도록 요구한다.
                         self.view.layoutIfNeeded()

@@ -12,9 +12,6 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let bounds: CGRect = UIScreen.main.bounds
-        super.view.frame = bounds
-        
         view.backgroundColor = .white // 배경색
         tabBar.barTintColor = .white // tabbar 배경 색
         tabBar.tintColor = .blue // 선택 되었을 때

@@ -11,21 +11,28 @@ import UIKit
 // 델리게이트 프로토콜을 사용해 사용한다.(Delegate가 붙여진 프로토콜 붙인다.)
 class ConversionViewController: UIViewController, UITextFieldDelegate {
     
-    lazy var textField: UITextField! = {
+    // 강제추출 ! 는 스토리보드에서 많이 사용
+    lazy var textField: UITextField = {
         let textField: UITextField = UITextField()
+        // autolayout을 적용할 때, 자동으로 frame 속성을 > auto layout으로 변환
+        // 위치, 사이즈
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.delegate = self
         textField.placeholder = "value"
         textField.textColor = .orange
         textField.addTarget(self, action: #selector(self.fahrenheitFieldEditingChanged), for: .editingChanged)
-        textField.font = textField.font?.withSize(70)
+        // 생성할 때
+        textField.font = .systemFont(ofSize: 70)
+        textField.keyboardType = .decimalPad
         return textField
     }()
-    lazy var celsiusLabel: UILabel! = {
+    
+    lazy var celsiusLabel: UILabel = {
         let celsiusLabel: UILabel = UILabel()
         celsiusLabel.translatesAutoresizingMaskIntoConstraints = false
         celsiusLabel.text = "???"
         celsiusLabel.textColor = .orange
+        // 같은 Label 중 속성을 변경할 때
         celsiusLabel.font = celsiusLabel.font.withSize(70)
         return celsiusLabel
     }()
@@ -50,8 +57,8 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
             return isReallyLabel
         }()
         
-        let degreesCelsiusLabel: UILabel! = {
-            let degreesCelsiusLabel: UILabel! = UILabel()
+        let degreesCelsiusLabel: UILabel = {
+            let degreesCelsiusLabel: UILabel = UILabel()
             degreesCelsiusLabel.translatesAutoresizingMaskIntoConstraints = false
             degreesCelsiusLabel.text = "degrees Celsius"
             degreesCelsiusLabel.textColor = .orange
@@ -66,7 +73,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(degreesCelsiusLabel)
         
         
-        let textFieldConstraints: [NSLayoutConstraint] = [textField.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
+        let textFieldConstraints: [NSLayoutConstraint] = [textField.centerXAnchor.constraint(equalTo:       self.view.safeAreaLayoutGuide.centerXAnchor),
                                                           textField.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 8.0)]
         let degreesFahrenheitConstraints: [NSLayoutConstraint] = [degreesFahrenheitLabel.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
                                                                        degreesFahrenheitLabel.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 15)]
