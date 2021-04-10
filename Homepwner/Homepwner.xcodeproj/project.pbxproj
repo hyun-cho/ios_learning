@@ -15,6 +15,7 @@
 		D99AEF05262002810037C577 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AEF04262002810037C577 /* ItemsViewController.swift */; };
 		D99AEF09262004390037C577 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AEF08262004390037C577 /* Item.swift */; };
 		D99AEF0C262007B70037C577 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AEF0B262007B70037C577 /* ItemStore.swift */; };
+		D99AEF0F262169DA0037C577 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AEF0E262169DA0037C577 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D99AEF04262002810037C577 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		D99AEF08262004390037C577 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D99AEF0B262007B70037C577 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		D99AEF0E262169DA0037C577 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				D99AEF04262002810037C577 /* ItemsViewController.swift */,
 				D99AEF08262004390037C577 /* Item.swift */,
 				D99AEF0B262007B70037C577 /* ItemStore.swift */,
+				D99AEF0E262169DA0037C577 /* ItemCell.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			files = (
 				D99AEF09262004390037C577 /* Item.swift in Sources */,
 				D99AEF05262002810037C577 /* ItemsViewController.swift in Sources */,
+				D99AEF0F262169DA0037C577 /* ItemCell.swift in Sources */,
 				D99AEEF0261FFC680037C577 /* AppDelegate.swift in Sources */,
 				D99AEF0C262007B70037C577 /* ItemStore.swift in Sources */,
 				D99AEEF2261FFC680037C577 /* SceneDelegate.swift in Sources */,
