@@ -97,7 +97,7 @@ class ItemsViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         // 재사용 셀을 얻거나, 새로운 셀을 얻는다.
-        cell.updateLabels()
+        cell.updateLabels(item: item)
         
         cell.nameLabel.text = item.name
         cell.serialNumberLabel.text = item.serialNumber
