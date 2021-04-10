@@ -7,11 +7,21 @@ class ItemsViewController: UITableViewController {
     @IBAction func addNewItem(sender: AnyObject) {
         let newItem = itemStore.createItem()
         
-        if let index = itemStore.allItems.firstIndex(of: newItem) {
-            let indexPath = IndexPath(row: index, section: 0)
-            
-            // 테이블에 새로운 행을 삽입한다.
-            tableView.insertRows(at: [indexPath], with: .automatic)
+        if newItem.valueInDollars >= 50 {
+            if let index = itemStore.allItems.filter({ $0.valueInDollars >= 50 }).firstIndex(of: newItem) {
+                let indexPath = IndexPath(row: index, section: 0)
+                
+                // 테이블에 새로운 행을 삽입한다.
+                tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+        }
+        else {
+            if let index = itemStore.allItems.filter({ $0.valueInDollars < 50 }).firstIndex(of: newItem) {
+                let indexPath = IndexPath(row: index, section: 1)
+                
+                // 테이블에 새로운 행을 삽입한다.
+                tableView.insertRows(at: [indexPath], with: .automatic)
+            }
         }
         
     }
@@ -50,25 +60,39 @@ class ItemsViewController: UITableViewController {
         tableView.estimatedRowHeight = 65
     }
     
+    // 테이블뷰의 총 섹션 개수를 묻는 메서드
+    override func numberOfSections(in: UITableView) -> Int {
+        return 2
+    }
+    
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        return itemStore.allItems.count
+        if section == 0 {
+            return itemStore.allItems.filter({ $0.valueInDollars >= 50}).count
+        } else {
+            return itemStore.allItems.filter({ $0.valueInDollars < 50}).count
+        }
     }
     
     // 셀을 만들고, 그 셀의 내용을 설정
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // 재사용 셀을 얻거나, 새로운 셀을 얻는다.
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
-        cell.updateLabels()
-        
         //물품 배열의 indexPath, n 번째에 있는 항목의 설명을 n과 row와 일치하는 셀의 텍스트로 설정
-        let item = itemStore.allItems[indexPath.row]
+        var item: Item
+        if indexPath.section == 0 {
+            item = itemStore.allItems.filter({ $0.valueInDollars >= 50})[indexPath.row]
+        } else {
+            item = itemStore.allItems.filter({ $0.valueInDollars < 50})[indexPath.row]
+        }
+        
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        // 재사용 셀을 얻거나, 새로운 셀을 얻는다.
+        cell.updateLabels()
         
         cell.nameLabel.text = item.name
         cell.serialNumberLabel.text = item.serialNumber
         cell.valueLabel.text = "\(item.valueInDollars)"
-    
         
         return cell
     }
@@ -79,7 +103,14 @@ class ItemsViewController: UITableViewController {
                             forRowAt indexPath: IndexPath) {
         // 테이블 뷰가 삭제 명령의 적용을 요청하면
         if editingStyle == .delete {
-            let item = itemStore.allItems[indexPath.row]
+            var item: Item
+            if indexPath.section == 0 {
+                item = itemStore.allItems.filter({ $0.valueInDollars >= 50 })[indexPath.row]
+            }
+            else {
+                item = itemStore.allItems.filter({ $0.valueInDollars < 50 })[indexPath.row]
+            }
+            
             
             let title = "Delete \(item.name)?"
             let message = "정말로 삭제하시겠습니까?"
