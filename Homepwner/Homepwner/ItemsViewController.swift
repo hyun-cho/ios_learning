@@ -62,15 +62,19 @@ class ItemsViewController: UITableViewController {
     
     // 테이블뷰의 총 섹션 개수를 묻는 메서드
     override func numberOfSections(in: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return itemStore.allItems.filter({ $0.valueInDollars >= 50}).count
-        } else {
+        }
+        else if section == 1 {
             return itemStore.allItems.filter({ $0.valueInDollars < 50}).count
+        }
+        else {
+            return 1
         }
     }
     
@@ -81,8 +85,13 @@ class ItemsViewController: UITableViewController {
         var item: Item
         if indexPath.section == 0 {
             item = itemStore.allItems.filter({ $0.valueInDollars >= 50})[indexPath.row]
-        } else {
+        }
+        else if indexPath.section == 1 {
             item = itemStore.allItems.filter({ $0.valueInDollars < 50})[indexPath.row]
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "noMoreItemCell", for: indexPath)
+            return cell
         }
         
         
@@ -107,8 +116,11 @@ class ItemsViewController: UITableViewController {
             if indexPath.section == 0 {
                 item = itemStore.allItems.filter({ $0.valueInDollars >= 50 })[indexPath.row]
             }
-            else {
+            else if indexPath.section == 1{
                 item = itemStore.allItems.filter({ $0.valueInDollars < 50 })[indexPath.row]
+            }
+            else {
+                return
             }
             
             
@@ -143,6 +155,17 @@ class ItemsViewController: UITableViewController {
                             moveRowAt sourceIndexPath: IndexPath,
                             to destinationIndexPath: IndexPath) {
         itemStore.moveItemAtIndex(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
+    }
+    override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        if sourceIndexPath.section == 2 {
+            return IndexPath(row: 0, section: 2)
+        }
+        else  if proposedDestinationIndexPath.section == 2{
+            return sourceIndexPath
+        }
+        else {
+            return proposedDestinationIndexPath
+        }
     }
     
     

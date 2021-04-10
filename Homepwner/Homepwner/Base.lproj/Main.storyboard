@@ -87,6 +87,26 @@
                                     <outlet property="valueLabel" destination="Rfi-pk-uqF" id="JR4-vd-4gf"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noMoreItemCell" rowHeight="65" id="hda-Lt-E50" customClass="ItemCell" customModule="Homepwner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="137" width="414" height="65"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hda-Lt-E50" id="SNq-Jq-ghJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No more items!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQt-ti-BdS">
+                                            <rect key="frame" x="149" y="22" width="116" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qQt-ti-BdS" firstAttribute="centerY" secondItem="SNq-Jq-ghJ" secondAttribute="centerY" id="O0Q-aT-abC"/>
+                                        <constraint firstItem="qQt-ti-BdS" firstAttribute="centerX" secondItem="SNq-Jq-ghJ" secondAttribute="centerX" id="oWf-71-eJo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="YgV-lx-KoZ" id="SdI-Ou-g5a"/>
