@@ -135,8 +135,9 @@ class ItemsViewController: UITableViewController {
             ac.addAction(cancelAction)
             
             // 삭제 시 옵션을 핸들러로 클로저로 만들어 전달한다.
-            let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) -> Void in
+            let deleteAction = UIAlertAction(title: "Remove", style: .destructive, handler: { (action) -> Void in
                 // 저장소에서 그 항목을 제거한다.
+                
                 self.itemStore.removeItem(item: item)
                 
                 // 또한 애니메이션과 함께 테이블 뷰에서 그 행을 제거한다.
