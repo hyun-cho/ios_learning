@@ -39,4 +39,19 @@ class DetailViewController: UIViewController {
         valueField.text = numberFormatter.string(from: item.valueInDollars as NSNumber)
         dateCreated.text = dateFormatter.string(from: item.dateCreated as Date)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        item.name = nameField.text ?? ""
+        item.serialNumber = serialField.text
+        
+        if let valueText = valueField.text,
+           let value = numberFormatter.number(from: valueText) {
+            item.valueInDollars = value.intValue
+        }
+        else {
+            item.valueInDollars = 0
+        }
+    }
 }
