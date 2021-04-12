@@ -125,8 +125,6 @@ class ItemsViewController: UITableViewController {
         prepare(for: uiStoryboardSegue, sender: tableView.cellForRow(at: indexPath))
     }
     
-    override func tableView
-    
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section < 2 {
             return "section \(section)"
