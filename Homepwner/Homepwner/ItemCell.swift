@@ -19,11 +19,13 @@ class ItemCell: UITableViewCell {
     
     func updateLabels(item: Item) {
         if item.valueInDollars >= 50 {
-            contentView.backgroundColor = .red
+            self.backgroundColor = .red
         }
         else {
-            contentView.backgroundColor = .green
+            self.backgroundColor = .green
+            
         }
+        
         let bodyFont = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         nameLabel.font = bodyFont
         valueLabel.font = bodyFont

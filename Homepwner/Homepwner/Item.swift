@@ -44,4 +44,15 @@ class Item: NSObject {
             self.init(name: "", serialNumber: nil, valueInDollars: 0)
         }
     }
+    
+    var section: Int {
+        get {
+            if self.valueInDollars >= 50 {
+                return 1
+            }
+            else {
+                return 0
+            }
+        }
+    }
 }

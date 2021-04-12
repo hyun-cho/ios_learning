@@ -5,25 +5,8 @@ class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
     
     @IBAction func addNewItem(sender: AnyObject) {
-        let newItem = itemStore.createItem()
-        
-        if newItem.valueInDollars >= 50 {
-            if let index = itemStore.allItems.filter({ $0.valueInDollars >= 50 }).firstIndex(of: newItem) {
-                let indexPath = IndexPath(row: index, section: 0)
-                
-                // 테이블에 새로운 행을 삽입한다.
-                tableView.insertRows(at: [indexPath], with: .automatic)
-            }
-        }
-        else {
-            if let index = itemStore.allItems.filter({ $0.valueInDollars < 50 }).firstIndex(of: newItem) {
-                let indexPath = IndexPath(row: index, section: 1)
-                
-                // 테이블에 새로운 행을 삽입한다.
-                tableView.insertRows(at: [indexPath], with: .automatic)
-            }
-        }
-        
+        let _ = self.itemStore.createItem()
+        tableView.reloadData()
     }
     
     @IBAction func toggleEditingMode(sender: AnyObject) {
@@ -46,18 +29,17 @@ class ItemsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // iOS 13부터 deprecated된 사항
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
-        
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        // tabView와 view는 같은 인스턴스 이지만, Type을 UITableView로 컴파일 단계에서 받을 수 있다.
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
-        
+        self.itemStore = ItemStore()
         // 동적 height를 설정, rowHeigh의 기본값 automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         // 스크롤이 일어날 때까지 미룰 수 있다.
         tableView.estimatedRowHeight = 65
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
     }
     
     // 테이블뷰의 총 섹션 개수를 묻는 메서드
@@ -67,33 +49,20 @@ class ItemsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return itemStore.allItems.filter({ $0.valueInDollars >= 50}).count
-        }
-        else if section == 1 {
-            return itemStore.allItems.filter({ $0.valueInDollars < 50}).count
-        }
-        else {
+        guard section != 2 else {
             return 1
         }
+        
+        return self.itemStore[section]?.count ?? 0
     }
     
     // 셀을 만들고, 그 셀의 내용을 설정
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         //물품 배열의 indexPath, n 번째에 있는 항목의 설명을 n과 row와 일치하는 셀의 텍스트로 설정
-        var item: Item
-        if indexPath.section == 0 {
-            item = itemStore.allItems.filter({ $0.valueInDollars >= 50})[indexPath.row]
-        }
-        else if indexPath.section == 1 {
-            item = itemStore.allItems.filter({ $0.valueInDollars < 50})[indexPath.row]
-        }
-        else {
+        guard let item = self.itemStore[indexPath] else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "noMoreItemCell", for: indexPath)
             return cell
         }
-        
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         // 재사용 셀을 얻거나, 새로운 셀을 얻는다.
@@ -112,14 +81,7 @@ class ItemsViewController: UITableViewController {
                             forRowAt indexPath: IndexPath) {
         // 테이블 뷰가 삭제 명령의 적용을 요청하면
         if editingStyle == .delete {
-            var item: Item
-            if indexPath.section == 0 {
-                item = itemStore.allItems.filter({ $0.valueInDollars >= 50 })[indexPath.row]
-            }
-            else if indexPath.section == 1{
-                item = itemStore.allItems.filter({ $0.valueInDollars < 50 })[indexPath.row]
-            }
-            else {
+            guard let item = itemStore[indexPath] else {
                 return
             }
             
@@ -137,11 +99,9 @@ class ItemsViewController: UITableViewController {
             // 삭제 시 옵션을 핸들러로 클로저로 만들어 전달한다.
             let deleteAction = UIAlertAction(title: "Remove", style: .destructive, handler: { (action) -> Void in
                 // 저장소에서 그 항목을 제거한다.
-                
                 self.itemStore.removeItem(item: item)
                 
-                // 또한 애니메이션과 함께 테이블 뷰에서 그 행을 제거한다.
-                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.reloadData()
             })
             ac.addAction(deleteAction)
             
@@ -157,11 +117,12 @@ class ItemsViewController: UITableViewController {
                             to destinationIndexPath: IndexPath) {
         itemStore.moveItemAtIndex(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
+    
     override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
         if sourceIndexPath.section == 2 {
             return IndexPath(row: 0, section: 2)
         }
-        else  if proposedDestinationIndexPath.section == 2{
+        else if proposedDestinationIndexPath.section == 2 {
             return sourceIndexPath
         }
         else {
@@ -169,6 +130,10 @@ class ItemsViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let uiStoryboardSegue = UIStoryboardSegue(identifier: "ShowItem", source: self, destination: DetailViewController())
+        prepare(for: uiStoryboardSegue, sender: tableView.cellForRow(at: indexPath))
+    }
     
     // show segue를 위한 메서드
     // UIStoryboardSegue는 세 가지 정보를 가진다.
@@ -177,14 +142,10 @@ class ItemsViewController: UITableViewController {
         if segue.identifier == "ShowItem" {
             // 어느 행이 눌렀는지,
             if let indexPath = tableView.indexPathForSelectedRow{
-                var items: [Item] = itemStore.allItems
-                if indexPath.section == 0 {
-                    items = items.filter({ $0.valueInDollars >= 50 })
+                print(indexPath)
+                guard let item = itemStore[indexPath] else {
+                    return
                 }
-                else {
-                    items = items.filter({ $0.valueInDollars < 50 })
-                }
-                let item = items[indexPath.row]
                 
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.item = item

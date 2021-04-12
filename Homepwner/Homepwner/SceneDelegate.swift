@@ -18,13 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        // 의존성 주입을 위한 코드.
-        let itemStore: ItemStore = ItemStore()
-        
-        // rootViewController 가 타입캐스팅이 되지 않는 이슈가 있었는데, 스토리보드에서 구현체를 지정해주지 않아 생긴 오류였다.
-        let itemsController: ItemsViewController = window!.rootViewController as! ItemsViewController
-        itemsController.itemStore = itemStore
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
