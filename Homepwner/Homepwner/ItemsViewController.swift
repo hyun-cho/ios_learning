@@ -170,4 +170,26 @@ class ItemsViewController: UITableViewController {
     }
     
     
+    // show segue를 위한 메서드
+    // UIStoryboardSegue는 세 가지 정보를 가진다.
+    // 뷰 컨트롤러(세그웨이가 시작된 곳)와, 목표 뷰 컨트롤러(세그웨이가 끝난 곳), 세그웨이 식별자로 구분할 수 있다.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowItem" {
+            // 어느 행이 눌렀는지,
+            if let indexPath = tableView.indexPathForSelectedRow{
+                var items: [Item] = itemStore.allItems
+                if indexPath.section == 0 {
+                    items = items.filter({ $0.valueInDollars >= 50 })
+                }
+                else {
+                    items = items.filter({ $0.valueInDollars < 50 })
+                }
+                let item = items[indexPath.row]
+                
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.item = item
+            }
+        }
+    }
+    
 }
