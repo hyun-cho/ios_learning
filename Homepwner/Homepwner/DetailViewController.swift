@@ -7,14 +7,20 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet var nameField: UITextField!
-    @IBOutlet var serialField: UITextField!
-    @IBOutlet var valueField: UITextField!
+    
+    
     @IBOutlet var dateCreated: UILabel!
+    @IBOutlet var nameField: SelectedUITextField!
+    @IBOutlet var serialField: SelectedUITextField!
+    @IBOutlet var valueField: SelectedUITextField!
     
-    var item: Item!
+    var item: Item! {
+        didSet {
+            navigationItem.title = item.name
+        }
+    }
     
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -43,6 +49,8 @@ class DetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        view.endEditing(true)
+        
         item.name = nameField.text ?? ""
         item.serialNumber = serialField.text
         
@@ -53,5 +61,15 @@ class DetailViewController: UIViewController {
         else {
             item.valueInDollars = 0
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        // 어느 텍스트필드가 first responder인지 확인하고 resignFirstResponder 호출
+        view.endEditing(true)
     }
 }

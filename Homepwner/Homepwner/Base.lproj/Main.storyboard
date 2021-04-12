@@ -8,45 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Items View Controller-->
+        <!--Homepwner-->
         <scene sceneID="f1i-bx-XYe">
             <objects>
                 <tableViewController id="YgV-lx-KoZ" customClass="ItemsViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jhq-jy-cyz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="j9y-fJ-QiT">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzE-tO-N49">
-                                    <rect key="frame" x="211" y="7" width="195" height="30"/>
-                                    <state key="normal" title="Add"/>
-                                    <connections>
-                                        <action selector="addNewItemWithSender:" destination="YgV-lx-KoZ" eventType="touchUpInside" id="2v5-Fb-9TH"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9z-iT-72e">
-                                    <rect key="frame" x="8" y="7" width="195" height="30"/>
-                                    <state key="normal" title="Edit"/>
-                                    <connections>
-                                        <action selector="toggleEditingModeWithSender:" destination="YgV-lx-KoZ" eventType="touchUpInside" id="KyK-Pa-lFd"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstItem="SzE-tO-N49" firstAttribute="leading" secondItem="Y9z-iT-72e" secondAttribute="trailing" constant="8" id="5UW-qQ-JJf"/>
-                                <constraint firstItem="SzE-tO-N49" firstAttribute="width" secondItem="Y9z-iT-72e" secondAttribute="width" id="RUU-TG-8G1"/>
-                                <constraint firstAttribute="trailing" secondItem="SzE-tO-N49" secondAttribute="trailing" constant="8" id="ZoA-lE-vyc"/>
-                                <constraint firstItem="SzE-tO-N49" firstAttribute="centerY" secondItem="j9y-fJ-QiT" secondAttribute="centerY" id="fFV-N3-AD5"/>
-                                <constraint firstItem="Y9z-iT-72e" firstAttribute="leading" secondItem="j9y-fJ-QiT" secondAttribute="leading" constant="8" id="puT-6T-1gw"/>
-                                <constraint firstItem="Y9z-iT-72e" firstAttribute="centerY" secondItem="j9y-fJ-QiT" secondAttribute="centerY" id="qsR-4I-LbI"/>
-                            </constraints>
-                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="65" id="PPP-zV-SXT" customClass="ItemCell" customModule="Homepwner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="65"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PPP-zV-SXT" id="0Nn-e4-M1V">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
@@ -91,7 +62,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noMoreItemCell" rowHeight="65" id="hda-Lt-E50" customClass="ItemCell" customModule="Homepwner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="137" width="414" height="65"/>
+                                <rect key="frame" x="0.0" y="93" width="414" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hda-Lt-E50" id="SNq-Jq-ghJ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
@@ -116,7 +87,13 @@
                             <outlet property="delegate" destination="YgV-lx-KoZ" id="tzE-YY-oVJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ZnF-nO-PjH"/>
+                    <navigationItem key="navigationItem" title="Homepwner" id="ZnF-nO-PjH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tof-gM-Mld">
+                            <connections>
+                                <action selector="addNewItemWithSender:" destination="YgV-lx-KoZ" id="GN1-Sv-c0c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fda-gF-J7J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,12 +119,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EdX-P2-bKP">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EdX-P2-bKP" customClass="SelectedUITextField" customModule="Homepwner" customModuleProvider="target">
                                                 <rect key="frame" x="53" y="0.0" width="343" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="nameField:" destination="1z0-Fg-s4t" eventType="editingDidEnd" id="iFe-nO-Wfc"/>
+                                                    <outlet property="delegate" destination="RuG-vt-ADa" id="B1C-3p-IhU"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -161,12 +139,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xoz-Pi-rzk">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xoz-Pi-rzk" customClass="SelectedUITextField" customModule="Homepwner" customModuleProvider="target">
                                                 <rect key="frame" x="53" y="0.0" width="343" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="serialField:" destination="1z0-Fg-s4t" eventType="editingDidEnd" id="4tS-FH-tPC"/>
+                                                    <outlet property="delegate" destination="RuG-vt-ADa" id="zp7-2K-OQo"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -180,12 +159,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qwR-Az-yap">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qwR-Az-yap" customClass="SelectedUITextField" customModule="Homepwner" customModuleProvider="target">
                                                 <rect key="frame" x="53" y="0.0" width="343" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 <connections>
                                                     <action selector="valueField:" destination="1z0-Fg-s4t" eventType="editingDidEnd" id="bbe-L2-ZPY"/>
+                                                    <outlet property="delegate" destination="RuG-vt-ADa" id="L5H-q9-hdT"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -209,30 +189,38 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZF7-Eq-fyf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="IGc-gP-jU6" firstAttribute="bottom" secondItem="ZF7-Eq-fyf" secondAttribute="bottom" constant="8" id="93B-3P-gBy"/>
                             <constraint firstItem="IGc-gP-jU6" firstAttribute="leading" secondItem="ZF7-Eq-fyf" secondAttribute="leading" constant="9" id="J5k-KD-JQl"/>
                             <constraint firstItem="IGc-gP-jU6" firstAttribute="top" secondItem="ZF7-Eq-fyf" secondAttribute="top" constant="8" id="MwA-c8-bjs"/>
                             <constraint firstItem="ZF7-Eq-fyf" firstAttribute="trailing" secondItem="IGc-gP-jU6" secondAttribute="trailing" constant="9" id="xtZ-xn-P9n"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="KZj-xb-RHZ" appends="YES" id="lqz-qS-5cT"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Jm9-Ri-yf9"/>
                     <connections>
                         <outlet property="dateCreated" destination="pYX-hG-EaS" id="lOV-66-cBN"/>
-                        <outlet property="nameField" destination="EdX-P2-bKP" id="K5O-9O-TM0"/>
-                        <outlet property="serialField" destination="Xoz-Pi-rzk" id="729-6x-gZk"/>
-                        <outlet property="valueField" destination="qwR-Az-yap" id="rfc-8d-zrV"/>
+                        <outlet property="nameField" destination="EdX-P2-bKP" id="9kS-k3-trA"/>
+                        <outlet property="serialField" destination="Xoz-Pi-rzk" id="Gn1-QP-dtA"/>
+                        <outlet property="valueField" destination="qwR-Az-yap" id="iDw-67-T9N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRc-ux-95b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="1z0-Fg-s4t" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="KZj-xb-RHZ">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="RuG-vt-ADa" id="LUI-gC-Vrp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2256.521739130435" y="114.50892857142857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oeJ-dF-502">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f3v-Mb-ijm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ljn-oE-EWc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s1n-6Q-u4A">
@@ -244,6 +232,7 @@
                         <segue destination="YgV-lx-KoZ" kind="relationship" relationship="rootViewController" id="0Ze-6v-C0S"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f3v-Mb-ijm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="528.98550724637687" y="114.50892857142857"/>
         </scene>

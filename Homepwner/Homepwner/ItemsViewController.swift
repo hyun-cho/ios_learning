@@ -4,26 +4,16 @@ class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
     
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
+        
+    }
+    
     @IBAction func addNewItem(sender: AnyObject) {
         let _ = self.itemStore.createItem()
         tableView.reloadData()
-    }
-    
-    @IBAction func toggleEditingMode(sender: AnyObject) {
-        if isEditing {
-            // 사용자에게 상태를 알리기 위해 버튼의 텍스트를 변경한다.
-            sender.setTitle("Edit", for: UIControl.State.normal)
-            
-            // 편집 모드를 끈다.
-            setEditing(false, animated: true)
-        }
-        else {
-            // 사용자에게 상태를 알리기 위해 버튼의 텍스트를 변경한다.
-            sender.setTitle("Done", for: UIControl.State.normal)
-            
-            // 편집 모드로 들어간다.
-            setEditing(true, animated: true)
-        }
     }
     
     override func viewDidLoad() {
