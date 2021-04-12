@@ -125,6 +125,21 @@ class ItemsViewController: UITableViewController {
         prepare(for: uiStoryboardSegue, sender: tableView.cellForRow(at: indexPath))
     }
     
+    override func tableView
+    
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section < 2 {
+            return "section \(section)"
+        }
+        return nil
+    }
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section < 2 {
+            return 40
+        }
+        return 0
+    }
+    
     // show segue를 위한 메서드
     // UIStoryboardSegue는 세 가지 정보를 가진다.
     // 뷰 컨트롤러(세그웨이가 시작된 곳)와, 목표 뷰 컨트롤러(세그웨이가 끝난 곳), 세그웨이 식별자로 구분할 수 있다.
