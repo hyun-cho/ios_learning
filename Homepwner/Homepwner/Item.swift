@@ -7,11 +7,23 @@
 
 import UIKit
 
-class Item: NSObject {
+// NSCoder 구현
+class Item: NSObject, NSCoding {
     var name: String
     var valueInDollars: Int
     var serialNumber: String?
     let dateCreated: NSDate
+    
+    required init?(coder: NSCoder) {
+        name = coder.decodeObject(forKey: "name") as! String
+        print(name)
+        dateCreated = coder.decodeObject(forKey: "dateCreated") as! NSDate
+        print(dateCreated)
+        serialNumber = coder.decodeObject(forKey: "serialNumber") as! String?
+        
+        valueInDollars = coder.decodeInteger(forKey: "valueInDollars")
+        super.init()
+    }
     
     init(name: String, serialNumber: String?, valueInDollars: Int) {
         self.name = name
@@ -43,6 +55,14 @@ class Item: NSObject {
         else {
             self.init(name: "", serialNumber: nil, valueInDollars: 0)
         }
+    }
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(name, forKey: "name")
+        coder.encode(dateCreated, forKey: "dateCreated")
+        coder.encode(serialNumber, forKey: "serialNumber")
+        
+        coder.encode(valueInDollars, forKey: "valueInDollars")
     }
     
     var section: Int {

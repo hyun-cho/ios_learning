@@ -132,7 +132,6 @@ class ItemsViewController: UITableViewController {
         if segue.identifier == "ShowItem" {
             // 어느 행이 눌렀는지,
             if let indexPath = tableView.indexPathForSelectedRow{
-                print(indexPath)
                 guard let item = itemStore[indexPath] else {
                     return
                 }
