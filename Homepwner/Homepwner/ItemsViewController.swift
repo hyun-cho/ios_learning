@@ -8,10 +8,9 @@ class ItemsViewController: UITableViewController {
         super.init(coder: coder)
         
         navigationItem.leftBarButtonItem = editButtonItem
-        
     }
     
-    @IBAction func addNewItem(sender: AnyObject) {
+    func addNewItem(sender: AnyObject) {
         let _ = self.itemStore.createItem()
         tableView.reloadData()
     }
