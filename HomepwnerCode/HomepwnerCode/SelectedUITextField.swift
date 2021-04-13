@@ -1,8 +1,21 @@
 //
 //  SelectedUITextField.swift
-//  HomepwnerCode
+//  Homepwner
 //
-//  Created by NHN on 2021/04/13.
+//  Created by NHN on 2021/04/12.
 //
 
-import Foundation
+import UIKit
+
+class SelectedUITextField: UITextField {
+    override func becomeFirstResponder() -> Bool {
+        self.borderStyle = .none
+        return super.becomeFirstResponder()
+    }
+    
+    override func resignFirstResponder() -> Bool {
+        self.borderStyle = .bezel
+        return super.resignFirstResponder()
+    }
+}
+
