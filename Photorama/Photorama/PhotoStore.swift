@@ -29,6 +29,8 @@ enum PhotoError: Error {
 }
 
 class PhotoStore {
+    static let single = PhotoStore()
+    
     let session: URLSession = {
         let config = URLSessionConfiguration.default
         return URLSession(configuration: config)
@@ -36,6 +38,11 @@ class PhotoStore {
     
     
     func fetchImageForPhoto(photo: Photo, completion: @escaping (ImageResult) -> Void) {
+        if let image = photo.image {
+            completion(.Success(image))
+            return
+        }
+        
         let photoURL = photo.remoteURL
         let request = URLRequest(url: photoURL)
         
@@ -57,25 +64,6 @@ class PhotoStore {
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
             
-//            if let jsonData = data {
-////                if let jsonString = NSString(data: jsonData, encoding: String.Encoding.utf8.rawValue) {
-////                    print(jsonString)
-////                }
-//                do {
-//                    let jsonObject: Any = try JSONSerialization.jsonObject(with: jsonData, options: [])
-//                    print("json object")
-//                    print(jsonObject)
-//                }
-//                catch let error {
-//                    print("error create JSON object \(error)")
-//                }
-//            }
-//            else if let requestError = error {
-//                print("error fetching recent photos: \(requestError)")
-//            }
-//            else {
-//                print("unexprected error with the request")
-//            }
             let result = self.processRecentPhotoRequest(data: data, error: error)
             completion(result)
         }

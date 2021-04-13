@@ -52,9 +52,7 @@ struct FlickrAPI {
             }
         }
         components?.queryItems = queryItems
-        debugPrint(queryItems)
         let url: URL = (components?.url!)!
-        debugPrint(url)
         return url
     }
     
