@@ -20,7 +20,6 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
                 let menu = UIMenuController.shared
                 menu.hideMenu(from: self)
             }
-            
         }
     }
     var moveRecognizer: UIPanGestureRecognizer!
@@ -82,6 +81,7 @@ class DrawView: UIView, UIGestureRecognizerDelegate {
         selectedLineIndex = nil
         currentLines.removeAll()
         finishedLines.removeAll()
+        setNeedsDisplay()
     }
     @objc func tap(gestureRecognizer: UIGestureRecognizer) {
         print("Recognize a tap")

@@ -1,7 +1,7 @@
 import UIKit
 
-class ItemsViewController: UITableViewController {
-    
+class ItemsViewController: UIViewController {
+    var tableView: UITableView
     var itemStore: ItemStore!
     
     override func viewDidLoad() {
@@ -10,8 +10,10 @@ class ItemsViewController: UITableViewController {
         
         self.itemStore = ItemStore()
         
-        tableView = UITableView()
         view.backgroundColor = .white
+        
+        tableView = UITableView()
+        view.addSubview(tableView)
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -23,11 +25,11 @@ class ItemsViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItem))
         
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
-        let tableViewConstraints = [tableView.topAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.topAnchor, constant: 10),
-                                    tableView.bottomAnchor.constraint(equalTo: view),
+        let tableViewConstraints = [NSLayoutConstraint(item: tableView, attribute: .top, relatedBy: .equal, toItem: <#T##Any?#>, attribute: <#T##NSLayoutConstraint.Attribute#>, multiplier: <#T##CGFloat#>, constant: <#T##CGFloat#>),
+                                    tableView.bottomAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.bottomAnchor),
                                     tableView.leadingAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.leadingAnchor),
                                     tableView.trailingAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.trailingAnchor)]
-                                    
+        
         tableViewConstraints.forEach({ $0.isActive = true })
         
         
@@ -172,5 +174,13 @@ class ItemsViewController: UITableViewController {
             }
         }
     }
+    
+}
+
+extension ItemsViewController: UITableViewDataSource {
+    
+}
+
+extension ItemsViewController: UITableViewDelegate {
     
 }
