@@ -13,11 +13,23 @@ class PhotoViewController : UIViewController {
     var collectionView: UICollectionView!
     
     var store: PhotoStore = PhotoStore()
-    let photoDataSource = PhotoDataSource()
-    var photoDelegateFlowLayout = PhotoDelegateFlowLayout()
+    let photoDataSource: PhotoDataSource = PhotoDataSource()
+    var photoDelegateFlowLayout: PhotoDelegateFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView = {
+            let layout = UICollectionViewFlowLayout()
+            let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+            return collectionView
+        }()
+        
+        self.view.addSubview(collectionView)
+        collectionView.dataSource = photoDataSource
+        photoDelegateFlowLayout = PhotoDelegateFlowLayout(self)
+        collectionView.delegate = photoDelegateFlowLayout
+        
         store.fetchRecentPhotos() {
             (photosResult) -> Void in
             OperationQueue.main.addOperation {
@@ -35,22 +47,16 @@ class PhotoViewController : UIViewController {
             }
         }
         
-        collectionView = {
-            let layout = UICollectionViewFlowLayout()
-            let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
-            return collectionView
-        }()
-        self.view.addSubview(collectionView)
-        collectionView.dataSource = photoDataSource
-        collectionView.delegate = photoDelegateFlowLayout
+        
+        
+        
+        
         self.collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
     
         collectionView.backgroundColor = .white
         self.title = "Photorama"
-        
-        
         
         let constraints = [
             NSLayoutConstraint(item: collectionView!, attribute: .top, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1.0, constant: 0.0),

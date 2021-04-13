@@ -8,6 +8,10 @@
 import UIKit
 
 class PhotoDelegateFlowLayout: NSObject, UICollectionViewDelegateFlowLayout {
+    var viewController: PhotoViewController?
+    init(_ viewController: PhotoViewController) {
+        self.viewController = viewController
+    }
     //셀크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 90, height: 90)
@@ -38,9 +42,24 @@ class PhotoDelegateFlowLayout: NSObject, UICollectionViewDelegateFlowLayout {
                 
                 if let cell = collectionView.cellForItem(at: photoIndexPath) as? PhotoCollectionViewCell {
                     cell.updateWithImage(image: photo.image)
+                    cell.delegate = self
                 }
             }
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photoDataSource = collectionView.dataSource as! PhotoDataSource
         
+        let photo = photoDataSource.photos[indexPath.row]
+        
+        let vc = PhotoInfoViewController()
+        vc.photo = photo
+        pushNavigation(vc)
+        
+    }
+    
+    func pushNavigation(_ vc: UIViewController) {
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

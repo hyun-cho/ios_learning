@@ -8,6 +8,8 @@
 import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
+    var delegate: PhotoDelegateFlowLayout?
+    
     var imageView: UIImageView = {
         let image = UIImageView()
         
@@ -31,6 +33,8 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         self.addSubview(spinner)
         spinner.translatesAutoresizingMaskIntoConstraints = false
         
+        
+        
         NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .lessThanOrEqual, toItem: self, attribute: .width, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: imageView, attribute: .height, relatedBy: .lessThanOrEqual, toItem: self, attribute: .height, multiplier: 1.0, constant: 0.0).isActive = true
         
@@ -41,7 +45,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         
         NSLayoutConstraint(item: spinner, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: spinner, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
-        
     }
     
     required init?(coder: NSCoder) {
@@ -69,4 +72,5 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         
         updateWithImage(image: nil)
     }
+    
 }
