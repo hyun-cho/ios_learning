@@ -1,38 +1,36 @@
 import UIKit
 
 class ItemsViewController: UIViewController {
-    var tableView: UITableView
+    var tableView: UITableView!
     var itemStore: ItemStore!
     
     override func viewDidLoad() {
-        print(#function)
         super.viewDidLoad()
-        
         self.itemStore = ItemStore()
         
         view.backgroundColor = .white
         
         tableView = UITableView()
         view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
         
         tableView.register(ItemCell.self, forCellReuseIdentifier: "ItemCell")
         tableView.register(ItemCell.self, forCellReuseIdentifier: "noMoreItemCell")
         
-        
         navigationItem.leftBarButtonItem = editButtonItem
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewItem))
         
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
-        let tableViewConstraints = [NSLayoutConstraint(item: tableView, attribute: .top, relatedBy: .equal, toItem: <#T##Any?#>, attribute: <#T##NSLayoutConstraint.Attribute#>, multiplier: <#T##CGFloat#>, constant: <#T##CGFloat#>),
-                                    tableView.bottomAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.bottomAnchor),
-                                    tableView.leadingAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.leadingAnchor),
-                                    tableView.trailingAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.trailingAnchor)]
+        let tableViewConstraints = [
+            NSLayoutConstraint(item: tableView!, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0),
+            NSLayoutConstraint(item: tableView!, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0),
+            NSLayoutConstraint(item: tableView!, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: 0.0),
+            NSLayoutConstraint(item: tableView!, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1.0, constant: 0.0),
+        ]
         
         tableViewConstraints.forEach({ $0.isActive = true })
-        
-        
         
         // 동적 height를 설정, rowHeigh의 기본값 automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
@@ -41,7 +39,6 @@ class ItemsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print(#function)
         super.viewWillAppear(animated)
         
         tableView.reloadData()
@@ -52,12 +49,17 @@ class ItemsViewController: UIViewController {
         tableView.reloadData()
     }
     
+    
+}
+
+// DataSource
+extension ItemsViewController: UITableViewDataSource {
     // 테이블뷰의 총 섹션 개수를 묻는 메서드
-    override func numberOfSections(in: UITableView) -> Int {
+    func numberOfSections(in: UITableView) -> Int {
         return 3
     }
     
-    override func tableView(_ tableView: UITableView,
+    func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
         guard section != 2 else {
             return 1
@@ -67,7 +69,7 @@ class ItemsViewController: UIViewController {
     }
     
     // 셀을 만들고, 그 셀의 내용을 설정
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //물품 배열의 indexPath, n 번째에 있는 항목의 설명을 n과 row와 일치하는 셀의 텍스트로 설정
         guard let item = self.itemStore[indexPath] else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "noMoreItemCell", for: indexPath)
@@ -81,12 +83,13 @@ class ItemsViewController: UIViewController {
         cell.nameLabel.text = item.name
         cell.serialNumberLabel.text = item.serialNumber
         cell.valueLabel.text = "\(item.valueInDollars)"
+        cell.delegate = self
         
         return cell
     }
 
     // 테이블 삭제는 승인을 위해 호출한다.
-    override func tableView(_ tableView: UITableView,
+    func tableView(_ tableView: UITableView,
                             commit editingStyle: UITableViewCell.EditingStyle,
                             forRowAt indexPath: IndexPath) {
         // 테이블 뷰가 삭제 명령의 적용을 요청하면
@@ -119,16 +122,19 @@ class ItemsViewController: UIViewController {
             present(ac, animated: true, completion: nil)
         }
     }
-    
+}
+
+// Delegate
+extension ItemsViewController: UITableViewDelegate {
     // 테이블 이동은, 별도의 승인절차가 필요하지 않아 테이블이 직접 실행한다.
     // 하지만, itemStore의 위치를 변환해야한다.
-    override func tableView(_ tableView: UITableView,
+    func tableView(_ tableView: UITableView,
                             moveRowAt sourceIndexPath: IndexPath,
                             to destinationIndexPath: IndexPath) {
         itemStore.moveItemAtIndex(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
-    override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+    func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
         if sourceIndexPath.section == 2 {
             return IndexPath(row: 0, section: 2)
         }
@@ -140,47 +146,31 @@ class ItemsViewController: UIViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let uiStoryboardSegue = UIStoryboardSegue(identifier: "ShowItem", source: self, destination: DetailViewController())
-        prepare(for: uiStoryboardSegue, sender: tableView.cellForRow(at: indexPath))
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showDetail(indexPath)
     }
     
-    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section < 2 {
             return "section \(section)"
         }
         return nil
     }
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section < 2 {
             return 40
         }
         return 0
     }
     
-    // show segue를 위한 메서드
-    // UIStoryboardSegue는 세 가지 정보를 가진다.
-    // 뷰 컨트롤러(세그웨이가 시작된 곳)와, 목표 뷰 컨트롤러(세그웨이가 끝난 곳), 세그웨이 식별자로 구분할 수 있다.
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowItem" {
-            // 어느 행이 눌렀는지,
-            if let indexPath = tableView.indexPathForSelectedRow{
-                guard let item = itemStore[indexPath] else {
-                    return
-                }
-                
-                let detailViewController = segue.destination as! DetailViewController
-                detailViewController.item = item
-            }
+    func showDetail(_ indexPath: IndexPath) {
+        guard let item = itemStore[indexPath] else {
+            return
         }
+        print(item)
+        
+        let detailViewController = DetailViewController()
+        detailViewController.item = item
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
-    
-}
-
-extension ItemsViewController: UITableViewDataSource {
-    
-}
-
-extension ItemsViewController: UITableViewDelegate {
-    
 }
