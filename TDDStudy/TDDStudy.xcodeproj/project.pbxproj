@@ -17,6 +17,8 @@
 		D9792A16262860D8005E6D88 /* TDDStudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A15262860D8005E6D88 /* TDDStudyUITests.swift */; };
 		D9792A2D26286180005E6D88 /* CalculatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A2C26286180005E6D88 /* CalculatorTest.swift */; };
 		D9792A39262861F4005E6D88 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A38262861F4005E6D88 /* Calculator.swift */; };
+		D9792A45262862E3005E6D88 /* PasswordStrengthMeterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A44262862E3005E6D88 /* PasswordStrengthMeterTest.swift */; };
+		D9792A52262863D0005E6D88 /* PasswordStrengthMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A51262863D0005E6D88 /* PasswordStrengthMeter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,13 @@
 			remoteInfo = TDDStudy;
 		};
 		D9792A2F26286180005E6D88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D97929E8262860D5005E6D88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D97929EF262860D5005E6D88;
+			remoteInfo = TDDStudy;
+		};
+		D9792A47262862E3005E6D88 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D97929E8262860D5005E6D88 /* Project object */;
 			proxyType = 1;
@@ -62,6 +71,10 @@
 		D9792A2C26286180005E6D88 /* CalculatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTest.swift; sourceTree = "<group>"; };
 		D9792A2E26286180005E6D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9792A38262861F4005E6D88 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		D9792A42262862E3005E6D88 /* PasswordStrengthMeterTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordStrengthMeterTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9792A44262862E3005E6D88 /* PasswordStrengthMeterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrengthMeterTest.swift; sourceTree = "<group>"; };
+		D9792A46262862E3005E6D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9792A51262863D0005E6D88 /* PasswordStrengthMeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrengthMeter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +106,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D9792A3F262862E3005E6D88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -103,6 +123,7 @@
 				D9792A09262860D8005E6D88 /* TDDStudyTests */,
 				D9792A14262860D8005E6D88 /* TDDStudyUITests */,
 				D9792A2B26286180005E6D88 /* CalculatorTest */,
+				D9792A43262862E3005E6D88 /* PasswordStrengthMeterTest */,
 				D97929F1262860D5005E6D88 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,6 +135,7 @@
 				D9792A06262860D8005E6D88 /* TDDStudyTests.xctest */,
 				D9792A11262860D8005E6D88 /* TDDStudyUITests.xctest */,
 				D9792A2A26286180005E6D88 /* CalculatorTest.xctest */,
+				D9792A42262862E3005E6D88 /* PasswordStrengthMeterTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +151,7 @@
 				D97929FE262860D7005E6D88 /* LaunchScreen.storyboard */,
 				D9792A01262860D7005E6D88 /* Info.plist */,
 				D9792A38262861F4005E6D88 /* Calculator.swift */,
+				D9792A51262863D0005E6D88 /* PasswordStrengthMeter.swift */,
 			);
 			path = TDDStudy;
 			sourceTree = "<group>";
@@ -158,6 +181,15 @@
 				D9792A2E26286180005E6D88 /* Info.plist */,
 			);
 			path = CalculatorTest;
+			sourceTree = "<group>";
+		};
+		D9792A43262862E3005E6D88 /* PasswordStrengthMeterTest */ = {
+			isa = PBXGroup;
+			children = (
+				D9792A44262862E3005E6D88 /* PasswordStrengthMeterTest.swift */,
+				D9792A46262862E3005E6D88 /* Info.plist */,
+			);
+			path = PasswordStrengthMeterTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +266,24 @@
 			productReference = D9792A2A26286180005E6D88 /* CalculatorTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D9792A41262862E3005E6D88 /* PasswordStrengthMeterTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9792A49262862E3005E6D88 /* Build configuration list for PBXNativeTarget "PasswordStrengthMeterTest" */;
+			buildPhases = (
+				D9792A3E262862E3005E6D88 /* Sources */,
+				D9792A3F262862E3005E6D88 /* Frameworks */,
+				D9792A40262862E3005E6D88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9792A48262862E3005E6D88 /* PBXTargetDependency */,
+			);
+			name = PasswordStrengthMeterTest;
+			productName = PasswordStrengthMeterTest;
+			productReference = D9792A42262862E3005E6D88 /* PasswordStrengthMeterTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -258,6 +308,10 @@
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = D97929EF262860D5005E6D88;
 					};
+					D9792A41262862E3005E6D88 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = D97929EF262860D5005E6D88;
+					};
 				};
 			};
 			buildConfigurationList = D97929EB262860D5005E6D88 /* Build configuration list for PBXProject "TDDStudy" */;
@@ -277,6 +331,7 @@
 				D9792A05262860D8005E6D88 /* TDDStudyTests */,
 				D9792A10262860D8005E6D88 /* TDDStudyUITests */,
 				D9792A2926286180005E6D88 /* CalculatorTest */,
+				D9792A41262862E3005E6D88 /* PasswordStrengthMeterTest */,
 			);
 		};
 /* End PBXProject section */
@@ -313,6 +368,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D9792A40262862E3005E6D88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -323,6 +385,7 @@
 				D97929F8262860D5005E6D88 /* ViewController.swift in Sources */,
 				D9792A39262861F4005E6D88 /* Calculator.swift in Sources */,
 				D97929F4262860D5005E6D88 /* AppDelegate.swift in Sources */,
+				D9792A52262863D0005E6D88 /* PasswordStrengthMeter.swift in Sources */,
 				D97929F6262860D5005E6D88 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +414,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D9792A3E262862E3005E6D88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9792A45262862E3005E6D88 /* PasswordStrengthMeterTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -368,6 +439,11 @@
 			isa = PBXTargetDependency;
 			target = D97929EF262860D5005E6D88 /* TDDStudy */;
 			targetProxy = D9792A2F26286180005E6D88 /* PBXContainerItemProxy */;
+		};
+		D9792A48262862E3005E6D88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D97929EF262860D5005E6D88 /* TDDStudy */;
+			targetProxy = D9792A47262862E3005E6D88 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -661,6 +737,44 @@
 			};
 			name = Release;
 		};
+		D9792A4A262862E3005E6D88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PasswordStrengthMeterTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nhn.PasswordStrengthMeterTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDDStudy.app/TDDStudy";
+			};
+			name = Debug;
+		};
+		D9792A4B262862E3005E6D88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PasswordStrengthMeterTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nhn.PasswordStrengthMeterTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDDStudy.app/TDDStudy";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -705,6 +819,15 @@
 			buildConfigurations = (
 				D9792A3226286180005E6D88 /* Debug */,
 				D9792A3326286180005E6D88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9792A49262862E3005E6D88 /* Build configuration list for PBXNativeTarget "PasswordStrengthMeterTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9792A4A262862E3005E6D88 /* Debug */,
+				D9792A4B262862E3005E6D88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
