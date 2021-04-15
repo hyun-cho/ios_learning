@@ -42,6 +42,8 @@ class DetailViewController: UIViewController {
         dateCreated.setContentHuggingPriority(UILayoutPriority(249), for: .vertical)
         dateCreated.textAlignment = .center
         
+        // target + action 의 동작원리를 다시 알아보자 (엮어서 공부하자!!)
+        // action을 외부에 등록을 해놓고, 해당 core영역에서 실행은 다른쪽에서 한다..
         let tapGestureRecognizer = UITapGestureRecognizer(target: self.view, action: #selector(backgroundTapped))
         tapGestureRecognizer.numberOfTapsRequired = 1
         stackView.addGestureRecognizer(tapGestureRecognizer)

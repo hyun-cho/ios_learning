@@ -10,7 +10,7 @@ import UIKit
 class PhotoInfoViewController: UIViewController {
     var imageView: UIImageView!
     
-    var photo: Photo! {
+    weak var photo: Photo! {
         didSet {
             navigationItem.title = photo.title
         }
@@ -35,7 +35,7 @@ class PhotoInfoViewController: UIViewController {
         ]
         constraints.forEach({ $0.isActive = true })
         
-        PhotoStore.single.fetchImageForPhoto(photo: photo, completion: {
+        PhotoStore.shared.fetchImageForPhoto(photo: photo, completion: {
             (result) -> Void in
             switch result {
             case let .Success(image):
@@ -47,5 +47,10 @@ class PhotoInfoViewController: UIViewController {
             }
             
         })
+    }
+    
+    deinit {
+        print(#file)
+        print("deinited")
     }
 }

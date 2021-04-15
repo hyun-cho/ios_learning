@@ -23,4 +23,9 @@ class PhotoDataSource: NSObject, UICollectionViewDataSource {
         
         return cell
     }
+    
+    deinit {
+        print(#file)
+        print("deinited")
+    }
 }

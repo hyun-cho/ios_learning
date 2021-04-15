@@ -22,6 +22,10 @@ class Photo {
         self.dateTaken = dateTaken
     }
     
+    deinit {
+        print(#file)
+        print("deinited")
+    }
 }
 
 extension Photo: Equatable {

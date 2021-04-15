@@ -75,4 +75,8 @@ class Item: NSObject, NSCoding {
             }
         }
     }
+    
+    deinit {
+        print("item name \(name) deinit")
+    }
 }

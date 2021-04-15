@@ -29,7 +29,7 @@ enum PhotoError: Error {
 }
 
 class PhotoStore {
-    static let single = PhotoStore()
+    static let shared = PhotoStore()
     
     let session: URLSession = {
         let config = URLSessionConfiguration.default
@@ -90,5 +90,9 @@ class PhotoStore {
         return FlickrAPI.photoFromJSONData(data: jsonData)
     }
     
+    deinit {
+        print(#file)
+        print("deinited")
+    }
     
 }

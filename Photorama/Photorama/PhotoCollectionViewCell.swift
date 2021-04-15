@@ -8,8 +8,6 @@
 import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
-    var delegate: PhotoDelegateFlowLayout?
-    
     var imageView: UIImageView = {
         let image = UIImageView()
         
@@ -71,6 +69,11 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         
         updateWithImage(image: nil)
+    }
+    
+    deinit {
+        print(#file)
+        print("deinited")
     }
     
 }

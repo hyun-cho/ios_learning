@@ -96,10 +96,6 @@ struct FlickrAPI {
               let dateTaken = dateFormatter.date(from: dateString) else {
             return nil
         }
-        return Photo(title: title, photoID: photoID, remoteURL: url, dateTaken: dateTaken)
-              
-                
-              
-              
+        return Photo(title: title, photoID: photoID, remoteURL: url, dateTaken: dateTaken)         
     }
 }

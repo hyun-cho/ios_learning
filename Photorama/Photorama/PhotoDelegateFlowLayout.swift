@@ -32,6 +32,8 @@ class PhotoDelegateFlowLayout: NSObject, UICollectionViewDelegateFlowLayout {
         
         let photo = photoDataSource.photos[indexPath.row]
         
+        // single rxswift - reactive ()
+        // shared singleton
         PhotoStore.single.fetchImageForPhoto(photo: photo) {
             (result) -> Void in
             
@@ -55,11 +57,16 @@ class PhotoDelegateFlowLayout: NSObject, UICollectionViewDelegateFlowLayout {
         
         let vc = PhotoInfoViewController()
         vc.photo = photo
+        // pushNavigation 의 역할? ->
         pushNavigation(vc)
-        
     }
     
     func pushNavigation(_ vc: UIViewController) {
         self.viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    deinit {
+        print(#class)
+        print("deinited")
     }
 }
