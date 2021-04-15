@@ -61,6 +61,11 @@ class PasswordStrengthMeterTest: XCTestCase {
         assertStrength(password: "ABZEF", expStr: .WEAK)
     }
     
+    // 아홉번째 : 아무 조건도 충족하지 않은 경우
+    func testMeetsNoCriteriaThenWeak() {
+        assertStrength(password: "abc", expStr: .WEAK)
+    }
+    
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

@@ -19,30 +19,29 @@ class PasswordStrengthMeter {
               !password.isEmpty else {
             return .INVALID
         }
-        let lengthEnough = password.count >= 8
-        let containsNum: Bool = meetsContainingNumberCriteria(string: password)
-        let containsUpp: Bool = meetsContainingUppercaseCriteria(string: password)
+        let metCount: Int = getMetCriteriaCount(string: password)
         
-        if lengthEnough && !containsUpp && !containsNum {
+        if metCount <= 1 {
             return .WEAK
         }
-        if !lengthEnough && containsUpp && !containsNum {
-            return .WEAK
-        }
-        if !lengthEnough && !containsUpp && containsNum {
-            return .WEAK
-        }
-        
-        if !lengthEnough {
-            return .NORMAL
-        }
-        if !containsNum {
-            return .NORMAL
-        }
-        if !containsUpp {
+        if metCount == 2 {
             return .NORMAL
         }
         return .STRONG
+    }
+    
+    func getMetCriteriaCount(string: String) -> Int {
+        var metCount: Int = 0
+        if string.count >= 8 {
+            metCount += 1
+        }
+        if meetsContainingNumberCriteria(string: string) {
+            metCount += 1
+        }
+        if meetsContainingUppercaseCriteria(string: string) {
+            metCount += 1
+        }
+        return metCount
     }
     
     func meetsContainingNumberCriteria(string: String) -> Bool {
