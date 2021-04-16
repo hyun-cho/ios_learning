@@ -13,7 +13,9 @@
 		D97929D52628289D005E6D88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D97929D42628289D005E6D88 /* Assets.xcassets */; };
 		D97929D82628289D005E6D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D97929D62628289D005E6D88 /* LaunchScreen.storyboard */; };
 		D97929E2262828F7005E6D88 /* BookRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97929E1262828F7005E6D88 /* BookRecViewController.swift */; };
-		D97929E52628328E005E6D88 /* BookFirstIntroPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97929E42628328E005E6D88 /* BookFirstIntroPageCell.swift */; };
+		D97929E52628328E005E6D88 /* BookRecFirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97929E42628328E005E6D88 /* BookRecFirstCell.swift */; };
+		D9792A5E262934DB005E6D88 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A5D262934DB005E6D88 /* Book.swift */; };
+		D9792A6126293575005E6D88 /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A6026293575005E6D88 /* BookStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,9 @@
 		D97929D72628289D005E6D88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D97929D92628289D005E6D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D97929E1262828F7005E6D88 /* BookRecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRecViewController.swift; sourceTree = "<group>"; };
-		D97929E42628328E005E6D88 /* BookFirstIntroPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFirstIntroPageCell.swift; sourceTree = "<group>"; };
+		D97929E42628328E005E6D88 /* BookRecFirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRecFirstCell.swift; sourceTree = "<group>"; };
+		D9792A5D262934DB005E6D88 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		D9792A6026293575005E6D88 /* BookStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +69,9 @@
 				D97929D62628289D005E6D88 /* LaunchScreen.storyboard */,
 				D97929D92628289D005E6D88 /* Info.plist */,
 				D97929E1262828F7005E6D88 /* BookRecViewController.swift */,
-				D97929E42628328E005E6D88 /* BookFirstIntroPageCell.swift */,
+				D97929E42628328E005E6D88 /* BookRecFirstCell.swift */,
+				D9792A5D262934DB005E6D88 /* Book.swift */,
+				D9792A6026293575005E6D88 /* BookStore.swift */,
 			);
 			path = IamSchoolBookRec;
 			sourceTree = "<group>";
@@ -142,8 +148,10 @@
 			files = (
 				D97929E2262828F7005E6D88 /* BookRecViewController.swift in Sources */,
 				D97929CC2628289B005E6D88 /* AppDelegate.swift in Sources */,
+				D9792A6126293575005E6D88 /* BookStore.swift in Sources */,
 				D97929CE2628289B005E6D88 /* SceneDelegate.swift in Sources */,
-				D97929E52628328E005E6D88 /* BookFirstIntroPageCell.swift in Sources */,
+				D9792A5E262934DB005E6D88 /* Book.swift in Sources */,
+				D97929E52628328E005E6D88 /* BookRecFirstCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
