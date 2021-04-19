@@ -16,6 +16,10 @@
 		D97929E52628328E005E6D88 /* BookRecFirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97929E42628328E005E6D88 /* BookRecFirstCell.swift */; };
 		D9792A5E262934DB005E6D88 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A5D262934DB005E6D88 /* Book.swift */; };
 		D9792A6126293575005E6D88 /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A6026293575005E6D88 /* BookStore.swift */; };
+		D9792A6A2629A0A4005E6D88 /* BookRecThirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A692629A0A4005E6D88 /* BookRecThirdCell.swift */; };
+		D9792A6D2629A352005E6D88 /* BookCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A6C2629A352005E6D88 /* BookCollectionCell.swift */; };
+		D9792A702629FBCA005E6D88 /* BookRecFourthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A6F2629FBCA005E6D88 /* BookRecFourthCell.swift */; };
+		D9792A732629FDC6005E6D88 /* BookGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A722629FDC6005E6D88 /* BookGuide.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		D97929E42628328E005E6D88 /* BookRecFirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRecFirstCell.swift; sourceTree = "<group>"; };
 		D9792A5D262934DB005E6D88 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		D9792A6026293575005E6D88 /* BookStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStore.swift; sourceTree = "<group>"; };
+		D9792A692629A0A4005E6D88 /* BookRecThirdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRecThirdCell.swift; sourceTree = "<group>"; };
+		D9792A6C2629A352005E6D88 /* BookCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionCell.swift; sourceTree = "<group>"; };
+		D9792A6F2629FBCA005E6D88 /* BookRecFourthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRecFourthCell.swift; sourceTree = "<group>"; };
+		D9792A722629FDC6005E6D88 /* BookGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookGuide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +73,15 @@
 				D97929CB2628289B005E6D88 /* AppDelegate.swift */,
 				D97929CD2628289B005E6D88 /* SceneDelegate.swift */,
 				D97929D12628289B005E6D88 /* Main.storyboard */,
+				D9792A722629FDC6005E6D88 /* BookGuide.swift */,
 				D97929D42628289D005E6D88 /* Assets.xcassets */,
 				D97929D62628289D005E6D88 /* LaunchScreen.storyboard */,
 				D97929D92628289D005E6D88 /* Info.plist */,
 				D97929E1262828F7005E6D88 /* BookRecViewController.swift */,
 				D97929E42628328E005E6D88 /* BookRecFirstCell.swift */,
+				D9792A692629A0A4005E6D88 /* BookRecThirdCell.swift */,
+				D9792A6C2629A352005E6D88 /* BookCollectionCell.swift */,
+				D9792A6F2629FBCA005E6D88 /* BookRecFourthCell.swift */,
 				D9792A5D262934DB005E6D88 /* Book.swift */,
 				D9792A6026293575005E6D88 /* BookStore.swift */,
 			);
@@ -147,8 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D97929E2262828F7005E6D88 /* BookRecViewController.swift in Sources */,
+				D9792A732629FDC6005E6D88 /* BookGuide.swift in Sources */,
 				D97929CC2628289B005E6D88 /* AppDelegate.swift in Sources */,
+				D9792A6D2629A352005E6D88 /* BookCollectionCell.swift in Sources */,
+				D9792A702629FBCA005E6D88 /* BookRecFourthCell.swift in Sources */,
 				D9792A6126293575005E6D88 /* BookStore.swift in Sources */,
+				D9792A6A2629A0A4005E6D88 /* BookRecThirdCell.swift in Sources */,
 				D97929CE2628289B005E6D88 /* SceneDelegate.swift in Sources */,
 				D9792A5E262934DB005E6D88 /* Book.swift in Sources */,
 				D97929E52628328E005E6D88 /* BookRecFirstCell.swift in Sources */,

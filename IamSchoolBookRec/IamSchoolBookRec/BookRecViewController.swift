@@ -18,18 +18,21 @@ class BookRecViewController: UITableViewController {
         tableView.delegate = self
         
         tableView.rowHeight = UITableView.automaticDimension
+        
+        navigationController?.navigationItem.backBarButtonItem?.tintColor = .black
+        tableView.reloadData()
     }
 }
 
 // dataSource
 extension BookRecViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 4
     }
     
     // Return the number of rows for the table.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section <= 1 {
+        if section <= 3 {
             return 1
         }
         return 0
@@ -45,8 +48,19 @@ extension BookRecViewController {
             cell.initBooks(bookStore: self.bookStore!)
             return cell
         }
-        else {
+        else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BookRecSecondCell", for: indexPath)
+            return cell
+        }
+        else if indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BookRecThirdCell", for: indexPath) as! BookRecThirdCell
+            cell.initBooks(title: "책 목록", bookStore: self.bookStore!)
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BookRecFourthCell", for: indexPath) as! BookRecFourthCell
+            print(cell)
+            cell.initBookGuide(bookGuide: BookGuide(title: "국어 실력 UP! ~~~~~", description: "국어 실력과 독서 습관을 ~~~~~~~~~~", remoteURL: "https://charlottesometimesgoestothemovies.files.wordpress.com/2020/03/books.jpg?w=1024&h=717&crop=1"))
             return cell
         }
     }
@@ -55,8 +69,11 @@ extension BookRecViewController {
 
 //delegate
 extension BookRecViewController {
-    
+    // rowHeight가 자동으로 안늘어난다 왜??
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 2 {
+            return 280
+        }
         return UITableView.automaticDimension
     }
     

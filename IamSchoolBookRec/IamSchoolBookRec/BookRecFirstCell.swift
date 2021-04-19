@@ -26,15 +26,14 @@ class BookRecFirstCell: UITableViewCell {
             
             let book = bookStore.books[index]
             bookStandStackView.book = book
-            bookStandStackView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width / 2, height: self.bounds.height)
+            bookStandStackView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width / 2, height: self.bounds.height / 2)
             
             let constantOriginX = UIScreen.main.bounds.width / 4
             bookStandStackView.frame.origin.x = constantOriginX +  bookStandStackView.frame.width * CGFloat(index)
             bookStandScollView.addSubview(bookStandStackView)
             
             let constrains = [
-                NSLayoutConstraint(item:bookStandStackView, attribute: .top, relatedBy: .equal, toItem: bookStandScollView.frameLayoutGuide, attribute: .top, multiplier: 1.0, constant: 20.0),
-                NSLayoutConstraint(item: bookStandScollView.frameLayoutGuide, attribute: .bottom, relatedBy: .equal, toItem: bookStandStackView, attribute: .bottom, multiplier: 1.0, constant: 0.0),
+                NSLayoutConstraint(item:bookStandStackView, attribute: .top, relatedBy: .equal, toItem: bookStandScollView.contentLayoutGuide, attribute: .top, multiplier: 1.0, constant: 20.0),
                 NSLayoutConstraint(item: bookStandScollView.frameLayoutGuide, attribute: .width, relatedBy: .equal, toItem: bookStandStackView, attribute: .width, multiplier: 0.5, constant: 0.0),
                 NSLayoutConstraint(item: bookStandScollView.frameLayoutGuide, attribute: .height, relatedBy: .equal, toItem: bookStandStackView, attribute: .height, multiplier: 1.0, constant: 0.0)
             ]

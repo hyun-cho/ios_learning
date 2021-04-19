@@ -100,11 +100,13 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Cyi-fP-ulP" firstAttribute="centerX" secondItem="c3T-Pq-pW4" secondAttribute="centerX" id="2Tt-e7-ZIA"/>
+                                        <constraint firstItem="PJ4-UW-1gQ" firstAttribute="width" secondItem="c3T-Pq-pW4" secondAttribute="width" id="4rQ-ej-4Pi"/>
                                         <constraint firstItem="20y-O1-hZv" firstAttribute="centerX" secondItem="c3T-Pq-pW4" secondAttribute="centerX" id="86S-Na-37f"/>
                                         <constraint firstItem="PJ4-UW-1gQ" firstAttribute="top" secondItem="c3T-Pq-pW4" secondAttribute="top" constant="75" id="F41-TY-Z4E"/>
                                         <constraint firstItem="Cyi-fP-ulP" firstAttribute="top" secondItem="20y-O1-hZv" secondAttribute="bottom" constant="8" id="FBc-oe-tfc"/>
                                         <constraint firstItem="PJ4-UW-1gQ" firstAttribute="leading" secondItem="c3T-Pq-pW4" secondAttribute="leading" id="M9R-Gm-G8d"/>
                                         <constraint firstAttribute="bottom" secondItem="Cyi-fP-ulP" secondAttribute="bottom" constant="6.5" id="Q9M-t5-Gyh"/>
+                                        <constraint firstItem="PJ4-UW-1gQ" firstAttribute="centerX" secondItem="c3T-Pq-pW4" secondAttribute="centerX" id="dbi-za-Zbp"/>
                                         <constraint firstItem="20y-O1-hZv" firstAttribute="top" secondItem="Dhv-fJ-KoZ" secondAttribute="bottom" constant="15" id="gkc-sY-pSd"/>
                                         <constraint firstAttribute="trailing" secondItem="PJ4-UW-1gQ" secondAttribute="trailing" id="hcq-hl-Oew"/>
                                         <constraint firstItem="Dhv-fJ-KoZ" firstAttribute="top" secondItem="PJ4-UW-1gQ" secondAttribute="bottom" constant="5" id="vi2-Wn-JFn"/>
@@ -144,6 +146,7 @@
                                                 <button opaque="NO" tag="-2" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Juh-Sf-kBk">
                                                     <rect key="frame" x="192" y="0.0" width="182" height="67"/>
                                                     <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                     <state key="normal" title="책 가이드                 " image="chevron.right" catalog="system">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -170,6 +173,162 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookRecThirdCell" rowHeight="263" id="w5P-HU-An7" customClass="BookRecThirdCell" customModule="IamSchoolBookRec" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="454" width="414" height="263"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w5P-HU-An7" id="V5W-WK-phX">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="263"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W0b-Cq-AwN">
+                                            <rect key="frame" x="20" y="11" width="374" height="241"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0s-pz-gnI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r8u-1w-tjN">
+                                                    <rect key="frame" x="0.0" y="24" width="374" height="217"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="ktT-ae-grp">
+                                                        <size key="itemSize" width="128" height="128"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells/>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="w5P-HU-An7" id="J5H-tx-tTi"/>
+                                                        <outlet property="delegate" destination="w5P-HU-An7" id="CgR-fL-cFv"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="q0s-pz-gnI" firstAttribute="top" secondItem="W0b-Cq-AwN" secondAttribute="top" id="8c7-gy-p2A"/>
+                                                <constraint firstItem="r8u-1w-tjN" firstAttribute="leading" secondItem="W0b-Cq-AwN" secondAttribute="leading" id="HPT-HR-ykH"/>
+                                                <constraint firstItem="q0s-pz-gnI" firstAttribute="leading" secondItem="W0b-Cq-AwN" secondAttribute="leading" id="eoJ-wh-bo7"/>
+                                                <constraint firstItem="r8u-1w-tjN" firstAttribute="top" secondItem="q0s-pz-gnI" secondAttribute="bottom" id="fhy-A8-GY8"/>
+                                                <constraint firstAttribute="trailing" secondItem="q0s-pz-gnI" secondAttribute="trailing" id="inW-Ig-yAg"/>
+                                                <constraint firstAttribute="trailing" secondItem="r8u-1w-tjN" secondAttribute="trailing" id="wCN-sx-els"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="W0b-Cq-AwN" secondAttribute="trailing" id="Vm9-TJ-1ve"/>
+                                        <constraint firstItem="W0b-Cq-AwN" firstAttribute="centerX" secondItem="V5W-WK-phX" secondAttribute="centerX" id="WGF-I4-r53"/>
+                                        <constraint firstItem="W0b-Cq-AwN" firstAttribute="top" secondItem="V5W-WK-phX" secondAttribute="topMargin" id="XJT-7H-JWQ"/>
+                                        <constraint firstItem="W0b-Cq-AwN" firstAttribute="leading" secondItem="V5W-WK-phX" secondAttribute="leadingMargin" id="fca-yY-jcB"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="W0b-Cq-AwN" secondAttribute="bottom" id="fjE-fc-XcA"/>
+                                        <constraint firstItem="W0b-Cq-AwN" firstAttribute="centerY" secondItem="V5W-WK-phX" secondAttribute="centerY" id="tfV-43-ups"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bookCollectionView" destination="r8u-1w-tjN" id="wyM-gV-4t5"/>
+                                    <outlet property="title" destination="q0s-pz-gnI" id="yJ6-2G-rTe"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookRecFourthCell" rowHeight="263" id="6RP-jp-jfW" customClass="BookRecFourthCell" customModule="IamSchoolBookRec">
+                                <rect key="frame" x="0.0" y="717" width="414" height="263"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6RP-jp-jfW" id="y4A-jO-IyT">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="263"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="21W-KH-9Di">
+                                            <rect key="frame" x="40" y="20" width="334" height="136"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="국어 실력 UP! 해줄 KBS 한국어능력시험 선정 도서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dS0-Gw-6YW">
+                                            <rect key="frame" x="37" y="179" width="340" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="axF-hJ-pDO"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="국어 실력과 독서 습관을 한 번에 잡아주는 시험을 목표로 삼아보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oz0-lC-AHd">
+                                            <rect key="frame" x="37" y="201" width="340" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="OPv-1R-TO9"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" systemColor="systemGray2Color"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="21W-KH-9Di" firstAttribute="top" secondItem="y4A-jO-IyT" secondAttribute="topMargin" constant="9" id="45P-FR-cWe"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="oz0-lC-AHd" secondAttribute="bottom" constant="30" id="6aS-th-u79"/>
+                                        <constraint firstItem="oz0-lC-AHd" firstAttribute="top" secondItem="dS0-Gw-6YW" secondAttribute="bottom" constant="1" id="PKq-yD-HgD"/>
+                                        <constraint firstItem="oz0-lC-AHd" firstAttribute="trailing" secondItem="dS0-Gw-6YW" secondAttribute="trailing" id="Vtv-sQ-FrW"/>
+                                        <constraint firstItem="dS0-Gw-6YW" firstAttribute="top" secondItem="21W-KH-9Di" secondAttribute="bottom" constant="23" id="X9U-D0-Zfi"/>
+                                        <constraint firstItem="21W-KH-9Di" firstAttribute="top" secondItem="y4A-jO-IyT" secondAttribute="topMargin" constant="9" id="aPv-kc-hP4"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="dS0-Gw-6YW" secondAttribute="trailing" constant="17" id="djb-5p-4fE"/>
+                                        <constraint firstItem="21W-KH-9Di" firstAttribute="height" secondItem="y4A-jO-IyT" secondAttribute="height" multiplier="0.51711" id="fbu-Ww-JBE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="21W-KH-9Di" secondAttribute="trailing" constant="20" id="iXa-N5-Fbo"/>
+                                        <constraint firstItem="dS0-Gw-6YW" firstAttribute="leading" secondItem="y4A-jO-IyT" secondAttribute="leadingMargin" constant="17" id="loz-gF-5hw"/>
+                                        <constraint firstItem="21W-KH-9Di" firstAttribute="leading" secondItem="y4A-jO-IyT" secondAttribute="leadingMargin" constant="20" id="qQe-8h-S5m"/>
+                                        <constraint firstItem="oz0-lC-AHd" firstAttribute="leading" secondItem="dS0-Gw-6YW" secondAttribute="leading" id="tCq-0X-nCR"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bookGuideDescription" destination="oz0-lC-AHd" id="zw3-ee-pEZ"/>
+                                    <outlet property="bookGuideImage" destination="21W-KH-9Di" id="1Kt-IA-dFv"/>
+                                    <outlet property="bookGuideTitle" destination="dS0-Gw-6YW" id="Az8-zd-0nq"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookRecFourthCell" rowHeight="263" id="IMM-kQ-sQ7" customClass="BookRecFourthCell" customModule="IamSchoolBookRec">
+                                <rect key="frame" x="0.0" y="980" width="414" height="263"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IMM-kQ-sQ7" id="z0v-E7-nG6">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="263"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="I9I-KO-pBG">
+                                            <rect key="frame" x="40" y="20" width="334" height="136"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="국어 실력 UP! 해줄 KBS 한국어능력시험 선정 도서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdB-sa-Eud">
+                                            <rect key="frame" x="37" y="179" width="340" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="fiT-GP-zeQ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="국어 실력과 독서 습관을 한 번에 잡아주는 시험을 목표로 삼아보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHn-bd-w7N">
+                                            <rect key="frame" x="37" y="201" width="340" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="dvd-Xb-5F0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" systemColor="systemGray2Color"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="I9I-KO-pBG" firstAttribute="leading" secondItem="z0v-E7-nG6" secondAttribute="leadingMargin" constant="20" id="1ic-5K-EgJ"/>
+                                        <constraint firstItem="I9I-KO-pBG" firstAttribute="height" secondItem="z0v-E7-nG6" secondAttribute="height" multiplier="0.51711" id="438-xY-iSQ"/>
+                                        <constraint firstItem="I9I-KO-pBG" firstAttribute="top" secondItem="z0v-E7-nG6" secondAttribute="topMargin" constant="9" id="6tm-qD-iXD"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="kHn-bd-w7N" secondAttribute="bottom" constant="30" id="7Vs-0g-Phw"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="I9I-KO-pBG" secondAttribute="trailing" constant="20" id="HB3-hI-XwR"/>
+                                        <constraint firstItem="AdB-sa-Eud" firstAttribute="leading" secondItem="z0v-E7-nG6" secondAttribute="leadingMargin" constant="17" id="Iow-8z-Dgb"/>
+                                        <constraint firstItem="I9I-KO-pBG" firstAttribute="top" secondItem="z0v-E7-nG6" secondAttribute="topMargin" constant="9" id="N1M-EE-k5k"/>
+                                        <constraint firstItem="kHn-bd-w7N" firstAttribute="leading" secondItem="AdB-sa-Eud" secondAttribute="leading" id="WVV-Nz-xBK"/>
+                                        <constraint firstItem="kHn-bd-w7N" firstAttribute="top" secondItem="AdB-sa-Eud" secondAttribute="bottom" constant="1" id="fdG-fy-msf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="AdB-sa-Eud" secondAttribute="trailing" constant="17" id="hTI-pY-HSj"/>
+                                        <constraint firstItem="AdB-sa-Eud" firstAttribute="top" secondItem="I9I-KO-pBG" secondAttribute="bottom" constant="23" id="ijz-Bl-ifd"/>
+                                        <constraint firstItem="kHn-bd-w7N" firstAttribute="trailing" secondItem="AdB-sa-Eud" secondAttribute="trailing" id="u0R-kj-29n"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bookGuideDescription" destination="kHn-bd-w7N" id="Qah-8W-wK6"/>
+                                    <outlet property="bookGuideImage" destination="I9I-KO-pBG" id="rQt-sl-pv0"/>
+                                    <outlet property="bookGuideTitle" destination="AdB-sa-Eud" id="djH-c5-EYS"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="p1r-NP-fUk" id="Aqd-2E-dPE"/>
@@ -178,19 +337,23 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Uyy-rs-yFu">
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" id="qsL-XZ-ozS">
+                            <barButtonItem id="qsL-XZ-ozS">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="MCm-gn-CQO">
                                     <rect key="frame" x="338" y="7" width="56" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="도서 검색"/>
+                                    <state key="normal" title="도서 검색">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
                                 </button>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="iJU-Tk-ckR">
+                            <barButtonItem id="iJU-Tk-ckR">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="WhU-4T-16L">
                                     <rect key="frame" x="280" y="7" width="50" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <accessibility key="accessibilityConfiguration" label="MY"/>
-                                    <state key="normal" title="MY"/>
+                                    <state key="normal" title="MY">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
                                 </button>
                             </barButtonItem>
                         </rightBarButtonItems>

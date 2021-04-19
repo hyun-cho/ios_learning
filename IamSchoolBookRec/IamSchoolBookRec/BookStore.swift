@@ -11,7 +11,7 @@ class BookStore {
     var books: [Book] = [Book]()
     
     init() {
-        for i in 0..<5 {
+        for i in 0..<6 {
             let _ = createItem(i)
         }
     }
