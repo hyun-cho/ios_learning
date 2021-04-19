@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,7 +30,6 @@
         <!--View Controller-->
         <scene sceneID="2nK-yO-qLT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cL8-H7-kcb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="yVs-AD-Z8q" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4JX-dl-FrR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -49,79 +49,115 @@
                         </button>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cL8-H7-kcb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-141" y="69"/>
         </scene>
-        <!--Book Rec View Controller-->
+        <!--Book Recommend Table View Controller-->
         <scene sceneID="Fgb-aB-QIR">
             <objects>
-                <tableViewController id="p1r-NP-fUk" customClass="BookRecViewController" customModule="IamSchoolBookRec" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="p1r-NP-fUk" customClass="BookRecommendTableViewController" customModule="IamSchoolBookRecommend" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qr4-eo-7K3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookRecFirstCell" rowHeight="337" id="DUe-Th-CCX" customClass="BookRecFirstCell" customModule="IamSchoolBookRec" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="337"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StandSlidingCell" id="DUe-Th-CCX" customClass="StandSlidingCell" customModule="IamSchoolBookRecommend" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="474"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DUe-Th-CCX" id="c3T-Pq-pW4">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="337"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="474"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJ4-UW-1gQ">
-                                            <rect key="frame" x="0.0" y="75" width="414" height="160"/>
-                                            <viewLayoutGuide key="contentLayoutGuide" id="X6D-Zm-i8Z"/>
-                                            <viewLayoutGuide key="frameLayoutGuide" id="Nn8-JV-rRX"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="DUe-Th-CCX" id="AlB-gC-naL"/>
-                                            </connections>
-                                        </scrollView>
-                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Cyi-fP-ulP">
-                                            <rect key="frame" x="146" y="303" width="122.5" height="27.5"/>
-                                            <color key="pageIndicatorTintColor" systemColor="systemGray2Color"/>
-                                            <color key="currentPageIndicatorTintColor" systemColor="systemGreenColor"/>
-                                            <connections>
-                                                <action selector="pageChanged:" destination="DUe-Th-CCX" eventType="valueChanged" id="h9N-90-0Eh"/>
-                                            </connections>
-                                        </pageControl>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이유가 있어서 멸종 했습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhv-fJ-KoZ">
-                                            <rect key="frame" x="93.5" y="240" width="227" height="24"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세상에서 가장 재미있는 멸종 동물 도감" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20y-O1-hZv">
-                                            <rect key="frame" x="108" y="279" width="198" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="FrN-1A-V1r">
+                                            <rect key="frame" x="0.0" y="44.5" width="414" height="389.5"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Z1-3X-Emn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="303.5"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="207.5" id="TqD-Zw-0l1"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="41Q-Bs-ihy">
+                                                        <size key="itemSize" width="220" height="227"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StandCollectionViewCell" id="bfw-BC-zz7" customClass="StandCollectionViewCell" customModule="IamSchoolBookRecommend" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="38.5" width="220" height="227"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RIc-Sc-kfh">
+                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="227"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q1f-9T-drw">
+                                                                        <rect key="frame" x="53.5" y="44.5" width="113" height="133"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="79" id="2Dd-wp-z1K"/>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="79" id="Bep-2n-uST"/>
+                                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="163" id="Obe-rX-2qf"/>
+                                                                            <constraint firstAttribute="width" constant="113" id="iSb-Sl-OvF"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="Q1f-9T-drw" secondAttribute="bottom" constant="49.5" id="Z5w-gI-tv9"/>
+                                                                    <constraint firstItem="Q1f-9T-drw" firstAttribute="centerX" secondItem="RIc-Sc-kfh" secondAttribute="centerX" id="dBp-Ab-t7D"/>
+                                                                    <constraint firstItem="Q1f-9T-drw" firstAttribute="top" secondItem="RIc-Sc-kfh" secondAttribute="top" constant="44.5" id="dSH-4G-5nV"/>
+                                                                </constraints>
+                                                            </collectionViewCellContentView>
+                                                            <size key="customSize" width="220" height="227"/>
+                                                            <connections>
+                                                                <outlet property="imageView" destination="Q1f-9T-drw" id="syB-9M-k2b"/>
+                                                                <outlet property="imageViewHeightConstraint" destination="2Dd-wp-z1K" id="RLB-as-Nxq"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이유가 있어서 멸종 했습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dhv-fJ-KoZ">
+                                                    <rect key="frame" x="93.5" y="309.5" width="227" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세상에서 가장 재미있는 멸종 동물 도감" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20y-O1-hZv">
+                                                    <rect key="frame" x="108" y="339.5" width="198" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Cyi-fP-ulP">
+                                                    <rect key="frame" x="146" y="361.5" width="122.5" height="28"/>
+                                                    <color key="pageIndicatorTintColor" systemColor="systemGray2Color"/>
+                                                    <color key="currentPageIndicatorTintColor" systemColor="systemGreenColor"/>
+                                                </pageControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6Z1-3X-Emn" firstAttribute="leading" secondItem="FrN-1A-V1r" secondAttribute="leading" id="IAs-2s-uCm"/>
+                                                <constraint firstAttribute="trailing" secondItem="6Z1-3X-Emn" secondAttribute="trailing" id="gcd-Cp-7rs"/>
+                                            </constraints>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Cyi-fP-ulP" firstAttribute="centerX" secondItem="c3T-Pq-pW4" secondAttribute="centerX" id="2Tt-e7-ZIA"/>
-                                        <constraint firstItem="PJ4-UW-1gQ" firstAttribute="width" secondItem="c3T-Pq-pW4" secondAttribute="width" id="4rQ-ej-4Pi"/>
-                                        <constraint firstItem="20y-O1-hZv" firstAttribute="centerX" secondItem="c3T-Pq-pW4" secondAttribute="centerX" id="86S-Na-37f"/>
-                                        <constraint firstItem="PJ4-UW-1gQ" firstAttribute="top" secondItem="c3T-Pq-pW4" secondAttribute="top" constant="75" id="F41-TY-Z4E"/>
-                                        <constraint firstItem="Cyi-fP-ulP" firstAttribute="top" secondItem="20y-O1-hZv" secondAttribute="bottom" constant="8" id="FBc-oe-tfc"/>
-                                        <constraint firstItem="PJ4-UW-1gQ" firstAttribute="leading" secondItem="c3T-Pq-pW4" secondAttribute="leading" id="M9R-Gm-G8d"/>
-                                        <constraint firstAttribute="bottom" secondItem="Cyi-fP-ulP" secondAttribute="bottom" constant="6.5" id="Q9M-t5-Gyh"/>
-                                        <constraint firstItem="PJ4-UW-1gQ" firstAttribute="centerX" secondItem="c3T-Pq-pW4" secondAttribute="centerX" id="dbi-za-Zbp"/>
-                                        <constraint firstItem="20y-O1-hZv" firstAttribute="top" secondItem="Dhv-fJ-KoZ" secondAttribute="bottom" constant="15" id="gkc-sY-pSd"/>
-                                        <constraint firstAttribute="trailing" secondItem="PJ4-UW-1gQ" secondAttribute="trailing" id="hcq-hl-Oew"/>
-                                        <constraint firstItem="Dhv-fJ-KoZ" firstAttribute="top" secondItem="PJ4-UW-1gQ" secondAttribute="bottom" constant="5" id="vi2-Wn-JFn"/>
-                                        <constraint firstItem="Dhv-fJ-KoZ" firstAttribute="centerX" secondItem="c3T-Pq-pW4" secondAttribute="centerX" id="xYI-90-3tK"/>
+                                        <constraint firstItem="FrN-1A-V1r" firstAttribute="top" secondItem="c3T-Pq-pW4" secondAttribute="top" constant="44.5" id="7aB-Zo-E3v"/>
+                                        <constraint firstItem="FrN-1A-V1r" firstAttribute="leading" secondItem="c3T-Pq-pW4" secondAttribute="leading" id="Lh7-VN-d8y"/>
+                                        <constraint firstAttribute="bottom" secondItem="FrN-1A-V1r" secondAttribute="bottom" constant="40" id="QPa-J4-XfP"/>
+                                        <constraint firstAttribute="trailing" secondItem="FrN-1A-V1r" secondAttribute="trailing" id="flf-cp-3JN"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="bookPageControl" destination="Cyi-fP-ulP" id="ION-bv-60c"/>
-                                    <outlet property="bookStandScollView" destination="PJ4-UW-1gQ" id="Nnw-OI-SXN"/>
-                                    <outlet property="descriptionLabel" destination="20y-O1-hZv" id="bKP-vc-quH"/>
-                                    <outlet property="nameLabel" destination="Dhv-fJ-KoZ" id="KeE-wj-Ti5"/>
+                                    <outlet property="bookPageControl" destination="Cyi-fP-ulP" id="stW-57-IWK"/>
+                                    <outlet property="bookStandCollectionView" destination="6Z1-3X-Emn" id="IAm-G3-9DZ"/>
+                                    <outlet property="descriptionLabel" destination="20y-O1-hZv" id="g5M-jU-v0x"/>
+                                    <outlet property="nameLabel" destination="Dhv-fJ-KoZ" id="kku-p2-4u7"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookRecSecondCell" rowHeight="89" id="UCJ-tu-kzB">
-                                <rect key="frame" x="0.0" y="365" width="414" height="89"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonNavigationCell" rowHeight="89" id="UCJ-tu-kzB" customClass="ButtonNavigationCell" customModule="IamSchoolBookRecommend" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="502" width="414" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UCJ-tu-kzB" id="Zxf-YA-8bo">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
@@ -137,11 +173,6 @@
                                                     <state key="normal" title="교과연계 추천도서    " image="chevron.right" catalog="system">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" tag="-2" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Juh-Sf-kBk">
                                                     <rect key="frame" x="192" y="0.0" width="182" height="67"/>
@@ -151,11 +182,6 @@
                                                     <state key="normal" title="책 가이드                 " image="chevron.right" catalog="system">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -172,9 +198,14 @@
                                         <constraint firstItem="bah-KX-i6i" firstAttribute="bottom" secondItem="Zxf-YA-8bo" secondAttribute="bottomMargin" id="hVN-Pr-6XB"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="buttonStackView" destination="bah-KX-i6i" id="Roh-5E-JlP"/>
+                                    <outletCollection property="buttons" destination="NBu-zI-DIs" collectionClass="NSMutableArray" id="cM6-Pn-VuT"/>
+                                    <outletCollection property="buttons" destination="Juh-Sf-kBk" collectionClass="NSMutableArray" id="SVX-JB-tWT"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookRecThirdCell" rowHeight="263" id="w5P-HU-An7" customClass="BookRecThirdCell" customModule="IamSchoolBookRec" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="454" width="414" height="263"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CollectionCellTypeA" rowHeight="263" id="w5P-HU-An7" customClass="CollectionCellTypeA" customModule="IamSchoolBookRecommend" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="591" width="414" height="263"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w5P-HU-An7" id="V5W-WK-phX">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="263"/>
@@ -184,14 +215,17 @@
                                             <rect key="frame" x="20" y="11" width="374" height="241"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0s-pz-gnI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="24"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r8u-1w-tjN">
-                                                    <rect key="frame" x="0.0" y="24" width="374" height="217"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="241"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="280" id="40x-sB-8TH"/>
+                                                    </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="ktT-ae-grp">
                                                         <size key="itemSize" width="128" height="128"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -225,12 +259,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="bookCollectionView" destination="r8u-1w-tjN" id="wyM-gV-4t5"/>
-                                    <outlet property="title" destination="q0s-pz-gnI" id="yJ6-2G-rTe"/>
+                                    <outlet property="bookCollectionView" destination="r8u-1w-tjN" id="6vt-70-adb"/>
+                                    <outlet property="title" destination="q0s-pz-gnI" id="CSO-pU-jOo"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookRecFourthCell" rowHeight="263" id="6RP-jp-jfW" customClass="BookRecFourthCell" customModule="IamSchoolBookRec">
-                                <rect key="frame" x="0.0" y="717" width="414" height="263"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookGuideCell" rowHeight="263" id="6RP-jp-jfW" customClass="BookGuideCell" customModule="IamSchoolBookRecommend" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="854" width="414" height="263"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6RP-jp-jfW" id="y4A-jO-IyT">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="263"/>
@@ -279,60 +313,18 @@
                                     <outlet property="bookGuideTitle" destination="dS0-Gw-6YW" id="Az8-zd-0nq"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookRecFourthCell" rowHeight="263" id="IMM-kQ-sQ7" customClass="BookRecFourthCell" customModule="IamSchoolBookRec">
-                                <rect key="frame" x="0.0" y="980" width="414" height="263"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="a" rowHeight="263" id="IMM-kQ-sQ7">
+                                <rect key="frame" x="0.0" y="1117" width="414" height="263"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IMM-kQ-sQ7" id="z0v-E7-nG6">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="263"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="I9I-KO-pBG">
-                                            <rect key="frame" x="40" y="20" width="334" height="136"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="국어 실력 UP! 해줄 KBS 한국어능력시험 선정 도서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdB-sa-Eud">
-                                            <rect key="frame" x="37" y="179" width="340" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="fiT-GP-zeQ"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="국어 실력과 독서 습관을 한 번에 잡아주는 시험을 목표로 삼아보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHn-bd-w7N">
-                                            <rect key="frame" x="37" y="201" width="340" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="dvd-Xb-5F0"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <color key="textColor" systemColor="systemGray2Color"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="I9I-KO-pBG" firstAttribute="leading" secondItem="z0v-E7-nG6" secondAttribute="leadingMargin" constant="20" id="1ic-5K-EgJ"/>
-                                        <constraint firstItem="I9I-KO-pBG" firstAttribute="height" secondItem="z0v-E7-nG6" secondAttribute="height" multiplier="0.51711" id="438-xY-iSQ"/>
-                                        <constraint firstItem="I9I-KO-pBG" firstAttribute="top" secondItem="z0v-E7-nG6" secondAttribute="topMargin" constant="9" id="6tm-qD-iXD"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="kHn-bd-w7N" secondAttribute="bottom" constant="30" id="7Vs-0g-Phw"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="I9I-KO-pBG" secondAttribute="trailing" constant="20" id="HB3-hI-XwR"/>
-                                        <constraint firstItem="AdB-sa-Eud" firstAttribute="leading" secondItem="z0v-E7-nG6" secondAttribute="leadingMargin" constant="17" id="Iow-8z-Dgb"/>
-                                        <constraint firstItem="I9I-KO-pBG" firstAttribute="top" secondItem="z0v-E7-nG6" secondAttribute="topMargin" constant="9" id="N1M-EE-k5k"/>
-                                        <constraint firstItem="kHn-bd-w7N" firstAttribute="leading" secondItem="AdB-sa-Eud" secondAttribute="leading" id="WVV-Nz-xBK"/>
-                                        <constraint firstItem="kHn-bd-w7N" firstAttribute="top" secondItem="AdB-sa-Eud" secondAttribute="bottom" constant="1" id="fdG-fy-msf"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="AdB-sa-Eud" secondAttribute="trailing" constant="17" id="hTI-pY-HSj"/>
-                                        <constraint firstItem="AdB-sa-Eud" firstAttribute="top" secondItem="I9I-KO-pBG" secondAttribute="bottom" constant="23" id="ijz-Bl-ifd"/>
-                                        <constraint firstItem="kHn-bd-w7N" firstAttribute="trailing" secondItem="AdB-sa-Eud" secondAttribute="trailing" id="u0R-kj-29n"/>
-                                    </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="bookGuideDescription" destination="kHn-bd-w7N" id="Qah-8W-wK6"/>
-                                    <outlet property="bookGuideImage" destination="I9I-KO-pBG" id="rQt-sl-pv0"/>
-                                    <outlet property="bookGuideTitle" destination="AdB-sa-Eud" id="djH-c5-EYS"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="p1r-NP-fUk" id="Aqd-2E-dPE"/>
-                            <outlet property="delegate" destination="p1r-NP-fUk" id="1Y6-Mb-Kif"/>
+                            <outlet property="dataSource" destination="p1r-NP-fUk" id="AGv-rI-R0C"/>
+                            <outlet property="delegate" destination="p1r-NP-fUk" id="Shg-O4-Reu"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Uyy-rs-yFu">

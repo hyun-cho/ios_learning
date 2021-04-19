@@ -7,16 +7,11 @@
 
 import UIKit
 
-class Book {
-    var name: String
-    var description: String
-    var remoteURL: String
-    
-    var image: UIImage?
+class BookDetail: Book {
+    private(set) var description: String
     
     init(name: String, description: String, remoteURL: String) {
-        self.name = name
         self.description = description
-        self.remoteURL = remoteURL
+        super.init(name: name, remoteURL: remoteURL)
     }
 }

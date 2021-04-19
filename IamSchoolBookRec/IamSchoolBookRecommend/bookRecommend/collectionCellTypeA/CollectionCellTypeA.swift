@@ -8,31 +8,40 @@
 import UIKit
 
 
-class BookRecThirdCell: UITableViewCell {
-    var bookStore: BookStore?
+class CollectionCellTypeA: UITableViewCell, HasTask {
+    var task: BookRecommendTask?
+    var books: [Book] {
+        get {
+            guard let books = task?.dataSource as? [Book] else {
+                print("books is not exist in StandSlidingCell")
+                return []
+            }
+            return books
+        }
+    }
+
+    func updateTask(task: BookRecommendTask) {
+        self.task = task
+        
+        bookCollectionView.register(BookCollectionViewCell.self, forCellWithReuseIdentifier: "BookCollectionViewCell")
+        bookCollectionView.dataSource = self
+        bookCollectionView.delegate = self
+    }
     
     @IBOutlet var bookCollectionView: UICollectionView!
     @IBOutlet var title: UILabel!
     
-    func initBooks(title: String, bookStore: BookStore) {
-        self.title.text = title
-        self.bookStore = bookStore
-        
-        bookCollectionView.register(BookCollectionCell.self, forCellWithReuseIdentifier: "BookCollectionCell")
-        bookCollectionView.dataSource = self
-        bookCollectionView.delegate = self
-    }
 }
 
-extension BookRecThirdCell: UICollectionViewDataSource {
+extension CollectionCellTypeA: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bookStore?.books.count ?? 0
+        return books.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionCell", for: indexPath) as! BookCollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
         
-        cell.book = bookStore?.books[indexPath.row]
+        cell.book = books[indexPath.row]
         print("tteesstt")
         print(collectionView)
         print(cell)
@@ -42,7 +51,7 @@ extension BookRecThirdCell: UICollectionViewDataSource {
 }
 
 
-extension BookRecThirdCell: UICollectionViewDelegateFlowLayout {
+extension CollectionCellTypeA: UICollectionViewDelegateFlowLayout {
     //셀크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         print("tteessttt")

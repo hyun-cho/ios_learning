@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:">
+      location = "self:/Users/nhn/Workspace/ios_learning/IamSchoolBookRec/IamSchoolBookRecommend.xcodeproj">
    </FileRef>
 </Workspace>

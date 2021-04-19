@@ -8,7 +8,11 @@
 import UIKit
 
 
-class BookRecFourthCell: UITableViewCell {
+class BookGuideCell: UITableViewCell, HasTask {
+    var task: BookRecommendTask?
+    func updateTask(task: BookRecommendTask) {
+        self.task = task
+    }
     
     @IBOutlet var bookGuideImage: UIImageView!
     

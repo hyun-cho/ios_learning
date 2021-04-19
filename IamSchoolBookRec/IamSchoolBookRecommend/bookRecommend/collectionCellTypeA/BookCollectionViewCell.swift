@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookCollectionCell: UICollectionViewCell {
+class BookCollectionViewCell: UICollectionViewCell {
     var imageView: UIImageView! = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
