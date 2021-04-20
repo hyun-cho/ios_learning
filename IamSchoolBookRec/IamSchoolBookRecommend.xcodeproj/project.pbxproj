@@ -97,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				D9792A722629FDC6005E6D88 /* BookGuide.swift */,
-				D9792A5D262934DB005E6D88 /* BookDetail.swift */,
 				D9792A6026293575005E6D88 /* CellDataSourceStore.swift */,
 				D99087E7262D71850031ABAB /* BookRecommendTask.swift */,
 				D99087EB262D71E10031ABAB /* Book.swift */,
@@ -125,6 +124,7 @@
 		D9792A88262D42FE005E6D88 /* standSlidingCell */ = {
 			isa = PBXGroup;
 			children = (
+				D9792A5D262934DB005E6D88 /* BookDetail.swift */,
 				D97929E42628328E005E6D88 /* StandSlidingCell.swift */,
 				D9792A92262D4A27005E6D88 /* StandCollectionViewCell.swift */,
 			);

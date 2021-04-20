@@ -10,10 +10,19 @@ import UIKit
 
 class CollectionCellTypeA: UITableViewCell, HasTask {
     var task: BookRecommendTask?
+    var title: String {
+        get {
+            guard let title = task?.title else {
+                print("collection title not exist in CollectionCellTypeA")
+                return ""
+            }
+            return title
+        }
+    }
     var books: [Book] {
         get {
             guard let books = task?.dataSource as? [Book] else {
-                print("books is not exist in StandSlidingCell")
+                print("books is not exist in CollectionCellTypeA")
                 return []
             }
             return books
@@ -23,13 +32,13 @@ class CollectionCellTypeA: UITableViewCell, HasTask {
     func updateTask(task: BookRecommendTask) {
         self.task = task
         
-        bookCollectionView.register(BookCollectionViewCell.self, forCellWithReuseIdentifier: "BookCollectionViewCell")
         bookCollectionView.dataSource = self
         bookCollectionView.delegate = self
+        self.titleLabel.text = title
     }
     
     @IBOutlet var bookCollectionView: UICollectionView!
-    @IBOutlet var title: UILabel!
+    @IBOutlet var titleLabel: UILabel!
     
 }
 
@@ -42,20 +51,13 @@ extension CollectionCellTypeA: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
         
         cell.book = books[indexPath.row]
-        print("tteesstt")
-        print(collectionView)
-        print(cell)
-        
         return cell
     }
 }
 
-
 extension CollectionCellTypeA: UICollectionViewDelegateFlowLayout {
     //셀크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        print("tteessttt")
-        print(collectionView.frame.width / 3)
         let width = collectionView.frame.width / 3
         return CGSize(width: width, height: width)
     }

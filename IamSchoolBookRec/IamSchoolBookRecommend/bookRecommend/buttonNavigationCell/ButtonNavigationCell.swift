@@ -19,6 +19,8 @@ class ButtonNavigationCell: UITableViewCell, HasTask {
     override func updateConstraints() {
         super.updateConstraints()
         
-        buttons.forEach({ $0.layer.cornerRadius = 10 })
+        buttons.forEach({
+            $0.layer.cornerRadius = 6
+        })
     }
 }

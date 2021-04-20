@@ -8,11 +8,13 @@
 import UIKit
 
 class StandSlidingCell: UITableViewCell, HasTask {
+    // 상수 정의 하기
+    // Cell에 데이터가 필요할 때, 해당
     var task: BookRecommendTask?
     var bookDetails: [BookDetail] {
         get {
             guard let bookDetails = task?.dataSource as? [BookDetail] else {
-                print("bookDetail is not exist in StandSlidingCell")
+//                print("bookDetail is not exist in StandSlidingCell")
                 return []
             }
             return bookDetails
@@ -29,10 +31,11 @@ class StandSlidingCell: UITableViewCell, HasTask {
         bookPageControl.isUserInteractionEnabled = false
     }
     
-    
-    
+    // constarint가 갱신될 때마다 호출
     override func updateConstraints() {
         super.updateConstraints()
+        
+        // **한번만 호출되면 되는 구문** awakeFromNib
         bookStandCollectionView.delegate = self
         bookStandCollectionView.dataSource = self
     }
@@ -84,16 +87,14 @@ extension StandSlidingCell: UICollectionViewDelegateFlowLayout {
         return CGSize(width: 186, height: 176)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let spacing = (collectionView.frame.width - 186 - 54 - 54) / 2
-        print(spacing)
-        print(collectionView.frame.width)
-        return UIEdgeInsets(top: 0, left: collectionView.frame.width / 4, bottom: 0, right: collectionView.frame.width / 4 + spacing * (CGFloat(bookPageControl.numberOfPages) - 1))
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        let spacing = (collectionView.frame.width - 186 - 54 - 54) / 2
+//        return UIEdgeInsets(top: 0, left: collectionView.frame.width / 4, bottom: 0, right: collectionView.frame.width / 4 + spacing * (CGFloat(bookPageControl.numberOfPages) - 1))
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         let spacing = (collectionView.frame.width - 186 - 54 - 54) / 2
-        return spacing
+        return 0
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -104,18 +105,18 @@ extension StandSlidingCell: UICollectionViewDelegateFlowLayout {
 }
 
 extension StandSlidingCell: UIScrollViewDelegate {
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        targetContentOffset.pointee = scrollView.contentOffset;
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let spacing = (scrollView.frame.width - 186 - 54 - 54) / 2 + 186
-        let pageIndex = Int(round(scrollView.contentOffset.x / spacing))
-//        print(scrollView.contentOffset.x)
-//        print(scrollView.contentSize)
-//        print(spacing)
-//        print(CGFloat(bookPageControl.currentPage) * spacing)
-        updatePageControl(index: pageIndex)
-        scrollView.setContentOffset(CGPoint(x: CGFloat(bookPageControl.currentPage) * spacing, y: 0.0), animated: true)
-    }
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        targetContentOffset.pointee = scrollView.contentOffset;
+//    }
+//    
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        let spacing = (scrollView.frame.width - 186 - 54 - 54) / 2 + 186
+//        let pageIndex = Int(round(scrollView.contentOffset.x / spacing))
+////        print(scrollView.contentOffset.x)
+////        print(scrollView.contentSize)
+////        print(spacing)
+////        print(CGFloat(bookPageControl.currentPage) * spacing)
+//        updatePageControl(index: pageIndex)
+//        scrollView.setContentOffset(CGPoint(x: CGFloat(bookPageControl.currentPage) * spacing, y: 0.0), animated: true)
+//    }
 }

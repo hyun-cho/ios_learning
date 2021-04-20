@@ -7,6 +7,7 @@
 
 import UIKit
 
+// standSliding을 위한 Data -> 
 class BookDetail: Book {
     private(set) var description: String
     

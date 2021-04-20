@@ -27,8 +27,9 @@ class BookRecommendTableViewController: UITableViewController {
 
 // dataSource
 extension BookRecommendTableViewController {
+    // section, row? -> section이 필요가 없을것같다.!! TODO
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return tasks?.tasks.count ?? 0
     }
     
     // Return the number of rows for the table.
@@ -43,20 +44,28 @@ extension BookRecommendTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // section과 정보를 같이 서버에서 전해준다. (type - section / data)
         // Fetch a cell of the appropriate type.
+        // 배열 index check<<
+//        guard let task = tasks?[indexPath.row] as! BookRecommendationCellData else {
+//            return UITableViewCell()
+//        }
+//        switch task {
+//        case .StandSlidingCellData(let standSlidingCellData):
+//            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? StandSlidingCell
+//            cell.
+//        }
+        
         guard let task = tasks?[indexPath.section],
            let identifier = task.cellIdentifier?.rawValue,
            let cellWithTask = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? HasTask else {
             print("cell does not cast to HasTask")
             return UITableViewCell()
         }
+        // task -> 타입 캐스팅 -> 
         cellWithTask.updateTask(task: task)
         guard let cell = cellWithTask as? UITableViewCell else {
             print("cell does not cast to HasTask")
             return UITableViewCell()
         }
-        print("cellTest")
-        print(task)
-        print(cell)
         return cell
     }
     
@@ -65,10 +74,6 @@ extension BookRecommendTableViewController {
 //delegate
 extension BookRecommendTableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if let task = tasks?[indexPath.section],
-//           let task.needsHeight = true {
-//            return task.height
-//        }
         return UITableView.automaticDimension
     }
     
