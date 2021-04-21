@@ -81,17 +81,17 @@ class PhotoViewController : UIViewController {
 extension PhotoViewController: UICollectionViewDelegateFlowLayout {
     //셀크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 90, height: 90)
+        return CGSize(width: collectionView.frame.width, height: 90)
     }
 
     //위아래 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 100
     }
     
     //좌우간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
