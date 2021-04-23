@@ -8,9 +8,9 @@
 import Foundation
 
 struct PayData {
-    private(set) var firstBillingDate: Date = Date()
-    private(set) var billingDate: Date = Date()
-    private(set) var payAmount: Int = 0
+    private(set) var firstBillingDate: Date?
+    private(set) var billingDate: Date?
+    private(set) var payAmount: Int?
     
     static func builder() -> Builder {
         return Builder()

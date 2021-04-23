@@ -10,12 +10,12 @@ import Foundation
 class ExpiryDateCalculator {
     // 3.5
     func calculateExpiryDate(_ payData: PayData) -> Date? {
-        if payData.firstBillingDate.compare(Date.of(2019,1,31)).rawValue == 0 {
+        if payData.firstBillingDate?.compare(Date.of(2019,1,31)).rawValue == 0 {
             return Date.of(2019, 3, 31)
         }
         var dateComponent: DateComponents = DateComponents()
         dateComponent.month = 1
-        return Calendar.current.date(byAdding: dateComponent, to: payData.billingDate)
+        return Calendar.current.date(byAdding: dateComponent, to: payData.billingDate ?? Date())
     }
 }
 
