@@ -10,46 +10,48 @@ import UIKit
 // StandCollectionViewCell.ViewModel()
 // ViewCell의 Model naming을 명확하게 (폴더링? 네이밍? 이너클래스 ...)
 class StandCollectionViewCell: UICollectionViewCell {
-    // 셀을 그리기 위한 내부 Model
-    struct ViewModel {
-        
-    }
+    @IBOutlet private var bookStand: UIView!
+    @IBOutlet private var bookBorder: UIView!
     
     @IBOutlet private var imageView: UIImageView!
-    @IBOutlet private var imageViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet private var standView: UIView!
+    @IBOutlet private var imageHeightConstraint: NSLayoutConstraint!
     
-    @IBOutlet private var coverShadow: UIView!
+    private final let imageMinHeight: CGFloat = 79
+    private final let imageMaxHeight: CGFloat = 163
+    private final let imageWidth: CGFloat = 113
+    private final let bookMarkColor: UIColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.06)
     
-    func updateImage(image: UIImage) {
-        self.imageView.image = image
-        
-        var newHeight = image.size.height / image.size.width * 113
-        if newHeight < 79 {
-            newHeight = 79
+    var viewModel: StandCollectionViewCellData? {
+        didSet {
+            guard let image = viewModel?.image else {
+                return
+            }
+            self.imageView.image = image
+            updateImageHeight(size: image.size)
         }
-        if newHeight > 163 {
-            newHeight = 163
-        }
-        imageViewHeightConstraint.constant = newHeight
-        updateConstraintsIfNeeded()
     }
     
-    
-    // 스토리보드에서 설정 한 뒤에 항상 불린다.
     override func awakeFromNib() {
         super.awakeFromNib()
-        // 시작할때 한번 처리되야하는 것들
-        // IB에 추가하면, 컴파일과정에서 에러 확인이 안된다.
-        // or 속성 inspector를 추가할 수 있다.
-        self.standView.layer.borderWidth = 1.0
-        self.standView.layer.borderColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
-        self.coverShadow.layer.addBorder([.left], color: UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.06), width: 1.0)
+        
+        // bitmap 추가시 삭제 될 요소
+        self.bookStand.layer.borderWidth = 1.0
+        self.bookStand.layer.borderColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        
+        self.bookBorder.layer.addBorder([.left], color: bookMarkColor, width: 1.0)
     }
     
-    // frame 설정
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    private func updateImageHeight(size: CGSize) {
+        var newHeight = size.height / size.width * imageWidth
+        
+        if newHeight < imageMinHeight {
+            newHeight = imageMinHeight
+        }
+        if newHeight > imageMaxHeight {
+            newHeight = imageMaxHeight
+        }
+        imageHeightConstraint.constant = newHeight
+        updateConstraintsIfNeeded()
     }
 }
 

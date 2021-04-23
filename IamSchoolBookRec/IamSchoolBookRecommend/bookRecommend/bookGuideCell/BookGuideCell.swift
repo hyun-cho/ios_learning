@@ -8,21 +8,22 @@
 import UIKit
 
 
-class BookGuideCell: UITableViewCell, HasTask {
-    var task: BookRecommendTask?
-    func updateTask(task: BookRecommendTask) {
-        self.task = task
-    }
-    
+class BookGuideCell: UITableViewCell {
     @IBOutlet var bookGuideImage: UIImageView!
-    
     @IBOutlet var bookGuideTitle: UILabel!
     @IBOutlet var bookGuideDescription: UILabel!
     
-    func initBookGuide(bookGuide: BookGuide) {
-        bookGuideImage.image = bookGuide.image
-        
-        bookGuideTitle.text = bookGuide.title
-        bookGuideDescription.text = bookGuide.description
+    var viewModel: BookGuideData? {
+        didSet {
+            guard let image = viewModel?.image,
+                  let title = viewModel?.title,
+                  let description = viewModel?.description else {
+                print("book guide init viewModel error")
+                return
+            }
+            bookGuideImage.image = image
+            bookGuideTitle.text = title
+            bookGuideDescription.text = description
+        }
     }
 }

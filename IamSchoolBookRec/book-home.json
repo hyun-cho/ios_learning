@@ -1,0 +1,619 @@
+[{
+	"component": "iam-main-slider",
+	"title": "아이엠스쿨 추천 도서",
+	"items": [{
+		"title": "어린이를 위한 배 세계사 100",
+		"content": "배를 통해 알아보는 세계 역사",
+		"link": "iamschoolapp://green-book/articles/1293643",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134106667925640.jpg",
+		"width": 458,
+		"height": 627
+	}, {
+		"title": "단위 기호사전(과학과 공학의 기초를 쉽게 정리한)",
+		"content": "과학 공부, 기초부터 시작하고 싶다면",
+		"link": "iamschoolapp://green-book/articles/1293647",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134064527729953.jpg",
+		"width": 458,
+		"height": 650
+	}, {
+		"title": "내가 김소연진아일동안",
+		"content": "학교생활을 간접 체험하고 싶다면",
+		"link": "iamschoolapp://green-book/articles/1293640",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836011064382341.jpg",
+		"width": 458,
+		"height": 632
+	}, {
+		"title": "실크로드 역사특급",
+		"content": "역사 다큐보다 재미있는 동아시아 이야기",
+		"link": "iamschoolapp://green-book/articles/1293627",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134034493783513.jpg",
+		"width": 458,
+		"height": 590
+	}, {
+		"title": "건방진 장루이와 68일",
+		"content": "친구 관계를 알려주는 관계 동화",
+		"link": "iamschoolapp://green-book/articles/1293634",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836052899888532.jpg",
+		"width": 458,
+		"height": 631
+	}, {
+		"title": "어린이 세계 시민 학교",
+		"content": "아이를 글로벌한 인재로 키우고 싶다면",
+		"link": "iamschoolapp://green-book/articles/1293650",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836078573147789.jpg",
+		"width": 458,
+		"height": 606
+	}, {
+		"title": "초등 감정 연습",
+		"content": "아이의 감정 지능을 쑥쑥 키워주세요",
+		"link": "iamschoolapp://green-book/articles/1293642",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836219733403998.jpg",
+		"width": 458,
+		"height": 677,
+		"isRecommended": 0
+	}, {
+		"title": "말하는 대로 글이 되는 우리 아이 첫 글쓰기",
+		"content": "글쓰기 숙제가 부담인 아이들에게",
+		"link": "iamschoolapp://green-book/articles/1293621",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134124470515001.jpg",
+		"width": 690,
+		"height": 1037
+	}, {
+		"title": "백년아이",
+		"content": "근현대사를 알려주는 저학년 그림책",
+		"link": "iamschoolapp://green-book/articles/1293655",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138133952730475601.jpg",
+		"width": 458,
+		"height": 582
+	}, {
+		"title": "참 잘 뽑은 반장",
+		"content": "선거와 대표의 개념을 알려주는 초등 동화",
+		"link": "iamschoolapp://green-book/articles/1293625",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134084209579498.jpg",
+		"width": 458,
+		"height": 636
+	}]
+}, {
+	"component": "iam-button",
+	"items": [{
+		"title": "교과연계 추천도서",
+		"link": "iamschoolapp://webview?landingtype=1&webviewtype=3&url=https://school.iamservice.net/schoolbooks",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/8328052198893806.png",
+		"width": 96,
+		"height": 96
+	}, {
+		"title": "책 가이드",
+		"content": "",
+		"link": "iamschoolapp://green-book/board?category=4438&subject=4440&boardName=%EC%B1%85%20%EA%B0%80%EC%9D%B4%EB%93%9C",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/8328012896376554.png",
+		"width": 96,
+		"height": 96
+	}],
+	"background_color": "#00ce53",
+	"text_color": "#ffffff",
+	"title": "버튼 역역"
+}, {
+	"component": "iam-middle-slider",
+	"title": "지난주 가장 많이 판매된 책",
+	"items": [{
+		"title": "화내지 않고 상처받지 않는 어린이 감정 사전",
+		"content": "건강하게 내 마음을 표현하는 방법",
+		"link": "iamschoolapp://shop/product/102102269",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836260745944260.jpg",
+		"width": 458,
+		"height": 583,
+		"isRecommended": 1
+	}, {
+		"title": "지옥으로 가기 전에",
+		"content": "부모와 아이를 위한 동화 처방전",
+		"link": "iamschoolapp://green-book/articles/1286250",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836277929946064.jpg",
+		"width": 799,
+		"height": 1103
+	}, {
+		"title": "엄마 공부가 끝나면 아이 공부는 시작된다",
+		"content": "세 아이를 영재로 키워낸 엄마의 성장 고백서",
+		"link": "iamschoolapp://green-book/articles/1286249",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836296111400215.jpg",
+		"width": 458,
+		"height": 641
+	}, {
+		"title": "사회독서 세상을 읽는힘(1)인권과 민주주의",
+		"content": "세상 물정 아는 것이 진짜 공부다",
+		"link": "iamschoolapp://green-book/articles/1286255",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134233837294994.jpg",
+		"width": 458,
+		"height": 688
+	}, {
+		"title": "아이의 공부 태도가 바뀌는 하루 한 줄 인문학",
+		"content": "자기주도 학습력을 높이는 동기부여 문장 100",
+		"link": "iamschoolapp://green-book/articles/1278637",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134253327878941.jpg",
+		"width": 458,
+		"height": 675
+	}]
+}, {
+	"component": "iam-middle-slider",
+	"title": "4월, 이달에 꼭 만나볼 책",
+	"items": [{
+		"title": "청소년 추천 세트",
+		"content": "중고등학생을 위한 추천 도서",
+		"link": "iamschoolapp://shop/product/102180801",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/137334653917569466.jpg",
+		"width": 799,
+		"height": 1089
+	}, {
+		"title": "초등 고학년 추천 세트",
+		"content": "초등 5~6학년을 위한 추천 도서",
+		"link": "iamschoolapp://shop/product/102180799",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/137334635063475428.jpg",
+		"width": 690,
+		"height": 976
+	}, {
+		"title": "초등 중학년 추천 세트",
+		"content": "초등 3~4학년을 위한 추천 도서",
+		"link": "iamschoolapp://shop/product/102180798",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135036686288917848.jpg",
+		"width": 458,
+		"height": 603
+	}, {
+		"title": "초등 저학년 추천 세트",
+		"content": "초등 1~2학년을 위한 추천 도서",
+		"link": "iamschoolapp://shop/product/102180793",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/137334581741597528.jpg",
+		"width": 690,
+		"height": 954,
+		"isRecommended": 1
+	}]
+}, {
+	"component": "iam-magazine-big",
+	"title": "",
+	"items": [{
+		"title": "국어 실력 UP! 해줄 KBS한국어능력시험 선정 도서",
+		"content": "국어 실력과 독서 습관을 한 번에 잡아주는 시험을 목표로 삼아보세요.",
+		"link": "iamschoolapp://green-book/articles/1256228",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135356199906432867.png",
+		"width": 720,
+		"height": 245
+	}]
+}, {
+	"component": "iam-middle-slider",
+	"title": "제19회 KBS한국어능력시험 선정 도서",
+	"items": [{
+		"title": "책과 함께, 5급 선정도서",
+		"content": "초1~초2학년 선정 도서",
+		"link": "iamschoolapp://shop/product/102160652",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/136443798666463631.jpg",
+		"width": 458,
+		"height": 559
+	}, {
+		"title": "책과 함께, 4급 선정도서",
+		"content": "초3~초4학년 선정 도서",
+		"link": "iamschoolapp://shop/product/102160649",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/134145869417089252.jpg",
+		"width": 458,
+		"height": 597
+	}, {
+		"title": "책과 함께, 3급 선정도서",
+		"content": "초5~초6학년 선정 도서",
+		"link": "iamschoolapp://shop/product/102160635",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/136443787669764241.jpg",
+		"width": 458,
+		"height": 626
+	}, {
+		"title": "책과 함께, 2급 선정도서",
+		"content": "중1~중2학년 선정 도서",
+		"link": "iamschoolapp://shop/product/102160625",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/136443782274194929.jpg",
+		"width": 458,
+		"height": 589
+	}, {
+		"title": "책과 함께, 1급 선정도서",
+		"content": "중3~고1학년 선정 도서",
+		"link": "iamschoolapp://shop/product/102160596",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/136443777748297828.jpg",
+		"width": 458,
+		"height": 647
+	}, {
+		"title": "책과 함께, 누리급 선정도서",
+		"content": "유치부 선정 도서",
+		"link": "iamschoolapp://shop/product/102160653",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/134145850528784829.jpg",
+		"width": 458,
+		"height": 572,
+		"isRecommended": 1
+	}]
+}, {
+	"component": "iam-middle-slider",
+	"title": "황선미 작가가 들려주는 관계 이야기 시리즈",
+	"items": [{
+		"title": "나에게 없는 딱 세 가지",
+		"content": "형제자매 관계, 어떻게 해야 좋을까?",
+		"link": "iamschoolapp://shop/product/102181446",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/137614210395405390.jpg",
+		"width": 458,
+		"height": 633
+	}, {
+		"title": "할머니와 수상한 그림자",
+		"content": "인간관계의 시작, 그 첫 단추를 열어 주는 동화",
+		"link": "iamschoolapp://shop/product/102023738",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135316239346684875.jpg",
+		"width": 458,
+		"height": 639
+	}, {
+		"title": "내가 김소연진아일 동안",
+		"content": "선생님, 그 절대적인 존재와의 관계 이야기",
+		"link": "iamschoolapp://shop/product/102181445",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/137614194134439005.jpg",
+		"width": 458,
+		"height": 632
+	}, {
+		"title": "지옥으로 가기 전에",
+		"content": "부모 자식 관계, 함께 맞추어 가며 성장하는 이야기!",
+		"link": "iamschoolapp://shop/product/102181447",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135316303777097553.jpg",
+		"width": 799,
+		"height": 1103
+	}, {
+		"title": "건방진 장루이와 68일",
+		"content": "친구 관계, 갈등과 성장 이야기",
+		"link": "iamschoolapp://shop/product/102181443",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/137614116953033902.jpg",
+		"width": 458,
+		"height": 627,
+		"isRecommended": 1
+	}]
+}, {
+	"component": "iam-grid",
+	"title": "초등 글쓰기가 쉬워지는 비법",
+	"items": [{
+		"title": "말하는 대로 글이 되는 우리 아이 첫 글쓰기",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1293621",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836425454245945.jpg",
+		"width": 690,
+		"height": 1037
+	}, {
+		"title": "하루 3줄 초등 글쓰기의 기적",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1269210",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134326683084907.jpg",
+		"width": 458,
+		"height": 675
+	}, {
+		"title": "초등학생을 위한 150년 하버드 글쓰기 비법",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1242353",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134390251227837.jpg",
+		"width": 458,
+		"height": 677
+	}, {
+		"title": "초등 글쓰기 비밀수업",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1286271",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836447831190961.jpg",
+		"width": 458,
+		"height": 670
+	}, {
+		"title": "말하기 독서법",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1242369",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836503122686862.jpg",
+		"width": 458,
+		"height": 653
+	}, {
+		"title": "초등 독서 노트의 힘",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1242351",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134404192686623.jpg",
+		"width": 458,
+		"height": 673
+	}]
+}, {
+	"component": "iam-grid",
+	"title": "10대, 세상 보는 눈을 키우자!",
+	"items": [{
+		"title": "돈을 알면 세상이 보일까",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1209114",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836578206511727.jpg",
+		"width": 458,
+		"height": 720
+	}, {
+		"title": "사회독서 세상을 읽는힘(2)경제와 미디어",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1104702",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134457401630562.jpg",
+		"width": 458,
+		"height": 688
+	}, {
+		"title": "정치이야기 뭔데 이렇게재밌어",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1009283",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836614999384968.png",
+		"width": 458,
+		"height": 690
+	}, {
+		"title": "국제거래와 환율 쫌 아는 10대",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1104687",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836591904781158.jpg",
+		"width": 458,
+		"height": 664
+	}, {
+		"title": "경제를 읽는 쿨한 지리 이야기(생각하는 청소년 8)",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/937922",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134568858432838.jpg",
+		"width": 458,
+		"height": 655
+	}, {
+		"title": "꼰대 아빠와 등골브레이커의 브랜드 썰전",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/937954",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836629509718267.jpg",
+		"width": 458,
+		"height": 678
+	}]
+}, {
+	"component": "iam-grid",
+	"title": "엄마가 읽어도 재밌는 고학년 동화",
+	"items": [{
+		"title": "초정리 편지",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/827894",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836700781961907.jpg",
+		"width": 458,
+		"height": 678
+	}, {
+		"title": "책과 노니는 집",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/799665",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836688840229808.jpg",
+		"width": 458,
+		"height": 658
+	}, {
+		"title": "노잣돈 갚기 프로젝트",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1128117",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836733827079851.jpg",
+		"width": 458,
+		"height": 661
+	}, {
+		"title": "해리엇",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1047854",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836713990755743.jpg",
+		"width": 458,
+		"height": 654
+	}, {
+		"title": "블랙아웃",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1161570",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836768645040134.jpg",
+		"width": 458,
+		"height": 681
+	}, {
+		"title": "분홍문의 기적",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1137389",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134670686439089.jpg",
+		"width": 458,
+		"height": 655
+	}]
+}, {
+	"component": "iam-grid",
+	"title": "과학이 재밌어지는 청소년 도서",
+	"items": [{
+		"title": "질문하는 과학실",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/955977",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134782561501466.jpg",
+		"width": 458,
+		"height": 671
+	}, {
+		"title": "10대와 통하는 생물학 이야기",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1112905",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836847433111369.jpg",
+		"width": 458,
+		"height": 666
+	}, {
+		"title": "먹고 보니 과학이네? : 맛으로 배우는 화학",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/899969",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836890911850974.jpg",
+		"width": 458,
+		"height": 640
+	}, {
+		"title": "세포 짠 DNA 쏙 북적북적 생명 과학 수업",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1073747",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836875357681459.jpg",
+		"width": 458,
+		"height": 718
+	}, {
+		"title": "친절한 화학 교과서",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/911384",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135836933166372693.jpg",
+		"width": 458,
+		"height": 648
+	}, {
+		"title": "세상을 움직이는 화학",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1089713",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134841055124570.jpg",
+		"width": 458,
+		"height": 631
+	}]
+}, {
+	"component": "iam-small-slider",
+	"title": "#1~2학년",
+	"items": [{
+		"title": "우리와 다른 아이",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/964651",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138135090589317925.jpg",
+		"width": 458,
+		"height": 327
+	}, {
+		"title": "목기린 씨, 타세요",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1009044",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135837156129797819.jpg",
+		"width": 458,
+		"height": 627
+	}, {
+		"title": "시북 sea book : 우리가 지켜야 할 바다와 바닷속 생물 이야기",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1027984",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134920213718341.jpg",
+		"width": 458,
+		"height": 351
+	}, {
+		"title": "세계 면 요리 경연대회",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1038864",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138134895790532111.jpg",
+		"width": 458,
+		"height": 584
+	}, {
+		"title": "매일매일 힘을 주는 말",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1018642",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138135062476034972.jpg",
+		"width": 458,
+		"height": 611
+	}]
+}, {
+	"component": "iam-small-slider",
+	"title": "#3~4학년",
+	"items": [{
+		"title": "사랑에 대한 작은 책",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1192044",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135837265292652149.jpg",
+		"width": 458,
+		"height": 642
+	}, {
+		"title": "동물로 세상에서 잘 살아남기",
+		"content": "",
+		"link": "iamschoolapp://shop/product/102101735",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138135171159621895.jpg",
+		"width": 458,
+		"height": 606
+	}, {
+		"title": "내 멋대로 나 뽑기",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1145187",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138135217175702474.jpg",
+		"width": 458,
+		"height": 660
+	}, {
+		"title": "아무 말 대잔치",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1145224",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135837201585178701.jpg",
+		"width": 458,
+		"height": 627
+	}, {
+		"title": "골라 줘! 초이스 킹",
+		"content": "",
+		"link": "iamschoolapp://shop/product/102102292",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135837239355621060.jpg",
+		"width": 458,
+		"height": 682
+	}]
+}, {
+	"component": "iam-small-slider",
+	"title": "#5~6학년",
+	"items": [{
+		"title": "댓글왕 곰손 선생님",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1155157",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138135324608357527.jpg",
+		"width": 458,
+		"height": 582
+	}, {
+		"title": "세상을 읽는 커다란 눈 알고리즘",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1145222",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138135341223226277.jpg",
+		"width": 458,
+		"height": 535
+	}, {
+		"title": "어느 날, 헌법이 말했습니다",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1155168",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135837385622041271.jpg",
+		"width": 458,
+		"height": 668
+	}, {
+		"title": "도시에서 만난 야생 동물 이야기",
+		"content": "",
+		"link": "iamschoolapp://green-book/articles/1192037",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/138135280133597945.jpg",
+		"width": 458,
+		"height": 632
+	}, {
+		"title": "빈곤 : 풍요의 시대, 왜 여전히 가난할까?",
+		"content": "",
+		"link": "iamschoolapp://shop/product/102102266",
+		"image": "http://image.toast.com/aaaaaaq/iamschool/test/ICON_MENU/135837374646648812.jpg",
+		"width": 458,
+		"height": 629
+	}]
+}, {
+	"component": "iam-bookmark",
+	"title": "스크랩한 책/책 가이드",
+	"subject_ids": ["4440"]
+}, {
+	"component": "search-tag",
+	"title": "이런 책 어때요?",
+	"items": [{
+		"title": "학년별로 보기",
+		"tags": [{
+			"name": "#초 1~2"
+		}, {
+			"name": "#초 3~4"
+		}, {
+			"name": "#초 5~6"
+		}, {
+			"name": "#청소년"
+		}, {
+			"name": "#부모"
+		}],
+		"inputValue": ""
+	}, {
+		"title": "주제별로 보기",
+		"tags": [{
+			"name": "#어린이 문학"
+		}, {
+			"name": "#청소년 문학"
+		}, {
+			"name": "#자기계발"
+		}, {
+			"name": "#인문/사회"
+		}, {
+			"name": "#자연/과학"
+		}, {
+			"name": "#공부/진로"
+		}, {
+			"name": "#자녀 학습/진로"
+		}, {
+			"name": "#자녀 인성/가족"
+		}, {
+			"name": "#실용/기타"
+		}, {
+			"name": "#일반 문학"
+		}, {
+			"name": "#학습도서"
+		}, {
+			"name": "#책 추천"
+		}, {
+			"name": "#책 미리보기"
+		}],
+		"inputValue": ""
+	}]
+}]

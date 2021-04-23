@@ -7,12 +7,22 @@
 
 import UIKit
 
+
+
 // standSliding을 위한 Data -> 
-class BookDetail: Book {
+struct StandCollectionViewCellData: ImageLoader {
+    private(set) var name: String
     private(set) var description: String
     
+    private(set) var image: UIImage?
+    
     init(name: String, description: String, remoteURL: String) {
+        self.name = name
         self.description = description
-        super.init(name: name, remoteURL: remoteURL)
+        loadImage(remoteURL) {
+            (imageResult) -> Void in
+            image = imageResult
+        }
+        
     }
 }

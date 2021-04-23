@@ -7,20 +7,46 @@
 
 import UIKit
 
-class ButtonNavigationCell: UITableViewCell, HasTask {
-    var task: BookRecommendTask?
-    func updateTask(task: BookRecommendTask) {
-        self.task = task
+// cell -> xib로 변경
+class ButtonNavigationCell: UITableViewCell {
+    @IBOutlet private var buttonStackView: UIStackView!
+    
+    var viewModel: ButtonNavigationData? {
+        didSet {
+            guard let buttonDatas = viewModel?.buttonDatas else {
+                print("button navigation viewModel init failed")
+                return
+            }
+            removeAllSubview(from: buttonStackView)
+            createNavigationButton(buttonDatas)
+        }
     }
+    private var buttonEqualWidthConstraints: [NSLayoutConstraint] = [NSLayoutConstraint]()
     
-    @IBOutlet var buttonStackView: UIStackView!
-    @IBOutlet var buttons: [UIButton]!
-    
-    override func updateConstraints() {
-        super.updateConstraints()
-        
-        buttons.forEach({
-            $0.layer.cornerRadius = 6
+    private func removeAllSubview(from: UIStackView) {
+        buttonEqualWidthConstraints.forEach({ $0.isActive = false })
+        buttonEqualWidthConstraints.removeAll()
+        from.arrangedSubviews.forEach({
+            $0.removeFromSuperview()
         })
     }
+    
+    private func createNavigationButton(_ buttonDatas: [NavigationButtonData]) {
+        buttonDatas.forEach({
+            guard let button = NavigationButton.create(buttonData: $0) else {
+                print("navigation button not created")
+                return
+            }
+            self.buttonStackView.addArrangedSubview(button)
+            guard let firstButton = self.buttonStackView.subviews.first else {
+                return
+            }
+            
+            let buttonWidthEqualWithFirstButton = NSLayoutConstraint(item: firstButton, attribute: .width, relatedBy: .equal, toItem: button, attribute: .width, multiplier: 1.0, constant: 0.0)
+            buttonWidthEqualWithFirstButton.isActive = true
+            buttonEqualWidthConstraints.append(buttonWidthEqualWithFirstButton)
+        })
+
+    }
+    
 }

@@ -8,12 +8,13 @@
 import UIKit
 
 class BookRecommendTableViewController: UITableViewController {
-    var tasks: CellDataSourceStore?
+    fileprivate(set) var serverDataSource: ServerDataSourceStore?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // 데이터를 가져오는 부분, 추가 구현 예정
-        tasks = CellDataSourceStore()
+        serverDataSource = ServerDataSourceStore()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -27,54 +28,63 @@ class BookRecommendTableViewController: UITableViewController {
 
 // dataSource
 extension BookRecommendTableViewController {
-    // section, row? -> section이 필요가 없을것같다.!! TODO
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return tasks?.tasks.count ?? 0
-    }
-    
     // Return the number of rows for the table.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section <= 3 {
-            return 1
-        }
-        return 0
+        return serverDataSource?.serverData.count ?? 0
     }
 
     // Provide a cell object for each row.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // section과 정보를 같이 서버에서 전해준다. (type - section / data)
-        // Fetch a cell of the appropriate type.
-        // 배열 index check<<
-//        guard let task = tasks?[indexPath.row] as! BookRecommendationCellData else {
-//            return UITableViewCell()
-//        }
-//        switch task {
-//        case .StandSlidingCellData(let standSlidingCellData):
-//            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? StandSlidingCell
-//            cell.
-//        }
-        
-        guard let task = tasks?[indexPath.section],
-           let identifier = task.cellIdentifier?.rawValue,
-           let cellWithTask = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? HasTask else {
-            print("cell does not cast to HasTask")
+        guard let bookRecommendationCellData = serverDataSource?[indexPath] else {
             return UITableViewCell()
         }
-        // task -> 타입 캐스팅 -> 
-        cellWithTask.updateTask(task: task)
-        guard let cell = cellWithTask as? UITableViewCell else {
-            print("cell does not cast to HasTask")
+        switch bookRecommendationCellData {
+        case .standSlidingData(let standSlidingCellData):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: standSlidingCellData.cellIdentifier, for: indexPath) as? StandSlidingCell else {
+                return UITableViewCell()
+            }
+            cell.viewModel = standSlidingCellData
+            return cell
+        case .buttonNavigationData(let buttonNavigationData):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: buttonNavigationData.cellIdentifier, for: indexPath) as? ButtonNavigationCell else {
+                return UITableViewCell()
+            }
+            cell.viewModel = buttonNavigationData
+            return cell
+        case .bookCollectionTypeAData(let bookCollectionTypeAData):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: bookCollectionTypeAData.cellIdentifier, for: indexPath) as? BookCollectionTypeACell else {
+                return UITableViewCell()
+            }
+            cell.viewModel = bookCollectionTypeAData
+            return cell
+        case .bookGuideData(let bookGuideData):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: bookGuideData.cellIdentifier, for: indexPath) as? BookGuideCell else {
+                return UITableViewCell()
+            }
+            cell.viewModel = bookGuideData
+            return cell
+        case .bookScrapData(let bookScrapData):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: bookScrapData.cellIdentifier, for: indexPath) as? BookScrapCell else {
+                return UITableViewCell()
+            }
+            cell.viewModel = bookScrapData
+            return cell
+        case .bookScrollData(let bookScrollData):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: bookScrollData.cellIdentifier, for: indexPath) as? BookScrollCell else {
+                return UITableViewCell()
+            }
+            cell.viewModel = bookScrollData
+            return cell
+        case .none:
             return UITableViewCell()
         }
-        return cell
     }
     
 }
 
 //delegate
 extension BookRecommendTableViewController {
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
 }
