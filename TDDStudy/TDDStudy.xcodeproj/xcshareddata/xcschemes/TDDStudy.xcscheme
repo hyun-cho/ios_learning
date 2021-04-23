@@ -50,9 +50,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D9792A41262862E3005E6D88"
-               BuildableName = "PasswordStrengthMeterTest.xctest"
-               BlueprintName = "PasswordStrengthMeterTest"
+               BlueprintIdentifier = "D986275126329939004DA868"
+               BuildableName = "ExpiryDateCalculator.xctest"
+               BlueprintName = "ExpiryDateCalculator"
                ReferencedContainer = "container:TDDStudy.xcodeproj">
             </BuildableReference>
          </TestableReference>
