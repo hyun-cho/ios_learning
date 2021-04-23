@@ -21,6 +21,7 @@
 		D9792A52262863D0005E6D88 /* PasswordStrengthMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A51262863D0005E6D88 /* PasswordStrengthMeter.swift */; };
 		D986276926329977004DA868 /* ExpiryDateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986276826329977004DA868 /* ExpiryDateCalculator.swift */; };
 		D98627D026329F0D004DA868 /* DateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98627CF26329F0D004DA868 /* DateCalculator.swift */; };
+		D986280F2632A4A4004DA868 /* PayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986280E2632A4A3004DA868 /* PayData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		D98627CD26329F0D004DA868 /* DateCalculator.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DateCalculator.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98627CF26329F0D004DA868 /* DateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCalculator.swift; sourceTree = "<group>"; };
 		D98627D126329F0D004DA868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D986280E2632A4A3004DA868 /* PayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				D9792A38262861F4005E6D88 /* Calculator.swift */,
 				D9792A51262863D0005E6D88 /* PasswordStrengthMeter.swift */,
 				D986276826329977004DA868 /* ExpiryDateCalculator.swift */,
+				D986280E2632A4A3004DA868 /* PayData.swift */,
 			);
 			path = TDDStudy;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				D986276926329977004DA868 /* ExpiryDateCalculator.swift in Sources */,
 				D97929F8262860D5005E6D88 /* ViewController.swift in Sources */,
 				D9792A39262861F4005E6D88 /* Calculator.swift in Sources */,
+				D986280F2632A4A4004DA868 /* PayData.swift in Sources */,
 				D97929F4262860D5005E6D88 /* AppDelegate.swift in Sources */,
 				D9792A52262863D0005E6D88 /* PasswordStrengthMeter.swift in Sources */,
 				D97929F6262860D5005E6D88 /* SceneDelegate.swift in Sources */,
