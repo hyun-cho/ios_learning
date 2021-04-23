@@ -32,6 +32,16 @@ class DateCalculator: XCTestCase {
         assertExpiryDate(PayData.builder().billingDate(Date.of(2020, 1, 31)).payAmount(10_000).build(), Date.of(2020, 2, 29))
     }
     
+    // 3-10
+    func test_첫_납부일과_만료일_일자가_다를때_만원_납부() {
+        let payData: PayData = PayData.builder()
+            .firstBillingDate(Date.of(2019, 1, 31))
+            .billingDate(Date.of(2019, 2, 28))
+            .payAmount(10_000)
+            .build()
+        assertExpiryDate(patData, Date.of(2019, 3, 31))
+    }
+    
     func assertExpiryDate(_ payData: PayData, _ expectedExpiryDate: Date) {
         let cal: ExpiryDateCalculator = ExpiryDateCalculator()
         let expiryDate: Date? = cal.calculateExpiryDate(payData)
