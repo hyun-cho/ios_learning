@@ -46,6 +46,7 @@ class BookScrollCell: UITableViewCell {
             updateCellData(type: cellDataType, datas: cellDatas)
         }
     }
+    
     func updateCellData(type cellDataType: BookScrollData.BookScrollCellDataType, datas cellDatas: [BookScrollData.BookScrollCellDataType]) {
         switch cellDataType {
         case .typeB(_):

@@ -385,14 +385,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookScrapCell" id="IMM-kQ-sQ7" userLabel="BookScrapCell" customClass="BookScrapCell" customModule="IamSchoolBookRecommend" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1279" width="414" height="211"/>
+                                <rect key="frame" x="0.0" y="1279" width="414" height="216.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IMM-kQ-sQ7" id="z0v-E7-nG6">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="216.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="ZPA-CD-Kar">
-                                            <rect key="frame" x="20" y="40" width="374" height="131"/>
+                                            <rect key="frame" x="20" y="40" width="374" height="136.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="A9b-lK-t5v">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -422,28 +422,28 @@
                                                     </constraints>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pX0-S3-gDu">
-                                                    <rect key="frame" x="0.0" y="33.5" width="374" height="97.5"/>
+                                                    <rect key="frame" x="0.0" y="33.5" width="374" height="103"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Fog-67-xTR" userLabel="Horizon Stack View">
-                                                            <rect key="frame" x="16" y="0.0" width="342" height="97.5"/>
+                                                            <rect key="frame" x="16" y="0.0" width="342" height="103"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gQz-G9-QQC">
-                                                                    <rect key="frame" x="0.0" y="24.5" width="49" height="49"/>
+                                                                    <rect key="frame" x="0.0" y="27" width="49" height="49"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="49" id="db1-ky-LZ2"/>
                                                                         <constraint firstAttribute="height" constant="49" id="nVD-xZ-cWl"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zge-cK-fqn" userLabel="Verticla Stack View">
-                                                                    <rect key="frame" x="60" y="7" width="282" height="83.5"/>
+                                                                    <rect key="frame" x="60" y="10" width="282" height="83.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이유가 있어서 멸종했습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhJ-rO-dXC">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="이유가 있어서 멸종했습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhJ-rO-dXC">
                                                                             <rect key="frame" x="0.0" y="0.0" width="282" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                             <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGf-8V-Ufa">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="999" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGf-8V-Ufa">
                                                                             <rect key="frame" x="0.0" y="21" width="282" height="62.5"/>
                                                                             <string key="text">세상에서 가장 재미있는 멸종 동물 도감 세상에서 가장 재미있는 멸종 동물 도감 세상에서 가장 재미있는 멸종 동물 도감 세상에서 가장 재미있는 멸종 동물 도감세상에서 가장 재미있는 멸종 동물 도감 세상에서 가장 재미있는 멸종 동물 도감 세상에서 가장 재미있는 멸종 동물 도감 세상에서 가장 재미있는 멸종 동물 도감</string>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -481,7 +481,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookScrollCell" id="Pe9-gP-AwH" userLabel="BookScrollCell" customClass="BookScrollCell" customModule="IamSchoolBookRecommend" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1490" width="414" height="284"/>
+                                <rect key="frame" x="0.0" y="1495.5" width="414" height="284"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pe9-gP-AwH" id="GMk-Qo-Hsv">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="284"/>

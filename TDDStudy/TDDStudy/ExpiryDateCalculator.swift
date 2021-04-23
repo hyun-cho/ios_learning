@@ -10,28 +10,34 @@ import Foundation
 class ExpiryDateCalculator {
     // 3.5
     func calculateExpiryDate(_ payData: PayData) -> Date? {
-        let addedMonths = payData.payAmount! / 10_000
-        var oneMonthDateComponent: DateComponents = DateComponents()
-        oneMonthDateComponent.month = addedMonths
-        
-        if let firstBillingDate = payData.firstBillingDate {
-            let candidateExp: Date? = Calendar.current.date(byAdding: oneMonthDateComponent, to: payData.billingDate ?? Date())
-            let firstBillingDateComponent = Calendar.current.dateComponents([.day], from: firstBillingDate)
-            let candidateExpComponent = Calendar.current.dateComponents([.year, .month, .day], from: candidateExp!)
-            
-            if firstBillingDateComponent.day != candidateExpComponent.day {
-                
-                let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: Date.of(candidateExpComponent.year!, candidateExpComponent.month!, 1))
-                let endOfMonth = Calendar.current.date(byAdding: .day, value: -1, to: nextMonth!)
-                let endDayOfMonth = Calendar.current.dateComponents([.day], from: endOfMonth!).day!
-                if firstBillingDateComponent.day! > endDayOfMonth {
-                    return Date.of(candidateExpComponent.year!, candidateExpComponent.month!, endDayOfMonth)
-                }
-                return Date.of(candidateExpComponent.year!, candidateExpComponent.month!, firstBillingDateComponent.day!)
-            }
+        let addedMonths = payData.payAmount! == 100_000 ? 12 : payData.payAmount! / 10_000
+        var monthDateComponent: DateComponents = DateComponents()
+        monthDateComponent.month = addedMonths
+
+        if payData.firstBillingDate != nil {
+            return expiryDateUsingFirstBillingDate(payData: payData, monthDateComponent: monthDateComponent)
         }
-        return Calendar.current.date(byAdding: oneMonthDateComponent, to: payData.billingDate ?? Date())
+        else {
+            return Calendar.current.date(byAdding: monthDateComponent, to: payData.billingDate ?? Date())
+        }
     }
+    
+    func expiryDateUsingFirstBillingDate(payData: PayData, monthDateComponent: DateComponents) -> Date? {
+        if let firstBillingDate = payData.firstBillingDate {
+            var candidateExp: Date = (payData.billingDate?.addingMonth(monthDateComponent))!
+            if firstBillingDate.day! != candidateExp.day! {
+                if firstBillingDate.day! > candidateExp.dayLength {
+                    candidateExp.day = candidateExp.dayLength
+                }
+                else {
+                    candidateExp.day = firstBillingDate.day!
+                }
+            }
+            return candidateExp
+        }
+        return nil
+    }
+    
 }
 
 extension Date {
@@ -44,4 +50,45 @@ extension Date {
         return dateFormatter.date(from: "\(year)-\(month)-\(day)")!
     }
     
+    func addingMonth(_ month: DateComponents) -> Date?{
+        return Calendar.current.date(byAdding: month, to: self)
+    }
+    var day: Int? {
+        get {
+            return Calendar.current.dateComponents([.day], from: self).day
+        }
+        set(value) {
+            let component = Calendar.current.dateComponents([.year, .month], from: self)
+            self = Date.of(component.year!, component.month!, value!)
+        }
+    }
+    var month: Int? {
+        get {
+            return Calendar.current.dateComponents([.month], from: self).month
+        }
+    }
+    var year: Int? {
+        get {
+            return Calendar.current.dateComponents([.year], from: self).year
+        }
+    }
+    var dayLength: Int {
+        get {
+            let currentMonth = Calendar.current.dateComponents([.year, .month], from: self)
+            let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: Date.of(currentMonth.year!, currentMonth.month!, 1))
+            let endOfMonth = Calendar.current.date(byAdding: .day, value: -1, to: nextMonth!)
+            return Calendar.current.dateComponents([.day], from: endOfMonth!).day!
+        }
+    }
+    
+    func compareDay(_ another: Date?) -> Bool {
+        guard let another = another else {
+            return false
+        }
+        
+        let firstBillingDateComponent = Calendar.current.dateComponents([.day], from: another)
+        let candidateExpComponent = Calendar.current.dateComponents([.day], from: another)
+        
+        return firstBillingDateComponent.day! != candidateExpComponent.day!
+    }
 }
