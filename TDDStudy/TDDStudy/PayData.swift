@@ -8,6 +8,7 @@
 import Foundation
 
 struct PayData {
+    private(set) var firstBillingDate: Date = Date()
     private(set) var billingDate: Date = Date()
     private(set) var payAmount: Int = 0
     
@@ -18,6 +19,10 @@ struct PayData {
     class Builder {
         private var data: PayData = PayData()
         
+        func firstBillingDate(_ firstBillingDate: Date) -> Builder {
+            data.firstBillingDate = firstBillingDate
+            return self
+        }
         func billingDate(_ billingDate: Date) -> Builder {
             data.billingDate = billingDate
             return self

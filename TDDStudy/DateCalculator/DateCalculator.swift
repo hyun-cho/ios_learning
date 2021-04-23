@@ -39,7 +39,7 @@ class DateCalculator: XCTestCase {
             .billingDate(Date.of(2019, 2, 28))
             .payAmount(10_000)
             .build()
-        assertExpiryDate(patData, Date.of(2019, 3, 31))
+        assertExpiryDate(payData, Date.of(2019, 3, 31))
     }
     
     func assertExpiryDate(_ payData: PayData, _ expectedExpiryDate: Date) {
