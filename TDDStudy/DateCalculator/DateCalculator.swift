@@ -19,23 +19,17 @@ class DateCalculator: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    // 3.4
+    // 3.6
     func test_만원_납부하면_한달_뒤가_만료일이_됨() throws {
-        let billingDate: Date = Date.of(2019, 3, 1)
-        let payAmount: Int = 10_000
-        
+        assertExpiryDate(Date.of(2019, 3, 1), 10_000, Date.of(2019, 4, 1))
+        assertExpiryDate(Date.of(2019, 5, 5), 10_000, Date.of(2019, 6, 5))
+    }
+    
+    func assertExpiryDate(_ billingDate: Date, _ payAmount: Int, _ expectedExpiryDate: Date) {
         let cal: ExpiryDateCalculator = ExpiryDateCalculator()
-        let expiryDate: Date = cal.calculateExpiryDate(billingDate, payAmount)
+        let expiryDate: Date? = cal.calculateExpiryDate(billingDate, payAmount)
         
-        XCTAssertEqual(Date.of(2019,4,1), expiryDate)
-        
-        let billingDate2: Date = Date.of(2019,5,5)
-        let payAmount2 = 10_000
-        
-        let cal2: ExpiryDateCalculator = ExpiryDateCalculator()
-        let expiryDate2: Date = cal2.calculateExpiryDate(billingDate2, payAmount2)
-        
-        XCTAssertEqual(Date.of(2019,6,05), expiryDate2)
+        XCTAssertEqual(expectedExpiryDate, expiryDate)
     }
 
     func testPerformanceExample() throws {

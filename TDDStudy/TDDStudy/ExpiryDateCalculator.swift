@@ -8,8 +8,11 @@
 import Foundation
 
 class ExpiryDateCalculator {
-    func calculateExpiryDate(_ billingDate: Date, _ payAmount: Int) -> Date{
-        return Date.of(2019, 4, 1)
+    // 3.5
+    func calculateExpiryDate(_ billingDate: Date, _ payAmount: Int) -> Date? {
+        var dateComponent: DateComponents = DateComponents()
+        dateComponent.month = 1
+        return Calendar.current.date(byAdding: dateComponent, to: billingDate)
     }
 }
 
