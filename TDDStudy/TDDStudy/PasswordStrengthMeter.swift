@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum PasswordStrength {
     case STRONG, NORMAL, INVALID, WEAK
 }

@@ -50,9 +50,39 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D986275126329939004DA868"
+               BlueprintIdentifier = "D986277326329C82004DA868"
+               BuildableName = "ExpiryDateCalculatorTest.xctest"
+               BlueprintName = "ExpiryDateCalculatorTest"
+               ReferencedContainer = "container:TDDStudy.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D9792A2926286180005E6D88"
+               BuildableName = "CalculatorTest.xctest"
+               BlueprintName = "CalculatorTest"
+               ReferencedContainer = "container:TDDStudy.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D98627B726329EDF004DA868"
                BuildableName = "ExpiryDateCalculator.xctest"
                BlueprintName = "ExpiryDateCalculator"
+               ReferencedContainer = "container:TDDStudy.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D98627CC26329F0D004DA868"
+               BuildableName = "DateCalculator.xctest"
+               BlueprintName = "DateCalculator"
                ReferencedContainer = "container:TDDStudy.xcodeproj">
             </BuildableReference>
          </TestableReference>
