@@ -10,7 +10,7 @@ import Foundation
 class ExpiryDateCalculator {
     // 3.5
     func calculateExpiryDate(_ payData: PayData) -> Date? {
-        let addedMonths = 1
+        let addedMonths = payData.payAmount! / 10_000
         var oneMonthDateComponent: DateComponents = DateComponents()
         oneMonthDateComponent.month = addedMonths
         

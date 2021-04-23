@@ -63,6 +63,13 @@ class DateCalculator: XCTestCase {
             .payAmount(20_000)
             .build()
         assertExpiryDate(payData, Date.of(2019, 5, 1))
+        
+        // 3-19
+        let payData2: PayData = PayData.builder()
+            .billingDate(Date.of(2019, 3, 1))
+            .payAmount(30_000)
+            .build()
+        assertExpiryDate(payData2, Date.of(2019, 6, 1))
     }
     
     
