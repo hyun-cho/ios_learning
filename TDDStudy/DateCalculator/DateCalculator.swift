@@ -25,6 +25,13 @@ class DateCalculator: XCTestCase {
         assertExpiryDate(Date.of(2019, 5, 5), 10_000, Date.of(2019, 6, 5))
     }
     
+    // 3-7
+    func test_납부일과_한달_뒤_일자가_같지_않음() throws {
+        assertExpiryDate(Date.of(2019, 1, 31), 10_000, Date.of(2019, 2, 28))
+        assertExpiryDate(Date.of(2019, 5, 31), 10_000, Date.of(2019, 6, 30))
+        assertExpiryDate(Date.of(2020, 1, 31), 10_000, Date.of(2020, 2, 29))
+    }
+    
     func assertExpiryDate(_ billingDate: Date, _ payAmount: Int, _ expectedExpiryDate: Date) {
         let cal: ExpiryDateCalculator = ExpiryDateCalculator()
         let expiryDate: Date? = cal.calculateExpiryDate(billingDate, payAmount)
