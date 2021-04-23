@@ -9,11 +9,7 @@ import XCTest
 @testable import TDDStudy
 
 class DateCalculator: XCTestCase {
-    var dateFormatter: DateFormatter = {
-        var dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        return dateFormatter
-    }()
+    
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -25,14 +21,13 @@ class DateCalculator: XCTestCase {
 
     // 3.2
     func test_만원_납부하면_한달_뒤가_만료일이_됨() throws {
-        var billingDate: Date = dateFormatter.date(from: "2019-03-01")
+        let billingDate: Date = Date.of(2019, 3, 1)
         let payAmount: Int = 10_000
         
-        var cal: ExpiryDateCalculator = ExpiryDateCalculator()
-        var expiryDate: Date = cal.calculateExpiryDate(billingDate, payAmount)
+        let cal: ExpiryDateCalculator = ExpiryDateCalculator()
+        let expiryDate: Date = cal.calculateExpiryDate(billingDate, payAmount)
         
-        XCTAssertEqual(dateFormatter.date(from: "2019-04-01"), expiryDate)
-
+        XCTAssertEqual(Date.of(2019,4,1), expiryDate)
     }
 
     func testPerformanceExample() throws {

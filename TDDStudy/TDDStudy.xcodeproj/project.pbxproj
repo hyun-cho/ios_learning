@@ -20,7 +20,6 @@
 		D9792A45262862E3005E6D88 /* PasswordStrengthMeterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A44262862E3005E6D88 /* PasswordStrengthMeterTest.swift */; };
 		D9792A52262863D0005E6D88 /* PasswordStrengthMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9792A51262863D0005E6D88 /* PasswordStrengthMeter.swift */; };
 		D986276926329977004DA868 /* ExpiryDateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986276826329977004DA868 /* ExpiryDateCalculator.swift */; };
-		D98627BB26329EDF004DA868 /* ExpiryDateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98627BA26329EDF004DA868 /* ExpiryDateCalculator.swift */; };
 		D98627D026329F0D004DA868 /* DateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98627CF26329F0D004DA868 /* DateCalculator.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,20 +46,6 @@
 			remoteInfo = TDDStudy;
 		};
 		D9792A47262862E3005E6D88 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D97929E8262860D5005E6D88 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D97929EF262860D5005E6D88;
-			remoteInfo = TDDStudy;
-		};
-		D986277926329C82004DA868 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D97929E8262860D5005E6D88 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D97929EF262860D5005E6D88;
-			remoteInfo = TDDStudy;
-		};
-		D98627BD26329EDF004DA868 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D97929E8262860D5005E6D88 /* Project object */;
 			proxyType = 1;
@@ -100,10 +85,6 @@
 		D9792A46262862E3005E6D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9792A51262863D0005E6D88 /* PasswordStrengthMeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrengthMeter.swift; sourceTree = "<group>"; };
 		D986276826329977004DA868 /* ExpiryDateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiryDateCalculator.swift; sourceTree = "<group>"; };
-		D986277426329C82004DA868 /* ExpiryDateCalculatorTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpiryDateCalculatorTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D98627B826329EDF004DA868 /* ExpiryDateCalculator.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpiryDateCalculator.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D98627BA26329EDF004DA868 /* ExpiryDateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiryDateCalculator.swift; sourceTree = "<group>"; };
-		D98627BC26329EDF004DA868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D98627CD26329F0D004DA868 /* DateCalculator.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DateCalculator.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98627CF26329F0D004DA868 /* DateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCalculator.swift; sourceTree = "<group>"; };
 		D98627D126329F0D004DA868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -145,20 +126,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D986277126329C82004DA868 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D98627B526329EDF004DA868 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D98627CA26329F0D004DA868 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,7 +144,6 @@
 				D9792A14262860D8005E6D88 /* TDDStudyUITests */,
 				D9792A2B26286180005E6D88 /* CalculatorTest */,
 				D9792A43262862E3005E6D88 /* PasswordStrengthMeterTest */,
-				D98627B926329EDF004DA868 /* ExpiryDateCalculator */,
 				D98627CE26329F0D004DA868 /* DateCalculator */,
 				D97929F1262860D5005E6D88 /* Products */,
 			);
@@ -191,8 +157,6 @@
 				D9792A11262860D8005E6D88 /* TDDStudyUITests.xctest */,
 				D9792A2A26286180005E6D88 /* CalculatorTest.xctest */,
 				D9792A42262862E3005E6D88 /* PasswordStrengthMeterTest.xctest */,
-				D986277426329C82004DA868 /* ExpiryDateCalculatorTest.xctest */,
-				D98627B826329EDF004DA868 /* ExpiryDateCalculator.xctest */,
 				D98627CD26329F0D004DA868 /* DateCalculator.xctest */,
 			);
 			name = Products;
@@ -249,15 +213,6 @@
 				D9792A46262862E3005E6D88 /* Info.plist */,
 			);
 			path = PasswordStrengthMeterTest;
-			sourceTree = "<group>";
-		};
-		D98627B926329EDF004DA868 /* ExpiryDateCalculator */ = {
-			isa = PBXGroup;
-			children = (
-				D98627BA26329EDF004DA868 /* ExpiryDateCalculator.swift */,
-				D98627BC26329EDF004DA868 /* Info.plist */,
-			);
-			path = ExpiryDateCalculator;
 			sourceTree = "<group>";
 		};
 		D98627CE26329F0D004DA868 /* DateCalculator */ = {
@@ -361,42 +316,6 @@
 			productReference = D9792A42262862E3005E6D88 /* PasswordStrengthMeterTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D986277326329C82004DA868 /* ExpiryDateCalculatorTest */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D986277B26329C82004DA868 /* Build configuration list for PBXNativeTarget "ExpiryDateCalculatorTest" */;
-			buildPhases = (
-				D986277026329C82004DA868 /* Sources */,
-				D986277126329C82004DA868 /* Frameworks */,
-				D986277226329C82004DA868 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D986277A26329C82004DA868 /* PBXTargetDependency */,
-			);
-			name = ExpiryDateCalculatorTest;
-			productName = ExpiryDateCalculatorTest;
-			productReference = D986277426329C82004DA868 /* ExpiryDateCalculatorTest.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D98627B726329EDF004DA868 /* ExpiryDateCalculator */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D98627BF26329EDF004DA868 /* Build configuration list for PBXNativeTarget "ExpiryDateCalculator" */;
-			buildPhases = (
-				D98627B426329EDF004DA868 /* Sources */,
-				D98627B526329EDF004DA868 /* Frameworks */,
-				D98627B626329EDF004DA868 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D98627BE26329EDF004DA868 /* PBXTargetDependency */,
-			);
-			name = ExpiryDateCalculator;
-			productName = ExpiryDateCalculator;
-			productReference = D98627B826329EDF004DA868 /* ExpiryDateCalculator.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		D98627CC26329F0D004DA868 /* DateCalculator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98627D426329F0D004DA868 /* Build configuration list for PBXNativeTarget "DateCalculator" */;
@@ -443,14 +362,6 @@
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = D97929EF262860D5005E6D88;
 					};
-					D986277326329C82004DA868 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = D97929EF262860D5005E6D88;
-					};
-					D98627B726329EDF004DA868 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = D97929EF262860D5005E6D88;
-					};
 					D98627CC26329F0D004DA868 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = D97929EF262860D5005E6D88;
@@ -475,8 +386,6 @@
 				D9792A10262860D8005E6D88 /* TDDStudyUITests */,
 				D9792A2926286180005E6D88 /* CalculatorTest */,
 				D9792A41262862E3005E6D88 /* PasswordStrengthMeterTest */,
-				D986277326329C82004DA868 /* ExpiryDateCalculatorTest */,
-				D98627B726329EDF004DA868 /* ExpiryDateCalculator */,
 				D98627CC26329F0D004DA868 /* DateCalculator */,
 			);
 		};
@@ -515,20 +424,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D9792A40262862E3005E6D88 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D986277226329C82004DA868 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D98627B626329EDF004DA868 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -590,21 +485,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D986277026329C82004DA868 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D98627B426329EDF004DA868 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D98627BB26329EDF004DA868 /* ExpiryDateCalculator.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D98627C926329F0D004DA868 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -635,16 +515,6 @@
 			isa = PBXTargetDependency;
 			target = D97929EF262860D5005E6D88 /* TDDStudy */;
 			targetProxy = D9792A47262862E3005E6D88 /* PBXContainerItemProxy */;
-		};
-		D986277A26329C82004DA868 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D97929EF262860D5005E6D88 /* TDDStudy */;
-			targetProxy = D986277926329C82004DA868 /* PBXContainerItemProxy */;
-		};
-		D98627BE26329EDF004DA868 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D97929EF262860D5005E6D88 /* TDDStudy */;
-			targetProxy = D98627BD26329EDF004DA868 /* PBXContainerItemProxy */;
 		};
 		D98627D326329F0D004DA868 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -981,82 +851,6 @@
 			};
 			name = Release;
 		};
-		D986277C26329C82004DA868 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ExpiryDateCalculatorTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nhn.ExpiryDateCalculatorTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDDStudy.app/TDDStudy";
-			};
-			name = Debug;
-		};
-		D986277D26329C82004DA868 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ExpiryDateCalculatorTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nhn.ExpiryDateCalculatorTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDDStudy.app/TDDStudy";
-			};
-			name = Release;
-		};
-		D98627C026329EDF004DA868 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ExpiryDateCalculator/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nhn.ExpiryDateCalculator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDDStudy.app/TDDStudy";
-			};
-			name = Debug;
-		};
-		D98627C126329EDF004DA868 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ExpiryDateCalculator/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nhn.ExpiryDateCalculator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDDStudy.app/TDDStudy";
-			};
-			name = Release;
-		};
 		D98627D526329F0D004DA868 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1148,24 +942,6 @@
 			buildConfigurations = (
 				D9792A4A262862E3005E6D88 /* Debug */,
 				D9792A4B262862E3005E6D88 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D986277B26329C82004DA868 /* Build configuration list for PBXNativeTarget "ExpiryDateCalculatorTest" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D986277C26329C82004DA868 /* Debug */,
-				D986277D26329C82004DA868 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D98627BF26329EDF004DA868 /* Build configuration list for PBXNativeTarget "ExpiryDateCalculator" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D98627C026329EDF004DA868 /* Debug */,
-				D98627C126329EDF004DA868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
