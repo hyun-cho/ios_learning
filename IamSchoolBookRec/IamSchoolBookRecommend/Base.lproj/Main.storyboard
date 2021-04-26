@@ -385,14 +385,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookScrapCell" id="IMM-kQ-sQ7" userLabel="BookScrapCell" customClass="BookScrapCell" customModule="IamSchoolBookRecommend" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1279" width="414" height="216.5"/>
+                                <rect key="frame" x="0.0" y="1279" width="414" height="234.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IMM-kQ-sQ7" id="z0v-E7-nG6">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="216.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="234.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="ZPA-CD-Kar">
-                                            <rect key="frame" x="20" y="40" width="374" height="136.5"/>
+                                            <rect key="frame" x="20" y="40" width="374" height="154.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="A9b-lK-t5v">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -422,20 +422,20 @@
                                                     </constraints>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pX0-S3-gDu">
-                                                    <rect key="frame" x="0.0" y="33.5" width="374" height="103"/>
+                                                    <rect key="frame" x="0.0" y="33.5" width="374" height="121"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Fog-67-xTR" userLabel="Horizon Stack View">
-                                                            <rect key="frame" x="16" y="0.0" width="342" height="103"/>
+                                                            <rect key="frame" x="16" y="0.0" width="342" height="121"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gQz-G9-QQC">
-                                                                    <rect key="frame" x="0.0" y="27" width="49" height="49"/>
+                                                                    <rect key="frame" x="0.0" y="36" width="49" height="49"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="49" id="db1-ky-LZ2"/>
                                                                         <constraint firstAttribute="height" constant="49" id="nVD-xZ-cWl"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zge-cK-fqn" userLabel="Verticla Stack View">
-                                                                    <rect key="frame" x="60" y="10" width="282" height="83.5"/>
+                                                                    <rect key="frame" x="60" y="19" width="282" height="83.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="이유가 있어서 멸종했습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhJ-rO-dXC">
                                                                             <rect key="frame" x="0.0" y="0.0" width="282" height="18"/>
@@ -481,54 +481,61 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookScrollCell" id="Pe9-gP-AwH" userLabel="BookScrollCell" customClass="BookScrollCell" customModule="IamSchoolBookRecommend" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1495.5" width="414" height="284"/>
+                                <rect key="frame" x="0.0" y="1513.5" width="414" height="278.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pe9-gP-AwH" id="GMk-Qo-Hsv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="284"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="278.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59e-lY-77L">
-                                            <rect key="frame" x="20" y="31" width="374" height="21"/>
+                                            <rect key="frame" x="20" y="31" width="374" height="47"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="WoD-af-Bfg"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyJ-5k-DhY">
-                                            <rect key="frame" x="0.0" y="64" width="414" height="200"/>
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" id="hBG-eX-6eA" customClass="UIPagingScrollView" customModule="IamSchoolBookRecommend" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="90" width="414" height="168"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="L4w-H5-70g">
-                                                    <rect key="frame" x="0.0" y="0.0" width="1000" height="200"/>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="200" translatesAutoresizingMaskIntoConstraints="NO" id="P2L-aj-Er8">
+                                                    <rect key="frame" x="0.0" y="0.5" width="1000" height="168"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="200" id="EqY-E0-Bej"/>
-                                                        <constraint firstAttribute="width" constant="1000" id="ue5-b3-WDZ"/>
+                                                        <constraint firstAttribute="width" priority="999" constant="1000" id="6cn-EW-vhb"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="1000" id="ucf-pq-wYT"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="L4w-H5-70g" secondAttribute="trailing" id="0Ub-cn-eOw"/>
-                                                <constraint firstItem="L4w-H5-70g" firstAttribute="height" secondItem="MyJ-5k-DhY" secondAttribute="height" id="67L-A6-KN2"/>
-                                                <constraint firstItem="L4w-H5-70g" firstAttribute="leading" secondItem="MyJ-5k-DhY" secondAttribute="leading" id="iUb-az-eGP"/>
-                                                <constraint firstItem="L4w-H5-70g" firstAttribute="top" secondItem="MyJ-5k-DhY" secondAttribute="top" id="jh2-2X-eJk"/>
-                                                <constraint firstAttribute="bottom" secondItem="L4w-H5-70g" secondAttribute="bottom" id="qxj-Ys-YGe"/>
+                                                <constraint firstItem="P2L-aj-Er8" firstAttribute="leading" secondItem="hBG-eX-6eA" secondAttribute="leading" id="3tx-nP-ffp"/>
+                                                <constraint firstItem="P2L-aj-Er8" firstAttribute="top" secondItem="hBG-eX-6eA" secondAttribute="top" id="76t-hj-zZA"/>
+                                                <constraint firstAttribute="trailing" secondItem="P2L-aj-Er8" secondAttribute="trailing" id="EKS-hT-liZ"/>
+                                                <constraint firstItem="P2L-aj-Er8" firstAttribute="height" secondItem="hBG-eX-6eA" secondAttribute="height" id="FHV-0q-0ZG"/>
+                                                <constraint firstAttribute="bottom" secondItem="P2L-aj-Er8" secondAttribute="bottom" id="Lbi-pz-Sop"/>
+                                                <constraint firstItem="P2L-aj-Er8" firstAttribute="width" secondItem="hBG-eX-6eA" secondAttribute="width" priority="750" id="r6Q-ij-Sl7"/>
                                             </constraints>
+                                            <connections>
+                                                <outlet property="contentView" destination="P2L-aj-Er8" id="0CD-dJ-lcY"/>
+                                                <outlet property="contentViewEqualHeightConstraint" destination="FHV-0q-0ZG" id="201-zb-AHG"/>
+                                                <outlet property="contentViewEqualWidthConstraint" destination="r6Q-ij-Sl7" id="zjz-LQ-7b0"/>
+                                                <outlet property="contentViewHeightConstraint" destination="ucf-pq-wYT" id="amy-IY-FnM"/>
+                                                <outlet property="contentViewWidthConstraint" destination="6cn-EW-vhb" id="Pkw-va-HoL"/>
+                                            </connections>
                                         </scrollView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="MyJ-5k-DhY" firstAttribute="leading" secondItem="GMk-Qo-Hsv" secondAttribute="leading" id="0v0-50-XyZ"/>
                                         <constraint firstItem="59e-lY-77L" firstAttribute="top" secondItem="GMk-Qo-Hsv" secondAttribute="topMargin" constant="20" id="6eb-w7-G17"/>
-                                        <constraint firstAttribute="bottom" secondItem="MyJ-5k-DhY" secondAttribute="bottom" constant="20" id="Hhi-oM-UEa"/>
-                                        <constraint firstItem="MyJ-5k-DhY" firstAttribute="top" secondItem="59e-lY-77L" secondAttribute="bottom" constant="12" id="SuD-D2-Ee8"/>
+                                        <constraint firstItem="hBG-eX-6eA" firstAttribute="top" secondItem="59e-lY-77L" secondAttribute="bottom" constant="12" id="Jen-pg-HS1"/>
+                                        <constraint firstAttribute="bottom" secondItem="P2L-aj-Er8" secondAttribute="bottom" constant="20" id="Orm-aV-ro8"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="59e-lY-77L" secondAttribute="trailing" id="e2A-fZ-z0N"/>
                                         <constraint firstItem="59e-lY-77L" firstAttribute="leading" secondItem="GMk-Qo-Hsv" secondAttribute="leadingMargin" id="pdz-xh-0Dg"/>
-                                        <constraint firstAttribute="trailing" secondItem="MyJ-5k-DhY" secondAttribute="trailing" id="qUR-ko-XgI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="bookScrollView" destination="MyJ-5k-DhY" id="ip3-me-hfl"/>
-                                    <outlet property="innerView" destination="L4w-H5-70g" id="CPM-YJ-d68"/>
-                                    <outlet property="innerViewHeightConstraint" destination="EqY-E0-Bej" id="zUO-2v-ut7"/>
-                                    <outlet property="innerViewWidthConstraint" destination="ue5-b3-WDZ" id="9Lk-MS-fRb"/>
+                                    <outlet property="bookScrollView" destination="hBG-eX-6eA" id="DMD-ZQ-Y20"/>
                                     <outlet property="titleLabel" destination="59e-lY-77L" id="2oh-kT-SCH"/>
                                 </connections>
                             </tableViewCell>

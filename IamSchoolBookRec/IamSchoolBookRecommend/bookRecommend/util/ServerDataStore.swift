@@ -21,7 +21,7 @@ class ServerDataStore {
 //            ServerRawData(cellType: "bookGuide", data: ""),
             ServerRawData(cellType: "bookScrap", data: ""),
             ServerRawData(cellType: "bookScrollTypeB", data: ""),
-            ServerRawData(cellType: "bookScrollTypeC", data: ""),
+//            ServerRawData(cellType: "bookScrollTypeC", data: ""),
             ServerRawData(cellType: "this Is not for cell Type -> needs passing", data: "")
         ]
     }

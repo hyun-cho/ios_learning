@@ -8,131 +8,64 @@
 import UIKit
 class BookScrollCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var bookScrollView: UIScrollView!
-    @IBOutlet var innerView: UIView!
-
-    @IBOutlet var innerViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var innerViewWidthConstraint: NSLayoutConstraint!
-    
-    private let typeBSideImageWidth: CGFloat = 63
-    
-    private var leadingMargin: CGFloat {
-        get {
-            titleLabel.frame.origin.x
-        }
-    }
-    private var typeBCellWidth: CGFloat {
-        get {
-            bookScrollView.frame.width - typeBSideImageWidth - leadingMargin * 2
-        }
-    }
-    private var typeCCellWidth: CGFloat {
-        get {
-            CGFloat(108)
-        }
-    }
-    lazy private var reuseViewPool: [UIView] = [UIView]()
+    @IBOutlet var bookScrollView: UIPagingScrollView!
     
     var viewModel: BookScrollData? {
         didSet {
-            removeAllSubviews(from: bookScrollView)
-            guard let title = viewModel?.title,
-                  let cellDataType = viewModel?.dataType,
-                  let cellDatas = viewModel?.scrollViewDatas else {
-                return
-            }
-            titleLabel.text = title
-            
-            updateCellData(type: cellDataType, datas: cellDatas)
+            print("pagingscrollview viewmodel updated")
+            bookScrollView.reloadData()
         }
     }
     
-    func updateCellData(type cellDataType: BookScrollData.BookScrollCellDataType, datas cellDatas: [BookScrollData.BookScrollCellDataType]) {
-        switch cellDataType {
-        case .typeB(_):
-            self.innerViewWidthConstraint.constant = CGFloat(cellDatas.count) * (typeBCellWidth) + typeBSideImageWidth
-            for index in 0...5 {
-                guard let cell = dequeueReusableCell(with: cellDatas, for: IndexPath(row: index, section: 0)) as? ScrollTypeBViewCell else {
-                    return
-                }
-                innerView.addSubview(cell)
-                cell.leadingConstant = leadingMargin
-                cell.updateConstraints(leading: innerView, centerY: innerView, index: index)
-                if index == 0 {
-                    innerViewHeightConstraint.constant = cell.cellHeight
-                }
-            }
-            
-        case .typeC(_):
-            self.innerViewWidthConstraint.constant = CGFloat(cellDatas.count) * (typeCCellWidth + leadingMargin)
-            for index in 0...5 {
-                guard let cell = dequeueReusableCell(with: cellDatas, for: IndexPath(row: index, section: 0)) as? ScrollTypeCViewCell else {
-                    return
-                }
-                innerView.addSubview(cell)
-                cell.leadingConstant = leadingMargin
-                cell.updateConstraints(leading: innerView, bottom: innerView, index: index)
-                if index == 0 {
-                    innerViewHeightConstraint.constant = cell.cellHeight
-                }
-            }
-            
-        }
-        updateConstraintsIfNeeded()
-    }
-}
-
-extension BookScrollCell {
-    private func removeAllSubviews(from: UIScrollView) {
-        innerView.subviews.forEach({ $0.removeFromSuperview() })
+    override func awakeFromNib() {
+        print("scrollCell awake from nib")
+        bookScrollView.layoutDelegate = self
+        bookScrollView.dataSource = self
+        bookScrollView.register(UINib(nibName: "ScrollTypeBViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "ScrollTypeBViewCell")
     }
     
-    private func dequeueReusableCell(with cellDatas: [BookScrollData.BookScrollCellDataType]?, for indexPath: IndexPath) -> UIView? {
-        guard let cellData = cellDatas?[indexPath.row] else {
-            return nil
+    override func prepareForReuse() {
+        print("prepare")
+        print(self.frame.size)
+    }
+}
+
+extension BookScrollCell: UIPagingScrollDataSource {
+    func scrollViewNumberOfItems(_ pagingScrollView: UIPagingScrollView) -> Int {
+        return viewModel?.scrollViewDatas.count ?? 0
+    }
+    
+    func scrollView(_ pagingScrollView: UIPagingScrollView, cellForItemAt index: Int) -> UIPagingScrollViewCell {
+        guard let dataType = viewModel?[index] else {
+            return UIPagingScrollViewCell()
         }
-        
-        switch cellData {
-        case .typeB(let scrollTypeBData):
-            if reuseViewPool.isEmpty {
-                return ScrollTypeBViewCell.create(bookData: scrollTypeBData, cellWidth: typeBCellWidth, leadingConstant: leadingMargin)
+        switch dataType {
+        case .typeB(let scrollTypeBViewCellData):
+            guard let cell = pagingScrollView.dequeueReusableCell(withIdentifier: scrollTypeBViewCellData.cellIdentifier, for: index) as? ScrollTypeBViewCell else {
+                return UIPagingScrollViewCell()
             }
-            guard let cell = reuseViewPool.removeFirst() as? ScrollTypeBViewCell else {
-                return ScrollTypeBViewCell.create(bookData: scrollTypeBData, cellWidth: typeBCellWidth, leadingConstant: leadingMargin)
-            }
-            cell.viewModel = scrollTypeBData
-            cell.leadingConstraint.constant = typeBCellWidth * CGFloat(indexPath.row) + leadingMargin
+            cell.interItemSpacing = pagingScrollView.layoutDelegate?.interItemSpacing
+            cell.viewModel = scrollTypeBViewCellData
             return cell
-        case .typeC(let scrollTypeCData):
-            if reuseViewPool.isEmpty {
-                return ScrollTypeCViewCell.create(bookData: scrollTypeCData, cellWidth: typeCCellWidth, leadingConstant: leadingMargin)
-            }
-            guard let cell = reuseViewPool.removeFirst() as? ScrollTypeCViewCell else {
-                return ScrollTypeCViewCell.create(bookData: scrollTypeCData, cellWidth: typeCCellWidth, leadingConstant: leadingMargin)
-            }
-            
-            cell.viewModel = scrollTypeCData
-            cell.leadingConstraint?.constant = typeBCellWidth * CGFloat(indexPath.row)
-            return cell
+        case .typeC(let scrollTypeCViewCellData):
+            print(scrollTypeCViewCellData)
+            return UIPagingScrollViewCell()
         }
     }
 }
 
-extension BookScrollCell: UIScrollViewDelegate {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) // any offset changes
-//
-//    // called on start of dragging (may require some time and or distance to move)
-//    func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
-//
-//    // called on finger up if the user dragged. velocity is in points/millisecond. targetContentOffset may be changed to adjust where the scroll view comes to rest
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
-//
-//    // called on finger up if the user dragged. decelerate is true if it will continue moving afterwards
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
-//
-//    //    @available(iOS 2.0, *)
-//    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) // called when setContentOffset/scrollRectVisible:animated: finishes. not called if not animating
-//
-//    func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView)
+extension BookScrollCell: UIPagingScrollViewLayoutDelegate {
+    // size fix
+    
+    var scrollDirection: ScrollDirection {
+        return .horizon
+    }
+    
+    var interItemSpacing: CGFloat {
+        return titleLabel.frame.origin.x
+    }
+    
+    var scrollViewContentInsets: UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: titleLabel.frame.origin.x, bottom: 0, right: titleLabel.frame.origin.x)
+    }
 }
-

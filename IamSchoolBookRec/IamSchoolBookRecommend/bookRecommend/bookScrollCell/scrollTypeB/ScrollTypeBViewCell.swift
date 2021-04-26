@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ScrollTypeBViewCell: UIView {
+class ScrollTypeBViewCell: UIPagingScrollViewCell {
     @IBOutlet private var bookImageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
@@ -16,26 +16,22 @@ class ScrollTypeBViewCell: UIView {
     @IBOutlet private var imageViewHeightConstraint: NSLayoutConstraint!
     
     private let spacingBetweenImageAndLabel: CGFloat = 20
+    private let nextItemWidth: CGFloat = 63
     private let imageWidth: CGFloat = 108
     private let imageMinHeight: CGFloat = 96
     private let imageMaxHeight: CGFloat = 156
     
-    var leadingConstant: CGFloat = 0
-    var leadingConstraint: NSLayoutConstraint = NSLayoutConstraint()
-    var centerYConstraint: NSLayoutConstraint = NSLayoutConstraint()
-    
-    private var cellWidth: CGFloat? {
-        didSet {
-            if let cellwidth = cellWidth {
-                labelWidthConstraint.constant = cellwidth - imageWidth - leadingConstant - spacingBetweenImageAndLabel
-            }
+    private var labelWidth: CGFloat? {
+        get {
+            return UIScreen.main.bounds.width - imageWidth - spacingBetweenImageAndLabel - CGFloat((interItemSpacing ?? 20) * 2) - nextItemWidth
         }
     }
-    var cellHeight: CGFloat {
-        get {
-            imageMaxHeight
-        }
-    }    
+
+    override func updateConstraints() {
+        super.updateConstraints()
+        updateImageLabelWidthConstraint()
+    }
+    
     var viewModel: ScrollTypeBViewCellData? {
         didSet {
             guard let image = viewModel?.image,
@@ -47,39 +43,16 @@ class ScrollTypeBViewCell: UIView {
             nameLabel.text = name
             descriptionLabel.text = description
             
+            alignWithSuperview = .centerY
+            maxSize = CGSize(width: 0, height: imageMaxHeight)
             updateImageHeightConstraint(size: image.size)
-            updateConstraintsIfNeeded()
+            updateConstraints()
         }
     }
-    
-    static func create(bookData: ScrollTypeBViewCellData, cellWidth: CGFloat, leadingConstant: CGFloat) -> ScrollTypeBViewCell? {
-        let className = String(String(describing: type(of:self)).split(separator: ".")[0])
-        let nib = UINib(nibName: className, bundle: Bundle.main)
-        
-        guard let view = nib.instantiate(withOwner: self, options: nil).first as? ScrollTypeBViewCell else {
-            return nil
+    private func updateImageLabelWidthConstraint() {
+        if let width = labelWidth {
+            labelWidthConstraint.constant = width
         }
-        
-        view.viewModel = bookData
-        view.leadingConstant = leadingConstant
-        view.cellWidth = cellWidth
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.updateConstraintsIfNeeded()
-        return view
-    }
-    
-    func updateData(viewModel: ScrollTypeBViewCellData, index: Int) {
-        self.viewModel = viewModel
-
-        leadingConstraint.constant = self.cellWidth! * CGFloat(index)
-    }
-    
-    func updateConstraints(leading: UIView, centerY: UIView, index: Int) {
-        self.leadingConstraint = NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: leading, attribute: .leading, multiplier: 1.0, constant: CGFloat(index) * self.cellWidth! + leadingConstant)
-        self.centerYConstraint = NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: centerY, attribute: .centerY, multiplier: 1.0, constant: 0.0)
-        self.leadingConstraint.isActive = true
-        self.centerYConstraint.isActive = true
-        self.updateConstraints()
     }
     
     private func updateImageHeightConstraint(size: CGSize) {

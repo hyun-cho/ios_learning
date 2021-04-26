@@ -8,6 +8,7 @@
 import UIKit
 
 struct ScrollTypeBViewCellData: ImageLoader {
+    let cellIdentifier = "ScrollTypeBViewCell"
     private(set) var name: String
     private(set) var description: String
     

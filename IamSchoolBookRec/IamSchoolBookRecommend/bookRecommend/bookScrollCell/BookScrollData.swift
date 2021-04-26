@@ -21,10 +21,10 @@ struct BookScrollData {
         }
     }
     
-    subscript(indexPath: IndexPath) -> BookScrollCellDataType? {
-        guard scrollViewDatas.count >= 1 && indexPath.row >= 0 && indexPath.row < scrollViewDatas.count else {
+    subscript(index: Int) -> BookScrollCellDataType? {
+        guard scrollViewDatas.count >= 1 && index >= 0 && index < scrollViewDatas.count else {
             return nil
         }
-        return scrollViewDatas[indexPath.row]
+        return scrollViewDatas[index]
     }
 }
