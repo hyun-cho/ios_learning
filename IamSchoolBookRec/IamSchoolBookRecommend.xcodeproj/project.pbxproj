@@ -30,12 +30,15 @@
 		D9862739263160A1004DA868 /* ScrollTypeBViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9862738263160A1004DA868 /* ScrollTypeBViewCellData.swift */; };
 		D986273F263160EE004DA868 /* ScrollTypeCViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986273E263160EE004DA868 /* ScrollTypeCViewCell.swift */; };
 		D9862743263160F3004DA868 /* ScrollTypeCViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9862742263160F3004DA868 /* ScrollTypeCViewCellData.swift */; };
-		D98628172633E353004DA868 /* UIPagingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98628162633E353004DA868 /* UIPagingScrollView.swift */; };
-		D986281B2633E415004DA868 /* UIPagingScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986281A2633E415004DA868 /* UIPagingScrollViewCell.swift */; };
-		D986281F2633E420004DA868 /* UIPagingScrollDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986281E2633E420004DA868 /* UIPagingScrollDataSource.swift */; };
-		D98628292633E6BE004DA868 /* UIPagingScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98628282633E6BE004DA868 /* UIPagingScrollView.xib */; };
-		D986282E263401FE004DA868 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986282D263401FE004DA868 /* ReusableView.swift */; };
-		D9862831263406A4004DA868 /* UIpagingScrollViewLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9862830263406A4004DA868 /* UIpagingScrollViewLayoutDelegate.swift */; };
+		D98628172633E353004DA868 /* PagingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98628162633E353004DA868 /* PagingScrollView.swift */; };
+		D986281B2633E415004DA868 /* PagingScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986281A2633E415004DA868 /* PagingScrollViewCell.swift */; };
+		D986281F2633E420004DA868 /* PagingScrollDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986281E2633E420004DA868 /* PagingScrollDataSource.swift */; };
+		D98628292633E6BE004DA868 /* PagingScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98628282633E6BE004DA868 /* PagingScrollView.xib */; };
+		D986282E263401FE004DA868 /* ReusableViewPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986282D263401FE004DA868 /* ReusableViewPool.swift */; };
+		D9862831263406A4004DA868 /* PagingScrollViewLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9862830263406A4004DA868 /* PagingScrollViewLayoutDelegate.swift */; };
+		D986283C2637779C004DA868 /* PagingScrollDirectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986283B2637779C004DA868 /* PagingScrollDirectionDelegate.swift */; };
+		D986283F26377B7F004DA868 /* PagingScrollDirectionHorizonalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986283E26377B7F004DA868 /* PagingScrollDirectionHorizonalDelegate.swift */; };
+		D986284326377BBE004DA868 /* PagingScrollDirectionVerticalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986284226377BBE004DA868 /* PagingScrollDirectionVerticalDelegate.swift */; };
 		D99087E8262D71850031ABAB /* BookRecommendationCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99087E7262D71850031ABAB /* BookRecommendationCellData.swift */; };
 		D99087EC262D71E10031ABAB /* BookCollectionTypeAData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99087EB262D71E10031ABAB /* BookCollectionTypeAData.swift */; };
 		D9EC9568262FB02A00BF7519 /* ButtonNavigationCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC9567262FB02A00BF7519 /* ButtonNavigationCellData.swift */; };
@@ -77,12 +80,15 @@
 		D9862738263160A1004DA868 /* ScrollTypeBViewCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTypeBViewCellData.swift; sourceTree = "<group>"; };
 		D986273E263160EE004DA868 /* ScrollTypeCViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTypeCViewCell.swift; sourceTree = "<group>"; };
 		D9862742263160F3004DA868 /* ScrollTypeCViewCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollTypeCViewCellData.swift; sourceTree = "<group>"; };
-		D98628162633E353004DA868 /* UIPagingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPagingScrollView.swift; sourceTree = "<group>"; };
-		D986281A2633E415004DA868 /* UIPagingScrollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPagingScrollViewCell.swift; sourceTree = "<group>"; };
-		D986281E2633E420004DA868 /* UIPagingScrollDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPagingScrollDataSource.swift; sourceTree = "<group>"; };
-		D98628282633E6BE004DA868 /* UIPagingScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIPagingScrollView.xib; sourceTree = "<group>"; };
-		D986282D263401FE004DA868 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
-		D9862830263406A4004DA868 /* UIpagingScrollViewLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIpagingScrollViewLayoutDelegate.swift; sourceTree = "<group>"; };
+		D98628162633E353004DA868 /* PagingScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollView.swift; sourceTree = "<group>"; };
+		D986281A2633E415004DA868 /* PagingScrollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollViewCell.swift; sourceTree = "<group>"; };
+		D986281E2633E420004DA868 /* PagingScrollDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollDataSource.swift; sourceTree = "<group>"; };
+		D98628282633E6BE004DA868 /* PagingScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PagingScrollView.xib; sourceTree = "<group>"; };
+		D986282D263401FE004DA868 /* ReusableViewPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewPool.swift; sourceTree = "<group>"; };
+		D9862830263406A4004DA868 /* PagingScrollViewLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollViewLayoutDelegate.swift; sourceTree = "<group>"; };
+		D986283B2637779C004DA868 /* PagingScrollDirectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollDirectionDelegate.swift; sourceTree = "<group>"; };
+		D986283E26377B7F004DA868 /* PagingScrollDirectionHorizonalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollDirectionHorizonalDelegate.swift; sourceTree = "<group>"; };
+		D986284226377BBE004DA868 /* PagingScrollDirectionVerticalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollDirectionVerticalDelegate.swift; sourceTree = "<group>"; };
 		D99087E7262D71850031ABAB /* BookRecommendationCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRecommendationCellData.swift; sourceTree = "<group>"; };
 		D99087EB262D71E10031ABAB /* BookCollectionTypeAData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionTypeAData.swift; sourceTree = "<group>"; };
 		D9EC9567262FB02A00BF7519 /* ButtonNavigationCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNavigationCellData.swift; sourceTree = "<group>"; };
@@ -242,14 +248,33 @@
 		D98628192633E403004DA868 /* pagingScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				D98628162633E353004DA868 /* UIPagingScrollView.swift */,
-				D98628282633E6BE004DA868 /* UIPagingScrollView.xib */,
-				D986281A2633E415004DA868 /* UIPagingScrollViewCell.swift */,
-				D986281E2633E420004DA868 /* UIPagingScrollDataSource.swift */,
-				D9862830263406A4004DA868 /* UIpagingScrollViewLayoutDelegate.swift */,
-				D986282D263401FE004DA868 /* ReusableView.swift */,
+				D986284A26378043004DA868 /* delegate */,
+				D986284926378038004DA868 /* datasource */,
+				D98628162633E353004DA868 /* PagingScrollView.swift */,
+				D98628282633E6BE004DA868 /* PagingScrollView.xib */,
+				D986281A2633E415004DA868 /* PagingScrollViewCell.swift */,
+				D986282D263401FE004DA868 /* ReusableViewPool.swift */,
 			);
 			path = pagingScrollView;
+			sourceTree = "<group>";
+		};
+		D986284926378038004DA868 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				D986281E2633E420004DA868 /* PagingScrollDataSource.swift */,
+			);
+			path = datasource;
+			sourceTree = "<group>";
+		};
+		D986284A26378043004DA868 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D9862830263406A4004DA868 /* PagingScrollViewLayoutDelegate.swift */,
+				D986283B2637779C004DA868 /* PagingScrollDirectionDelegate.swift */,
+				D986283E26377B7F004DA868 /* PagingScrollDirectionHorizonalDelegate.swift */,
+				D986284226377BBE004DA868 /* PagingScrollDirectionVerticalDelegate.swift */,
+			);
+			path = delegate;
 			sourceTree = "<group>";
 		};
 		D9EC9561262ED00F00BF7519 /* util */ = {
@@ -332,7 +357,7 @@
 				D97929D82628289D005E6D88 /* LaunchScreen.storyboard in Resources */,
 				D9EC958E2630048600BF7519 /* NavigationButton.xib in Resources */,
 				D986273026316076004DA868 /* ScrollTypeBViewCell.xib in Resources */,
-				D98628292633E6BE004DA868 /* UIPagingScrollView.xib in Resources */,
+				D98628292633E6BE004DA868 /* PagingScrollView.xib in Resources */,
 				D97929D52628289D005E6D88 /* Assets.xcassets in Resources */,
 				D97929D32628289B005E6D88 /* Main.storyboard in Resources */,
 			);
@@ -352,8 +377,8 @@
 				D9792A732629FDC6005E6D88 /* BookGuideData.swift in Sources */,
 				D99087EC262D71E10031ABAB /* BookCollectionTypeAData.swift in Sources */,
 				D9EC959526300A3500BF7519 /* NavigationButtonData.swift in Sources */,
-				D9862831263406A4004DA868 /* UIpagingScrollViewLayoutDelegate.swift in Sources */,
-				D986281F2633E420004DA868 /* UIPagingScrollDataSource.swift in Sources */,
+				D9862831263406A4004DA868 /* PagingScrollViewLayoutDelegate.swift in Sources */,
+				D986281F2633E420004DA868 /* PagingScrollDataSource.swift in Sources */,
 				D97929CC2628289B005E6D88 /* AppDelegate.swift in Sources */,
 				D9EC959B263142B200BF7519 /* BookScrapCell.swift in Sources */,
 				D9EC958B262FDE8700BF7519 /* ServerDataStore.swift in Sources */,
@@ -362,20 +387,23 @@
 				D9792A93262D4A27005E6D88 /* StandCollectionViewCell.swift in Sources */,
 				D9862743263160F3004DA868 /* ScrollTypeCViewCellData.swift in Sources */,
 				D9792A702629FBCA005E6D88 /* BookGuideCell.swift in Sources */,
-				D98628172633E353004DA868 /* UIPagingScrollView.swift in Sources */,
+				D98628172633E353004DA868 /* PagingScrollView.swift in Sources */,
 				D9EC95A0263142FE00BF7519 /* BookScrapData.swift in Sources */,
 				D986272D2631605F004DA868 /* BookScrollData.swift in Sources */,
 				D9792A6126293575005E6D88 /* ServerDataSourceStore.swift in Sources */,
 				D9792A6A2629A0A4005E6D88 /* BookCollectionTypeACell.swift in Sources */,
 				D97929CE2628289B005E6D88 /* SceneDelegate.swift in Sources */,
 				D9EC9592263009B400BF7519 /* NavigationButton.swift in Sources */,
-				D986281B2633E415004DA868 /* UIPagingScrollViewCell.swift in Sources */,
+				D986281B2633E415004DA868 /* PagingScrollViewCell.swift in Sources */,
 				D986273F263160EE004DA868 /* ScrollTypeCViewCell.swift in Sources */,
-				D986282E263401FE004DA868 /* ReusableView.swift in Sources */,
+				D986282E263401FE004DA868 /* ReusableViewPool.swift in Sources */,
+				D986283C2637779C004DA868 /* PagingScrollDirectionDelegate.swift in Sources */,
 				D9792A99262D4BA9005E6D88 /* ButtonNavigationCell.swift in Sources */,
 				D9EC95982630F84100BF7519 /* ImageLoader.swift in Sources */,
 				D9792A5E262934DB005E6D88 /* StandCollectionViewCellData.swift in Sources */,
+				D986284326377BBE004DA868 /* PagingScrollDirectionVerticalDelegate.swift in Sources */,
 				D99087E8262D71850031ABAB /* BookRecommendationCellData.swift in Sources */,
+				D986283F26377B7F004DA868 /* PagingScrollDirectionHorizonalDelegate.swift in Sources */,
 				D9EC9580262FD5AA00BF7519 /* StandSlidingData.swift in Sources */,
 				D97929E52628328E005E6D88 /* StandSlidingCell.swift in Sources */,
 				D986272A26316058004DA868 /* BookScrollCell.swift in Sources */,

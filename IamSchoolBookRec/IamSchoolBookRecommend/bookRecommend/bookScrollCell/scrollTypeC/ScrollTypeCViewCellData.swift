@@ -8,6 +8,7 @@
 import UIKit
 
 struct ScrollTypeCViewCellData: ImageLoader {
+    let cellIdentifier = "ScrollTypeCViewCell"
     private(set) var name: String
     private(set) var image: UIImage?
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ScrollTypeBViewCell: UIPagingScrollViewCell {
+class ScrollTypeBViewCell: PagingScrollViewCell {
     @IBOutlet private var bookImageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
@@ -20,42 +20,36 @@ class ScrollTypeBViewCell: UIPagingScrollViewCell {
     private let imageWidth: CGFloat = 108
     private let imageMinHeight: CGFloat = 96
     private let imageMaxHeight: CGFloat = 156
-    
-    private var labelWidth: CGFloat? {
-        get {
-            return UIScreen.main.bounds.width - imageWidth - spacingBetweenImageAndLabel - CGFloat((interItemSpacing ?? 20) * 2) - nextItemWidth
-        }
-    }
+    private let labelWidth: CGFloat = 156
 
     override func updateConstraints() {
         super.updateConstraints()
         updateImageLabelWidthConstraint()
     }
     
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     var viewModel: ScrollTypeBViewCellData? {
         didSet {
-            guard let image = viewModel?.image,
-                  let name = viewModel?.name,
-                  let description = viewModel?.description else {
-                return
-            }
-            bookImageView.image = image
-            nameLabel.text = name
-            descriptionLabel.text = description
+            bookImageView.image = viewModel?.image
+            nameLabel.text = viewModel?.name
+            descriptionLabel.text = viewModel?.description
             
-            alignWithSuperview = .centerY
-            maxSize = CGSize(width: 0, height: imageMaxHeight)
-            updateImageHeightConstraint(size: image.size)
+            alignWith = .centerY
+            updateImageHeightConstraint()
             updateConstraints()
         }
     }
     private func updateImageLabelWidthConstraint() {
-        if let width = labelWidth {
-            labelWidthConstraint.constant = width
-        }
+        labelWidthConstraint.constant = labelWidth
     }
     
-    private func updateImageHeightConstraint(size: CGSize) {
+    private func updateImageHeightConstraint() {
+        guard let size = viewModel?.image?.size else {
+            return
+        }
         var newHeight = size.height / size.width * imageWidth
         if newHeight < imageMinHeight {
             newHeight = imageMinHeight

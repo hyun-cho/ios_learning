@@ -7,14 +7,13 @@
 
 import UIKit
 
-// pool -> generic
-public protocol ReusableView {
-    var reuseViewPool: [UIView] { get set }
+public protocol ReusableViewPool {
+    var reuseViewPool: [PagingScrollViewCell] { get set }
     var registeredNib: [String: UINib?] { get set }
     var registeredCell: [String: AnyClass?] { get set }
 }
 
-extension ReusableView {
+extension ReusableViewPool {
     mutating func register(_ cellClass: AnyClass?, forCellWithReuseIdentifier identifier: String){
         self.registeredCell.updateValue(cellClass, forKey: identifier)
     }
