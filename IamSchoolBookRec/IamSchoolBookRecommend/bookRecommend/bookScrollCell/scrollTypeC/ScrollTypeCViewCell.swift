@@ -27,7 +27,6 @@ class ScrollTypeCViewCell: PagingScrollViewCell {
             bookImageView.image = viewModel?.image
             nameLabel.text = viewModel?.name
             
-            alignWith = .bottom
             updateImageHeightConstraint()
             updateConstraintsIfNeeded()
         }

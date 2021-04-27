@@ -37,7 +37,6 @@ class ScrollTypeBViewCell: PagingScrollViewCell {
             nameLabel.text = viewModel?.name
             descriptionLabel.text = viewModel?.description
             
-            alignWith = .centerY
             updateImageHeightConstraint()
             updateConstraints()
         }

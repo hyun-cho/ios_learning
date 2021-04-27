@@ -13,7 +13,6 @@ public class PagingScrollViewCell: UIView {
     }
     
     open var alignWith: NSLayoutConstraint.Attribute?
-    open var interItemSpacing: CGFloat?
     open var index: Int?
     
     weak open var alignConstraint: NSLayoutConstraint?

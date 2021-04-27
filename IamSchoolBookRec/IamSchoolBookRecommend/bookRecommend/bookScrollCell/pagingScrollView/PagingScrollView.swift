@@ -61,10 +61,10 @@ extension PagingScrollView {
         self.dataSource?.pagingScrollView(self, numberOfItems: 0) ?? 0
     }
     var cellSize: CGSize {
-        self.layoutDelegate?.pagingScrollView(self, cellSize: CGSize(), index: 0) ?? CGSize()
+        self.layoutDelegate?.pagingScrollView(self, cellSize: CGSize(), index: 0) ?? CGSize(width: 0, height: 0)
     }
     var interItemSpacing: CGFloat {
-        self.layoutDelegate?.pagingScrollView(self, interItemSpacing: 20) ?? 20
+        self.layoutDelegate?.pagingScrollView(self, interItemSpacing: 20) ?? 0
     }
     var scrollViewContentInsets: UIEdgeInsets {
         self.layoutDelegate?.pagingScrollView(self, contentInsets: UIEdgeInsets()) ?? UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -160,19 +160,33 @@ extension PagingScrollView {
                   let alignWith = cell.alignWith else {
                 return
             }
-            let positionConstraint = self.directionDelegate?.positionConstraint(self, cell: cell, index: index)
-            positionConstraint?.isActive = true
-            cell.positionConstraint = positionConstraint
-            
-            let alignConstraint = NSLayoutConstraint(item: cell, attribute: alignWith, relatedBy: .equal, toItem: contentView, attribute: alignWith, multiplier: 1.0, constant: 0.0)
-            alignConstraint.isActive = true
-            cell.alignConstraint = alignConstraint
+            if cell.positionConstraint == nil {
+                let positionConstraint = self.directionDelegate?.positionConstraint(self, cell: cell, index: index)
+                positionConstraint?.isActive = true
+                cell.positionConstraint = positionConstraint
+            }
+            if cell.alignConstraint == nil {
+                let alignConstraint = NSLayoutConstraint(item: cell, attribute: alignWith, relatedBy: .equal, toItem: contentView, attribute: alignWith, multiplier: 1.0, constant: 0.0)
+                alignConstraint.isActive = true
+                cell.alignConstraint = alignConstraint
+            }
         })
     }
 }
 
+// scroll paging 구현
+extension PagingScrollView: UIScrollViewDelegate {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updateSubviewsFromCurrentOffset()
+    }
+    
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//        targetContentOffset.pointee = scrollView.contentOffset
+    }
+}
+
 // 재사용 로직
-extension PagingScrollView: ReusableViewPool {
+extension PagingScrollView {
     // reusableCell을 가져온다. 없을시 생성한다.
     func dequeueReusableCell(withIdentifier: String, for index: Int) -> UIView? {
         if reuseViewPool.first == nil {
@@ -204,48 +218,6 @@ extension PagingScrollView: ReusableViewPool {
     }
 }
 
-// scroll paging 구현
-extension PagingScrollView: UIScrollViewDelegate {
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        updateSubviewsFromCurrentOffset()
-    }
-    
-    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        targetContentOffset.pointee = scrollView.contentOffset
-    }
-    
-    
+// 재사용 로직을 위해 RegisterNibOrClass 프로토콜에 정의된 register() 메서드를 사용가능하다.
+extension PagingScrollView: RegisterNibOrClass {
 }
-
-//// 스펙 아웃
-//extension PagingScrollView {
-//    // spec out
-//    private var scrollStartPage: Int = 0 {
-//        didSet {
-//            if scrollStartPage < 0 {
-//                scrollStartPage = 0
-//            }
-//            if let numberOfItems = dataSource?.scrollViewNumberOfItems(self) {
-//                if scrollStartPage >= numberOfItems {
-//                    scrollStartPage = numberOfItems
-//                }
-//            }
-//        }
-//    }
-//
-//    // PagingScrollView
-//    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        if abs(scrollView.contentOffset.x - CGFloat(scrollStartPage) * itemWidth) < 10 {
-//            scrollView.setContentOffset(CGPoint(x: CGFloat(scrollStartPage) * itemWidth + layoutDelegate.scrollViewContentInsets.left, y: 0), animated: true)
-//        }
-//        else if scrollView.contentOffset.x > CGFloat(scrollStartPage) * itemWidth {
-//            scrollStartPage = Int(ceil(scrollView.contentOffset.x / itemWidth))
-//        }
-//        else if scrollView.contentOffset.x < CGFloat(scrollStartPage) * itemWidth {
-//            scrollStartPage = Int(floor(scrollView.contentOffset.x / itemWidth))
-//        }
-//        scrollView.setContentOffset(CGPoint(x: CGFloat(scrollStartPage) * itemWidth - layoutDelegate.scrollViewContentInsets.left, y: 0), animated: true)
-//        reloadData()
-//    }
-
-//}

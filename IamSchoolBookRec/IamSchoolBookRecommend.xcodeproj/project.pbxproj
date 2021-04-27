@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D94D66062637F9D00026BAD4 /* ReusableViewPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94D66052637F9D00026BAD4 /* ReusableViewPool.swift */; };
 		D97929CC2628289B005E6D88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97929CB2628289B005E6D88 /* AppDelegate.swift */; };
 		D97929CE2628289B005E6D88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97929CD2628289B005E6D88 /* SceneDelegate.swift */; };
 		D97929D32628289B005E6D88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D97929D12628289B005E6D88 /* Main.storyboard */; };
@@ -34,7 +35,7 @@
 		D986281B2633E415004DA868 /* PagingScrollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986281A2633E415004DA868 /* PagingScrollViewCell.swift */; };
 		D986281F2633E420004DA868 /* PagingScrollDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986281E2633E420004DA868 /* PagingScrollDataSource.swift */; };
 		D98628292633E6BE004DA868 /* PagingScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98628282633E6BE004DA868 /* PagingScrollView.xib */; };
-		D986282E263401FE004DA868 /* ReusableViewPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986282D263401FE004DA868 /* ReusableViewPool.swift */; };
+		D986282E263401FE004DA868 /* RegisterNibOrClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986282D263401FE004DA868 /* RegisterNibOrClass.swift */; };
 		D9862831263406A4004DA868 /* PagingScrollViewLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9862830263406A4004DA868 /* PagingScrollViewLayoutDelegate.swift */; };
 		D986283C2637779C004DA868 /* PagingScrollDirectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986283B2637779C004DA868 /* PagingScrollDirectionDelegate.swift */; };
 		D986283F26377B7F004DA868 /* PagingScrollDirectionHorizonalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986283E26377B7F004DA868 /* PagingScrollDirectionHorizonalDelegate.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D94D66052637F9D00026BAD4 /* ReusableViewPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewPool.swift; sourceTree = "<group>"; };
 		D97929C82628289B005E6D88 /* IamSchoolBookRecommend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IamSchoolBookRecommend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97929CB2628289B005E6D88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D97929CD2628289B005E6D88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +86,7 @@
 		D986281A2633E415004DA868 /* PagingScrollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollViewCell.swift; sourceTree = "<group>"; };
 		D986281E2633E420004DA868 /* PagingScrollDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollDataSource.swift; sourceTree = "<group>"; };
 		D98628282633E6BE004DA868 /* PagingScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PagingScrollView.xib; sourceTree = "<group>"; };
-		D986282D263401FE004DA868 /* ReusableViewPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewPool.swift; sourceTree = "<group>"; };
+		D986282D263401FE004DA868 /* RegisterNibOrClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNibOrClass.swift; sourceTree = "<group>"; };
 		D9862830263406A4004DA868 /* PagingScrollViewLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollViewLayoutDelegate.swift; sourceTree = "<group>"; };
 		D986283B2637779C004DA868 /* PagingScrollDirectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollDirectionDelegate.swift; sourceTree = "<group>"; };
 		D986283E26377B7F004DA868 /* PagingScrollDirectionHorizonalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollDirectionHorizonalDelegate.swift; sourceTree = "<group>"; };
@@ -253,7 +255,8 @@
 				D98628162633E353004DA868 /* PagingScrollView.swift */,
 				D98628282633E6BE004DA868 /* PagingScrollView.xib */,
 				D986281A2633E415004DA868 /* PagingScrollViewCell.swift */,
-				D986282D263401FE004DA868 /* ReusableViewPool.swift */,
+				D986282D263401FE004DA868 /* RegisterNibOrClass.swift */,
+				D94D66052637F9D00026BAD4 /* ReusableViewPool.swift */,
 			);
 			path = pagingScrollView;
 			sourceTree = "<group>";
@@ -395,8 +398,9 @@
 				D97929CE2628289B005E6D88 /* SceneDelegate.swift in Sources */,
 				D9EC9592263009B400BF7519 /* NavigationButton.swift in Sources */,
 				D986281B2633E415004DA868 /* PagingScrollViewCell.swift in Sources */,
+				D94D66062637F9D00026BAD4 /* ReusableViewPool.swift in Sources */,
 				D986273F263160EE004DA868 /* ScrollTypeCViewCell.swift in Sources */,
-				D986282E263401FE004DA868 /* ReusableViewPool.swift in Sources */,
+				D986282E263401FE004DA868 /* RegisterNibOrClass.swift in Sources */,
 				D986283C2637779C004DA868 /* PagingScrollDirectionDelegate.swift in Sources */,
 				D9792A99262D4BA9005E6D88 /* ButtonNavigationCell.swift in Sources */,
 				D9EC95982630F84100BF7519 /* ImageLoader.swift in Sources */,

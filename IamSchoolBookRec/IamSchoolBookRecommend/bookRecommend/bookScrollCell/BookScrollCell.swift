@@ -48,21 +48,21 @@ extension BookScrollCell: PagingScrollDataSource {
             guard let cell = pagingScrollView.dequeueReusableCell(withIdentifier: scrollTypeBViewCellData.cellIdentifier, for: index) as? ScrollTypeBViewCell else {
                 return PagingScrollViewCell()
             }
-            cell.interItemSpacing = pagingScrollView.interItemSpacing
+            cell.alignWith = .centerY
             cell.viewModel = scrollTypeBViewCellData
             return cell
         case .typeC(let scrollTypeCViewCellData):
             guard let cell = pagingScrollView.dequeueReusableCell(withIdentifier: scrollTypeCViewCellData.cellIdentifier, for: index) as? ScrollTypeCViewCell else {
                 return PagingScrollViewCell()
             }
-            cell.interItemSpacing = pagingScrollView.interItemSpacing
+            cell.alignWith = .top
             cell.viewModel = scrollTypeCViewCellData
             return cell
         }
     }
 }
 
-extension BookScrollCell: PagingScrollViewLayoutDelegate, PagingScrollDirectionVerticalDelegate {
+extension BookScrollCell: PagingScrollViewLayoutDelegate, PagingScrollDirectionHorizonalDelegate {
     func pagingScrollView(_ pagingScrollView: PagingScrollView, cellSize: CGSize?, index forIndex: Int) -> CGSize {
         guard let dataType = viewModel?[forIndex] else {
             return CGSize(width: 0, height: 0)

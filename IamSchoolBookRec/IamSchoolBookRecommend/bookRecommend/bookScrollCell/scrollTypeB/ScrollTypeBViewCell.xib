@@ -9,14 +9,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="OU5-88-hMf" customClass="ScrollTypeBViewCell" customModule="IamSchoolBookRecommend" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="389" height="162"/>
+            <rect key="frame" x="0.0" y="0.0" width="389" height="273"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gAT-Tg-z9Q">
-                    <rect key="frame" x="0.0" y="0.0" width="389" height="162"/>
+                    <rect key="frame" x="0.0" y="0.0" width="389" height="273"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fPG-YP-GLW">
-                            <rect key="frame" x="0.0" y="3" width="108" height="156"/>
+                            <rect key="frame" x="0.0" y="58.5" width="108" height="156"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="156" id="0g3-wx-GTr"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="96" id="2tN-9D-jQD"/>
@@ -25,7 +25,7 @@
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="H6G-qw-cu6">
-                            <rect key="frame" x="128" y="15" width="261" height="132"/>
+                            <rect key="frame" x="128" y="70.5" width="261" height="132"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이의 공부 태도가 바뀌는 하루 한 줄 인문학" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do4-61-QDh">
                                     <rect key="frame" x="0.0" y="0.0" width="261" height="45.5"/>
@@ -48,12 +48,17 @@
                             </constraints>
                         </stackView>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="H6G-qw-cu6" firstAttribute="height" relation="lessThanOrEqual" secondItem="gAT-Tg-z9Q" secondAttribute="height" id="422-UR-wD0"/>
+                        <constraint firstItem="fPG-YP-GLW" firstAttribute="height" relation="lessThanOrEqual" secondItem="gAT-Tg-z9Q" secondAttribute="height" id="iYe-BM-tep"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <constraints>
                 <constraint firstItem="gAT-Tg-z9Q" firstAttribute="top" secondItem="OU5-88-hMf" secondAttribute="top" id="2vb-Gn-LCx"/>
                 <constraint firstAttribute="trailing" secondItem="gAT-Tg-z9Q" secondAttribute="trailing" id="5Al-G6-Qnw"/>
                 <constraint firstItem="gAT-Tg-z9Q" firstAttribute="leading" secondItem="OU5-88-hMf" secondAttribute="leading" id="R5B-pA-9q9"/>
+                <constraint firstAttribute="height" secondItem="gAT-Tg-z9Q" secondAttribute="height" id="Tho-3c-Sfz"/>
                 <constraint firstAttribute="bottom" secondItem="gAT-Tg-z9Q" secondAttribute="bottom" id="mqH-mi-cIc"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
@@ -66,7 +71,7 @@
                 <outlet property="labelWidthConstraint" destination="gWJ-1n-UWq" id="5w1-5f-hLT"/>
                 <outlet property="nameLabel" destination="Do4-61-QDh" id="sPd-JI-tm9"/>
             </connections>
-            <point key="canvasLocation" x="-458.69565217391306" y="-760.04464285714278"/>
+            <point key="canvasLocation" x="-458.69565217391306" y="-797.20982142857144"/>
         </view>
     </objects>
 </document>

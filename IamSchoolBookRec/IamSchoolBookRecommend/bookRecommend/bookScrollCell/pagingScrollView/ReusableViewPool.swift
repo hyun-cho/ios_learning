@@ -1,24 +1,12 @@
 //
-//  ReusableView.swift
+//  ReusableViewPool.swift
 //  IamSchoolBookRecommend
 //
-//  Created by NHN on 2021/04/24.
+//  Created by NHN on 2021/04/27.
 //
 
 import UIKit
 
-public protocol ReusableViewPool {
-    var reuseViewPool: [PagingScrollViewCell] { get set }
-    var registeredNib: [String: UINib?] { get set }
-    var registeredCell: [String: AnyClass?] { get set }
-}
-
-extension ReusableViewPool {
-    mutating func register(_ cellClass: AnyClass?, forCellWithReuseIdentifier identifier: String){
-        self.registeredCell.updateValue(cellClass, forKey: identifier)
-    }
-
-    mutating func register(_ nib: UINib?, forCellWithReuseIdentifier identifier: String) {
-        self.registeredNib.updateValue(nib, forKey: identifier)
-    }
+public class ReusableViewPool<T> {
+    var reuseViewPool: [T] = [T]()
 }
