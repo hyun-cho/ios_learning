@@ -30,6 +30,7 @@ extension PagingScrollDirectionHorizonalDelegate {
         let cellSize = pagingScrollView.cellSize
         return Int(floor(pagingScrollView.contentOffset.x / (cellSize.width + interItemSpacing)))
     }
+    
     public func endIndexOfCurrentContentOffset(_ pagingScrollView: PagingScrollView) -> Int {
         let interItemSpacing = pagingScrollView.interItemSpacing
         let cellSize = pagingScrollView.cellSize

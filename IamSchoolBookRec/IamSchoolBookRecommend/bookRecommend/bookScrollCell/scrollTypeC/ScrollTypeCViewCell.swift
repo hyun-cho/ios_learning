@@ -16,11 +16,6 @@ class ScrollTypeCViewCell: PagingScrollViewCell {
     private let imageMinHeight: CGFloat = 96
     private let imageMaxHeight: CGFloat = 156
     private let imageWidth: CGFloat = 106
-    var cellHeight: CGFloat {
-        get {
-            imageMaxHeight + 28.5
-        }
-    }
     
     var viewModel: ScrollTypeCViewCellData? {
         didSet {

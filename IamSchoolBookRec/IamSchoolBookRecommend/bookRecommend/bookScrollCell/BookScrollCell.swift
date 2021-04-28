@@ -55,14 +55,18 @@ extension BookScrollCell: PagingScrollDataSource {
             guard let cell = pagingScrollView.dequeueReusableCell(withIdentifier: scrollTypeCViewCellData.cellIdentifier, for: index) as? ScrollTypeCViewCell else {
                 return PagingScrollViewCell()
             }
-            cell.alignWith = .top
+            cell.alignWith = .bottom
             cell.viewModel = scrollTypeCViewCellData
             return cell
         }
     }
 }
 
-extension BookScrollCell: PagingScrollViewLayoutDelegate, PagingScrollDirectionHorizonalDelegate {
+extension BookScrollCell: PagingScrollDirectionHorizonalDelegate {
+    // empty
+}
+
+extension BookScrollCell: PagingScrollViewLayoutDelegate {
     func pagingScrollView(_ pagingScrollView: PagingScrollView, cellSize: CGSize?, index forIndex: Int) -> CGSize {
         guard let dataType = viewModel?[forIndex] else {
             return CGSize(width: 0, height: 0)
@@ -71,7 +75,7 @@ extension BookScrollCell: PagingScrollViewLayoutDelegate, PagingScrollDirectionH
         case .typeB(_):
             return CGSize(width: 300, height: 162)
         case .typeC(_):
-            return CGSize(width: 106, height: 188)
+            return CGSize(width: 110, height: 184.5)
         }
         
     }

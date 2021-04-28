@@ -7,26 +7,22 @@
 
 import UIKit
 
-//hor, ver 분리
 public class PagingScrollView: UIScrollView {
-    // scrollview에 들어가는
     @IBOutlet var contentView: UIView!
     
-    // scrollDirection 조절
+    // directionDelegate에서 수정되는 속성
     @IBOutlet var contentViewEqualHeightConstraint: NSLayoutConstraint!
     @IBOutlet var contentViewEqualWidthConstraint: NSLayoutConstraint!
-    
-    // constraint를 통해 contentSize를 조정한다.
     @IBOutlet var contentViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var contentViewWidthConstraint: NSLayoutConstraint!
     
-    // reusable protocol 변수 구현
-    public var reuseViewPool: [PagingScrollViewCell] = [PagingScrollViewCell]()
+    // register protocol 변수 구현
     public var registeredNib: [String: UINib?] = [String: UINib?]()
     public var registeredCell: [String: AnyClass?] = [String: AnyClass?]()
     
-    // 현재 뷰에 노출되는 Cell 목록
-    private var presentedViewPool: [PagingScrollViewCell]?
+    // reusable을 사용해 reuse와 presented View Poll 표현
+    public var reuseViewPool: ReusableViewPool<PagingScrollViewCell> = ReusableViewPool<PagingScrollViewCell>()
+    private var presentedViewPool: ReusableViewPool<PagingScrollViewCell>?
     
     weak public var layoutDelegate: PagingScrollViewLayoutDelegate?
     weak public var directionDelegate: PagingScrollDirectionDelegate?
@@ -40,6 +36,11 @@ public class PagingScrollView: UIScrollView {
     public override func updateConstraints() {
         super.updateConstraints()
         updateSubviewsConstraints()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        updateSubviewsFromCurrentOffset()
     }
     
     public func reloadData() {
@@ -83,7 +84,7 @@ extension PagingScrollView {
             $0.removeFromSuperview()
         })
         if self.presentedViewPool == nil {
-            self.presentedViewPool = [PagingScrollViewCell]()
+            self.presentedViewPool = ReusableViewPool<PagingScrollViewCell>()
         }
         else {
             self.presentedViewPool?.removeAll()
@@ -102,9 +103,7 @@ extension PagingScrollView {
                 reuseViewPool.append(cell)
             }
         })
-        presentedViewPool?.removeAll(where: {
-            $0 === target
-        })
+        presentedViewPool?.remove(element: target)
     }
     
     private func updateScrollDirection() {
@@ -120,20 +119,22 @@ extension PagingScrollView {
         let startIndex = directionDelegate?.startIndexOfCurrentContentOffset(self) ?? 0
         let endIndex = directionDelegate?.endIndexOfCurrentContentOffset(self) ?? 0
         
-        // 매 point 계산을 하되, 해당 셀만 그때그때 구현.
+        guard startIndex <= endIndex else {
+            fatalError("index out of range in \(#function)")
+        }
         print("index from \(startIndex) to \(endIndex)")
         print("presentedViewCount \(presentedViewPool!.count)")
         print("reusePoolcount \(reuseViewPool.count)")
         for index in 0..<numberOfItems {
             switch index {
             case startIndex...endIndex:
-                if let notInPresent = presentedViewPool?.filter({ $0.index == index }).isEmpty,
-                   notInPresent {
+                guard let _ = presentedViewPool?[index] else {
                     appendView(index: index)
                     print("Appended \(index)")
+                    continue
                 }
             default:
-                guard let cell = presentedViewPool?.filter({ $0.index == index }).first else {
+                guard let cell = presentedViewPool?[index] else {
                     continue
                 }
                 removeSubview(cell: cell)

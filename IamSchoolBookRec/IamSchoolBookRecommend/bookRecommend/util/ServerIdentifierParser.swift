@@ -60,14 +60,19 @@ class ServerIdentifierParser {
             let bookScrapData = BookScrapData(title: "스크랩한 책/책 이야기", book: BookScrapData.Book(name: "이유가 있어서 멸종했습니다.", description: "세상에서 가장 재미있는 멸종 동물 도감 1 세상에서 가장 재미있는 멸종 동물 도감 2 세상에서 가장 재미있는 멸종 동물 도감 3 세상에서 가장 재미있는 멸종 동물 도감 4 세상에서 가장 재미있는 멸종 동물 도감 5", remoteURL: "https://images-na.ssl-images-amazon.com/images/I/41Q3VqCFCkL._SX322_BO1,204,203,200_.jpg"))
             return BookRecommendationCellData.bookScrapData(bookScrapData)
         case .bookScrollTypeB:
-            let bookScrollTypeBData = BookScrollData(title: "테마 추천", scrollViewDatas: [
+            let typeBDatas: [BookScrollData.BookScrollCellDataType] = [
                 .typeB(ScrollTypeBViewCellData(name: "이유가 있어서 멸종 했습니다. 0", description: "세상에서 가장 재미있는 멸종 동물 도감 0", remoteURL: "https://images-na.ssl-images-amazon.com/images/I/41Q3VqCFCkL._SX322_BO1,204,203,200_.jpg")),
                 .typeB(ScrollTypeBViewCellData(name: "이유가 있어서 멸종 했습니다. 1", description: "세상에서 가장 재미있는 명종 동물 도감 1", remoteURL: "https://simage.kyobobook.co.kr/images/book/large/053/l9791164137053.jpg")),
                 .typeB(ScrollTypeBViewCellData(name: "이유가 있어서 멸종 했습니다. 2", description: "세상에서 가장 재미있는 멸종 동물 도감 2", remoteURL: "https://simage.kyobobook.co.kr/images/book/large/204/l9791197182204.jpg")),
                 .typeB(ScrollTypeBViewCellData(name: "이유가 있어서 멸종 했습니다. 3", description: "세상에서 가장 재미있는 멸종 동물 도감 3", remoteURL: "https://simage.kyobobook.co.kr/images/book/large/787/l9791163460787.jpg")),
                 .typeB(ScrollTypeBViewCellData(name: "이유가 있어서 멸종 했습니다. 4", description: "세상에서 가장 재미있는 멸종 동물 도감 4", remoteURL: "https://simage.kyobobook.co.kr/images/book/large/133/l9788953332133.jpg")),
                 .typeB(ScrollTypeBViewCellData(name: "이유가 있어서 멸종 했습니다. 5", description: "세상에서 가장 재미있는 멸종 동물 도감 5", remoteURL: "https://images-na.ssl-images-amazon.com/images/I/41Q3VqCFCkL._SX322_BO1,204,203,200_.jpg")),
-            ])
+            ]
+//            var resultArray: [BookScrollData.BookScrollCellDataType] = []
+//            for _ in 0...1000 {
+//                resultArray.append(contentsOf: typeBDatas)
+//            }
+            let bookScrollTypeBData = BookScrollData(title: "테마 추천", scrollViewDatas: typeBDatas)
             return BookRecommendationCellData.bookScrollData(bookScrollTypeBData)
         case .bookScrollTypeC:
             let bookScrollTypeCData = BookScrollData(title: "도서 랭킹", scrollViewDatas: [
