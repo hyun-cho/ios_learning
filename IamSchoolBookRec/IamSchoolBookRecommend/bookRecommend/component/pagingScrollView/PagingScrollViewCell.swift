@@ -7,13 +7,14 @@
 
 import UIKit
 
-public class PagingScrollViewCell: UIView {
+public class PagingScrollViewCell: UIView, Indexable {
+    var index: Int?
+    
     public enum Align {
         case centerY, bottom
     }
     
     open var alignWith: NSLayoutConstraint.Attribute?
-    open var index: Int?
     
     weak open var alignConstraint: NSLayoutConstraint?
     weak open var positionConstraint: NSLayoutConstraint?

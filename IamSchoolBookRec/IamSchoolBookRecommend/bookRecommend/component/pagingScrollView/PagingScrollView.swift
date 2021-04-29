@@ -122,23 +122,27 @@ extension PagingScrollView {
         guard startIndex <= endIndex else {
             fatalError("index out of range in \(#function)")
         }
+        
         print("index from \(startIndex) to \(endIndex)")
         print("presentedViewCount \(presentedViewPool!.count)")
         print("reusePoolcount \(reuseViewPool.count)")
-        for index in 0..<numberOfItems {
+        presentedViewPool?.forEach({
+            guard let index = $0.index else {
+                return
+            }
             switch index {
             case startIndex...endIndex:
-                guard let _ = presentedViewPool?[index] else {
-                    appendView(index: index)
-                    print("Appended \(index)")
-                    continue
-                }
+                return
             default:
-                guard let cell = presentedViewPool?[index] else {
-                    continue
-                }
-                removeSubview(cell: cell)
+                removeSubview(cell: $0)
                 print("Removed \(index)")
+            }
+        })
+        for index in startIndex...endIndex {
+            guard let _ = presentedViewPool?[index] else {
+                appendView(index: index)
+                print("Appended \(index)")
+                continue
             }
         }
     }

@@ -8,25 +8,24 @@
 import UIKit
 
 class ServerDataSourceStore {
+    
     private(set) var serverData: [BookRecommendationCellData] = [BookRecommendationCellData]()
     
-    private var serverDataStore = ServerDataStore()
+    private var bookRecommendServerData = BookRecommendServerData(bookRecommendDataDidSet: {
+        [weak self]
+        (bookRecommendResponseDto: BookRecommendResponseDto) -> Void in
+        guard let cellData = self?.serverIdentifierParser.parse(data: bookRecommendResponseDto) else {
+            return
+        }
+        switch cellData {
+        case .none:
+            break
+        default:
+            self?.serverData.append(cellData)
+        }
+    })
     private var serverIdentifierParser = ServerIdentifierParser()
     
-    init() {
-        //TODO
-        let serverRawData: [ServerRawData] = serverDataStore.getDataFromServer()
-        
-        serverRawData.forEach({
-            let cellData = serverIdentifierParser.parse(cellType: $0.cellType , data: $0.data )
-            switch cellData {
-            case .none:
-                break
-            default:
-                serverData.append(cellData)
-            }
-        })
-    }
 }
 
 extension ServerDataSourceStore {

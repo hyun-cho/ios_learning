@@ -8,13 +8,14 @@
 import UIKit
 
 class BookRecommendTableViewController: UITableViewController {
-    fileprivate(set) var serverDataSource: ServerDataSourceStore?
+    private let bookRecommendServerData = BookRecommendServerData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // 데이터를 가져오는 부분, 추가 구현 예정
-        serverDataSource = ServerDataSourceStore()
+        bookRecommendServerData.fetchDataFromServer()
+//        bookRecommendServerData.fetchDataFromJson()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -30,12 +31,12 @@ class BookRecommendTableViewController: UITableViewController {
 extension BookRecommendTableViewController {
     // Return the number of rows for the table.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return serverDataSource?.serverData.count ?? 0
+        return bookRecommendServerData.cellDatas?.count ?? 0
     }
 
     // Provide a cell object for each row.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let bookRecommendationCellData = serverDataSource?[indexPath] else {
+        guard let bookRecommendationCellData = bookRecommendServerData[indexPath] else {
             return UITableViewCell()
         }
         switch bookRecommendationCellData {
