@@ -8,18 +8,7 @@
 import UIKit
 
 protocol ImageLoader {
-}
-extension ImageLoader {
-    func loadImage(_ remoteURL: String, completion: (UIImage) -> Void) -> Void {
-        let url = URL(string: remoteURL)
-        do {
-            let data = try Data(contentsOf: url!)
-            guard let image = UIImage(data: data) else {
-                return
-            }
-            completion(image)
-        } catch {
-            print("book image load error")
-        }
-    }
+    func loadImage(_ imageView: UIImageView, url remoteURL: String?)
+    func loadImage(_ imageView: UIImageView, url remoteURL: String?, completion: @escaping (UIImage) -> Void)
+    func cancelImage()
 }

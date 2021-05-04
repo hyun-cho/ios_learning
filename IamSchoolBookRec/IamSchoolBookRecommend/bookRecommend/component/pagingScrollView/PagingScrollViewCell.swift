@@ -16,8 +16,8 @@ public class PagingScrollViewCell: UIView, Indexable {
     
     open var alignWith: NSLayoutConstraint.Attribute?
     
-    weak open var alignConstraint: NSLayoutConstraint?
-    weak open var positionConstraint: NSLayoutConstraint?
+    weak var alignConstraint: NSLayoutConstraint?
+    weak var positionConstraint: NSLayoutConstraint?
     
     public func removeConstraints() {
         self.positionConstraint?.isActive = false

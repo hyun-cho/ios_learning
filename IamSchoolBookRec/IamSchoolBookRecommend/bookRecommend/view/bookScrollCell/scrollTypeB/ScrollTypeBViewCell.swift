@@ -22,6 +22,8 @@ class ScrollTypeBViewCell: PagingScrollViewCell {
     private let imageMaxHeight: CGFloat = 156
     private let labelWidth: CGFloat = 156
 
+    private let imageLoader: ImageLoader = ImageLoaderKf()
+    
     override func updateConstraints() {
         super.updateConstraints()
         updateImageLabelWidthConstraint()
@@ -33,11 +35,15 @@ class ScrollTypeBViewCell: PagingScrollViewCell {
     
     var viewModel: ScrollTypeBViewCellData? {
         didSet {
-            bookImageView.image = viewModel?.image
+            imageLoader.loadImage(bookImageView, url: viewModel?.remoteURL) {
+                [weak self]
+                (image) -> Void in
+                self?.updateImageHeightConstraint(size: image.size)
+            }
             nameLabel.text = viewModel?.name
             descriptionLabel.text = viewModel?.description
             
-            updateImageHeightConstraint()
+            
             updateConstraints()
         }
     }
@@ -45,10 +51,7 @@ class ScrollTypeBViewCell: PagingScrollViewCell {
         labelWidthConstraint.constant = labelWidth
     }
     
-    private func updateImageHeightConstraint() {
-        guard let size = viewModel?.image?.size else {
-            return
-        }
+    private func updateImageHeightConstraint(size: CGSize) {
         var newHeight = size.height / size.width * imageWidth
         if newHeight < imageMinHeight {
             newHeight = imageMinHeight

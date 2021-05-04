@@ -16,7 +16,6 @@ class BookScrollCell: UITableViewCell {
     
     var viewModel: BookScrollData? {
         didSet {
-            print("pagingscrollview viewmodel updated")
             titleLabel.text = viewModel?.title
             bookScrollView.reloadData()
         }

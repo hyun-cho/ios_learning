@@ -7,16 +7,12 @@
 
 import UIKit
 
-struct NavigationButtonData: ImageLoader {
+struct NavigationButtonData {
     private(set) var title: String
-    private(set) var image: UIImage?
+    private(set) var remoteURL: String
     
     init(title: String, remoteURL: String) {
         self.title = title
-        
-        loadImage(remoteURL) {
-            (imageResult) -> Void in
-            image = imageResult
-        }
+        self.remoteURL = remoteURL
     }
 }

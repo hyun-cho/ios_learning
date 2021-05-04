@@ -4,26 +4,27 @@
 //
 //  Created by NHN on 2021/04/15.
 //
+//  MVI
 
 import UIKit
 
 class BookRecommendTableViewController: UITableViewController {
-    private let bookRecommendServerData = BookRecommendServerData()
+    private var serverDataSource: ServerDataSource = ServerDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 데이터를 가져오는 부분, 추가 구현 예정
-        bookRecommendServerData.fetchDataFromServer()
-//        bookRecommendServerData.fetchDataFromJson()
-        
+        serverDataSource.fetchCellDatas {
+            [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
         tableView.dataSource = self
         tableView.delegate = self
         
         tableView.rowHeight = UITableView.automaticDimension
         
         navigationController?.navigationItem.backBarButtonItem?.tintColor = .black
-        tableView.reloadData()
     }
 }
 
@@ -31,12 +32,12 @@ class BookRecommendTableViewController: UITableViewController {
 extension BookRecommendTableViewController {
     // Return the number of rows for the table.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookRecommendServerData.cellDatas?.count ?? 0
+        return serverDataSource.cellDataCount
     }
 
     // Provide a cell object for each row.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let bookRecommendationCellData = bookRecommendServerData[indexPath] else {
+        guard let bookRecommendationCellData = serverDataSource[indexPath] else {
             return UITableViewCell()
         }
         switch bookRecommendationCellData {
@@ -52,11 +53,11 @@ extension BookRecommendTableViewController {
             }
             cell.viewModel = buttonNavigationData
             return cell
-        case .bookCollectionTypeAData(let bookCollectionTypeAData):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: bookCollectionTypeAData.cellIdentifier, for: indexPath) as? BookCollectionTypeACell else {
+        case .bookCollectionData(let bookCollectionData):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: bookCollectionData.cellIdentifier, for: indexPath) as? BookCollectionCell else {
                 return UITableViewCell()
             }
-            cell.viewModel = bookCollectionTypeAData
+            cell.viewModel = bookCollectionData
             return cell
         case .bookGuideData(let bookGuideData):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: bookGuideData.cellIdentifier, for: indexPath) as? BookGuideCell else {
@@ -81,11 +82,4 @@ extension BookRecommendTableViewController {
         }
     }
     
-}
-
-//delegate
-extension BookRecommendTableViewController {
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
 }

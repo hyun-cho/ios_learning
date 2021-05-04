@@ -7,16 +7,13 @@
 
 import UIKit
 
-struct ScrollTypeCViewCellData: ImageLoader {
+struct ScrollTypeCViewCellData {
     let cellIdentifier = "ScrollTypeCViewCell"
     private(set) var name: String
-    private(set) var image: UIImage?
+    private(set) var remoteURL: String?
     
     init(name: String, remoteURL: String) {
         self.name = name
-        loadImage(remoteURL) {
-            (imageResult) -> Void in
-            image = imageResult
-        }
+        self.remoteURL = remoteURL
     }
 }

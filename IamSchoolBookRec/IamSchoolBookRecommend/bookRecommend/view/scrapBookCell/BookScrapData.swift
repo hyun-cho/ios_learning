@@ -12,7 +12,7 @@ struct BookScrapData {
     private(set) var title: String
     private(set) var book: Book
     
-    struct Book: ImageLoader {
+    struct Book {
         private(set) var name: String
         private(set) var description: String
         private(set) var remoteURL: String
@@ -23,11 +23,6 @@ struct BookScrapData {
             self.name = name
             self.description = description
             self.remoteURL = remoteURL
-            
-            loadImage(remoteURL) {
-                (imageResult) -> Void in
-                image = imageResult
-            }
         }
     }
 

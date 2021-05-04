@@ -21,13 +21,15 @@ class StandCollectionViewCell: UICollectionViewCell {
     private final let imageWidth: CGFloat = 113
     private final let bookMarkColor: UIColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.06)
     
+    private let imageLoader: ImageLoader = ImageLoaderKf()
+    
     var viewModel: StandCollectionViewCellData? {
         didSet {
-            guard let image = viewModel?.image else {
-                return
+            imageLoader.loadImage(self.imageView, url: viewModel?.remoteURL) {
+                [weak self]
+                (image) -> Void in
+                self?.updateImageHeight(size: image.size)
             }
-            self.imageView.image = image
-            updateImageHeight(size: image.size)
         }
     }
     

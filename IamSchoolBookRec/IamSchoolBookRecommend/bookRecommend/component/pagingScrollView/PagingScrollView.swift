@@ -35,6 +35,7 @@ public class PagingScrollView: UIScrollView {
     
     public override func updateConstraints() {
         super.updateConstraints()
+        updateSubviewsFromCurrentOffset()
         updateSubviewsConstraints()
     }
     
@@ -99,8 +100,8 @@ extension PagingScrollView {
             }
             if cell === target {
                 cell.removeConstraints()
-                $0.removeFromSuperview()
                 reuseViewPool.append(cell)
+                $0.removeFromSuperview()
             }
         })
         presentedViewPool?.remove(element: target)
@@ -122,10 +123,9 @@ extension PagingScrollView {
         guard startIndex <= endIndex else {
             fatalError("index out of range in \(#function)")
         }
-        
-        print("index from \(startIndex) to \(endIndex)")
-        print("presentedViewCount \(presentedViewPool!.count)")
-        print("reusePoolcount \(reuseViewPool.count)")
+//        print("index from \(startIndex) to \(endIndex)")
+//        print("presentedViewCount \(presentedViewPool!.count)")
+//        print("reusePoolcount \(reuseViewPool.count)")
         presentedViewPool?.forEach({
             guard let index = $0.index else {
                 return
@@ -135,19 +135,24 @@ extension PagingScrollView {
                 return
             default:
                 removeSubview(cell: $0)
-                print("Removed \(index)")
+//                print("Removed \(index)")
             }
         })
         for index in startIndex...endIndex {
             guard let _ = presentedViewPool?[index] else {
-                appendView(index: index)
-                print("Appended \(index)")
+                if index >= 0 {
+                    appendView(index: index)
+                }
+//                print("Appended \(index)")
                 continue
             }
         }
     }
     private func appendView(index: Int) {
         guard let cell = self.dataSource?.pagingScrollView(self, cellForItemAt: index) else {
+            return
+        }
+        if cell.alignWith == nil {
             return
         }
         cell.index = index

@@ -47,10 +47,7 @@ protocol Indexable {
     var index: Int? { get }
 }
 
-// where 문 사용해서 T의 타입 지정 extension
 extension ReusableViewPool {
-    // Reusable 밖에서 해도 될것같다.
-    // T.index (index 프로퍼티만 가진 프로토콜을)
     func hasElement(index: Int) -> Bool where T: Indexable {
         let indexElements = reuseViewPool.filter({ $0.index == index })
         return !indexElements.isEmpty

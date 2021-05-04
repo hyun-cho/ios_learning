@@ -11,6 +11,8 @@ class NavigationButton: UIView {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var iconImageView: UIImageView!
     
+    private static let imageLoader: ImageLoader = ImageLoaderKf()
+    
     static func create(buttonData: NavigationButtonData) -> UIView? {
         let className = String(String(describing: type(of:self)).split(separator: ".")[0])
         let nib = UINib(nibName: className, bundle: Bundle.main)
@@ -20,7 +22,7 @@ class NavigationButton: UIView {
         }
         view.layer.cornerRadius = 6
         view.titleLabel.text = buttonData.title
-        view.iconImageView.image = buttonData.image
+        imageLoader.loadImage(view.iconImageView, url: buttonData.remoteURL)
         return view
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 enum BookRecommendationCellData {
     case standSlidingData(StandSlidingData)
     case buttonNavigationData(ButtonNavigationData)
-    case bookCollectionTypeAData(BookCollectionTypeAData)
+    case bookCollectionData(BookCollectionData)
     case bookGuideData(BookGuideData)
     case bookScrapData(BookScrapData)
     case bookScrollData(BookScrollData)
