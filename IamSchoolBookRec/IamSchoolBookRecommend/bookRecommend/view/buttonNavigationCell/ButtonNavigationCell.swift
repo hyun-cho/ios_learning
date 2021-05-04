@@ -7,7 +7,6 @@
 
 import UIKit
 
-// cell -> xib로 변경
 class ButtonNavigationCell: UITableViewCell {
     @IBOutlet private var buttonStackView: UIStackView!
     

@@ -9,6 +9,30 @@ import Foundation
 import BookRecommendData
 
 class ModelMapper {
+    func map(from: BookRecommendResponseDto) -> BookRecommendationCellData {
+        switch from {
+        case .mainSliderType(let mainSliderDatas):
+            return .standSlidingData(standSlidingData(from: mainSliderDatas))
+        case .buttonType(let buttonDatas):
+            return .buttonNavigationData(buttonNavigationData(from: buttonDatas))
+        case .gridType(let gridDatas):
+            return .bookCollectionData(bookCollectionData(from: gridDatas))
+        case .magazineBigType(let magazineBigData):
+            return .bookGuideData(bookGuideData(from: magazineBigData))
+        case .bookmarkType(let bookmarkData):
+            return .bookScrapData(bookScrapData(from: bookmarkData))
+        case .middleSliderType(let middleSliderDatas):
+            return .bookScrollData(bookScrollData(from: middleSliderDatas))
+        case .smallSliderType(let smallSliderDatas):
+            return .bookScrollData(bookScrollData(from: smallSliderDatas))
+        case .searchTagType(_):
+            return .none
+//            return .searchTagData(SearchTagData(from: searchTagData))
+        case .none:
+            return .none
+        }
+    }
+    
     func standSlidingData(from: MainSliderData) -> StandSlidingData {
         let standSlidingDatas = from.items.map({ return StandCollectionViewCellData(name: $0.title , description: $0.content, remoteURL: $0.image) })
         return StandSlidingData(standSlidingDatas: standSlidingDatas)

@@ -35,7 +35,10 @@ class ScrollTypeBViewCell: PagingScrollViewCell {
     
     var viewModel: ScrollTypeBViewCellData? {
         didSet {
-            imageLoader.loadImage(bookImageView, url: viewModel?.remoteURL) {
+            guard let remoteURL = viewModel?.remoteURL else {
+                return
+            }
+            imageLoader.loadImage(bookImageView, url: remoteURL) {
                 [weak self]
                 (image) -> Void in
                 self?.updateImageHeightConstraint(size: image.size)

@@ -8,10 +8,7 @@
 import UIKit
 
 class ImageLoaderURLSession: ImageLoader {
-    func loadImage(_ imageView: UIImageView, url remoteURL: String?) {
-        guard let remoteURL = remoteURL else {
-            return
-        }
+    func loadImage(_ imageView: UIImageView, url remoteURL: String) {
         let url = URL(string: remoteURL)
         do {
             let data = try Data(contentsOf: url!)
@@ -25,10 +22,7 @@ class ImageLoaderURLSession: ImageLoader {
             print("book image load error")
         }
     }
-    func loadImage(_ imageView: UIImageView, url remoteURL: String?, completion: @escaping (UIImage) -> Void) {
-        guard let remoteURL = remoteURL else {
-            return
-        }
+    func loadImage(_ imageView: UIImageView, url remoteURL: String, completion: @escaping (UIImage) -> Void) {
         let url = URL(string: remoteURL)
         do {
             let data = try Data(contentsOf: url!)
@@ -42,5 +36,13 @@ class ImageLoaderURLSession: ImageLoader {
         } catch {
             print("book image load error")
         }
+    }
+    
+    func loadImage(_ imageView: UIImageView, url remoteURL: String, completion: @escaping (UIImage) -> Void, withCancelToken: String) -> String? {
+        // note implemented
+        return nil
+    }
+    func cancelImage(cancelToken: String) {
+        // not implemented
     }
 }

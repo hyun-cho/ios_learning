@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 class BookScrollCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var bookScrollView: PagingScrollView!

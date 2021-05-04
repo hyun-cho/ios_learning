@@ -6,6 +6,7 @@ target 'API' do
   use_frameworks!
 
   # Pods for API
+  pod 'Alamofire', '~> 5.4'
 end
 
 target 'BookRecommendData' do

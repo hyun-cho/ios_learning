@@ -25,7 +25,10 @@ class StandCollectionViewCell: UICollectionViewCell {
     
     var viewModel: StandCollectionViewCellData? {
         didSet {
-            imageLoader.loadImage(self.imageView, url: viewModel?.remoteURL) {
+            guard let remoteURL = viewModel?.remoteURL else {
+                return
+            }
+            imageLoader.loadImage(self.imageView, url: remoteURL) {
                 [weak self]
                 (image) -> Void in
                 self?.updateImageHeight(size: image.size)
