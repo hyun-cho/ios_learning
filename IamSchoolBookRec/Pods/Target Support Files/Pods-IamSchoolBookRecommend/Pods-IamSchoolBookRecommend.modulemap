@@ -1,4 +1,4 @@
-framework module Pods_IamSchoolBookRecommend {
+module Pods_IamSchoolBookRecommend {
   umbrella header "Pods-IamSchoolBookRecommend-umbrella.h"
 
   export *

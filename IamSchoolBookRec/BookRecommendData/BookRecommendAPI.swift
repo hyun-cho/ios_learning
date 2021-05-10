@@ -9,30 +9,29 @@ import Foundation
 import API
 
 public class BookRecommendAPI {
-    public init() {
-        
-    }
-    private let apiManager: ApiManager = ApiManagerURLSession()
-    private let baseURLString = "http://nany.synology.me/book-home.json"
     
+    private let apiManager: ApiManagerAlamofire = ApiManagerAlamofire()
+    private let baseURLString = "http://nany.synology.me/book-home.json"
+    private var tasks: [String] = []
+    
+    
+    public init() {}
     private func bookRecommendURL() -> URL? {
         let components = URLComponents(string: baseURLString)
         return components?.url
     }
-    private var task: URLSessionTask?
-    // API (retry or cancel) -> compile or download... 도중
-    public func fetchDataFromServer(completion: @escaping ([BookRecommendResponseDto]?) -> Void) -> Void {
+    
+    public func fetchDataFromServer(completion: @escaping (Result<[BookRecommendResponseDto], BookRecommendApiError>) -> Void) {
         guard let url = bookRecommendURL() else {
             print("book recommend baseURL is not created")
             return
         }
         
-        let completionClosure: (_ result: Result<[BookRecommendResponseDto]?, ApiError>) -> Void = {
-            [weak self]
-            (result: Result<[BookRecommendResponseDto]?, ApiError>) -> Void in
+        let completionClosure: (_ result: Result<[BookRecommendResponseDto], ApiError>) -> Void = {
+            (result: Result<[BookRecommendResponseDto], ApiError>) -> Void in
             switch result {
             case .success(let jsonData):
-                completion(jsonData)
+                completion(.success(jsonData))
             case .failure(let error):
                 switch error {
                 case .serverRequestNotOk:
@@ -40,15 +39,20 @@ public class BookRecommendAPI {
                 case .jsonParseError:
                     print("json parse error")
                 case .unexpectedError:
-                    completion(nil)
-                    self?.task?.cancel()
+                    print("unexpected error")
                 }
+                completion(.failure(.recallApi))
             }
         }
-        task = apiManager.fetchData(request: url, completion: completionClosure)
-        task?.resume()
+        self.tasks.append(apiManager.fetchData(request: url, completion: completionClosure))
     }
+    
     public func cancel() {
-        task?.cancel()
+        guard let task = tasks.first else {
+            print("book recommend baseURL is not created")
+            return
+        }
+        apiManager.cancel(id: task)
+        tasks.removeFirst()
     }
 }

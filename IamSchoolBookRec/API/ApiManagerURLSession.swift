@@ -15,7 +15,7 @@ public class ApiManagerURLSession: NSObject, ApiManager {
     }()
     
     // append queue
-    public func fetchData<T: Decodable>(request: URL, completion: @escaping (Result<[T]?, ApiError>) -> Void) -> URLSessionTask? {
+    public func fetchData<T: Decodable>(request: URL, completion: @escaping (Result<[T], ApiError>) -> Void) -> String {
         let request = URLRequest(url: request)
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
@@ -35,10 +35,36 @@ public class ApiManagerURLSession: NSObject, ApiManager {
                 return
             }
             
-            if let result: Result<[T]?, ApiError> = self.processRequestData(data: data) {
+            if let result: Result<[T], ApiError> = self.processRequestData(data: data) {
                 completion(result)
             }
         }
-        return task
+        task.resume()
+        return String(task.taskIdentifier)
     }
+    
+    public func cancel(id: String) {
+        session.getAllTasks(completionHandler: {
+            (tasks) -> Void in
+            tasks.forEach({
+                if $0.taskIdentifier == Int(id) {
+                    $0.cancel()
+                }
+            })
+        })
+    }
+    
+    public func downloadData(request: String) -> String {
+        // not implemented
+        return ""
+    }
+    
+    public func pauseDownload(id: String) {
+        // not implemented
+    }
+    
+    public func resumeDownload(id: String) {
+        // not implemented
+    }
+    
 }

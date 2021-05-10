@@ -14,5 +14,6 @@ enum BookRecommendationCellData {
     case bookGuideData(BookGuideData)
     case bookScrapData(BookScrapData)
     case bookScrollData(BookScrollData)
+    case bookTagCollectionData(BookTagCollectionData)
     case none
 }

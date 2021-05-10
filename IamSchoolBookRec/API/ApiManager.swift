@@ -8,11 +8,19 @@
 import Foundation
 
 public protocol ApiManager: NSObjectProtocol {
-    func fetchData<T: Decodable>(request: URL, completion: @escaping (Result<[T]?, ApiError>) -> Void) -> URLSessionTask?
+    func fetchData<T: Decodable>(request: URL, completion: @escaping (Result<[T], ApiError>) -> Void) -> String
+    
+    func downloadData(request: String) -> String
+    
+    func cancel(id: String)
+    
+    func pauseDownload(id: String)
+    
+    func resumeDownload(id: String)
 }
 
 extension ApiManager {
-    func processRequestData<T: Decodable>(data: Data?) -> Result<[T]?, ApiError>? {
+    func processRequestData<T: Decodable>(data: Data?) -> Result<[T], ApiError>? {
         guard let data = data else {
             return .failure(.jsonParseError)
         }

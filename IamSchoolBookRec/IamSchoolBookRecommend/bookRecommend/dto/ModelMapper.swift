@@ -25,9 +25,8 @@ class ModelMapper {
             return .bookScrollData(bookScrollData(from: middleSliderDatas))
         case .smallSliderType(let smallSliderDatas):
             return .bookScrollData(bookScrollData(from: smallSliderDatas))
-        case .searchTagType(_):
-            return .none
-//            return .searchTagData(SearchTagData(from: searchTagData))
+        case .searchTagType(let searchTagDatas):
+            return .bookTagCollectionData(bookTagCollectionData(from: searchTagDatas))
         case .none:
             return .none
         }
@@ -65,7 +64,11 @@ class ModelMapper {
         let bookScrollCellDataTypeC: [BookScrollData.BookScrollCellDataType] = from.items.map({ return .typeC(ScrollTypeCViewCellData(name: $0.title, remoteURL: $0.image)) })
         return BookScrollData(title: from.title, scrollViewDatas: bookScrollCellDataTypeC)
     }
-//    func searchTagData(from: SearchTagData) {
-//        return searchTagData(title: from.title, )
-//    }
+    func bookTagCollectionData(from: SearchTagData) -> BookTagCollectionData {
+        let tags: [TagCollectionData] = from.items.map({
+            let names = $0.tags.map({ return $0.name })
+            return TagCollectionData(title: $0.title, name: names)
+        })
+        return BookTagCollectionData(title: from.title, tags: tags)
+    }
 }

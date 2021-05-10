@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E61F59BE7F7B9B58179026C /* Pods_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B5D9EB9495F2C0A63B2453 /* Pods_API.framework */; };
-		8E39C8E487E9E3DB5E75C869 /* Pods_BookRecommendData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCAD5F6D1EB1A6B4A758E1FF /* Pods_BookRecommendData.framework */; };
+		305F027BC0CA10850BA7FA14 /* libPods-IamSchoolBookRecommend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 813986E57C2F283AFABA1BA5 /* libPods-IamSchoolBookRecommend.a */; };
+		4F9B693BB8215623F8B5B639 /* libPods-API.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F852DE67713492EB41A86805 /* libPods-API.a */; };
+		819C158B3CB356ED5FCCE032 /* libPods-BookRecommendData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B245595CE76FA34C68FBEFB /* libPods-BookRecommendData.a */; };
 		D9073954263AA84300AACA6A /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D907394D263AA84300AACA6A /* API.framework */; };
 		D9073955263AA84300AACA6A /* API.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D907394D263AA84300AACA6A /* API.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D907396D263BA8F000AACA6A /* BookRecommendData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9073966263BA8F000AACA6A /* BookRecommendData.framework */; };
@@ -27,6 +28,11 @@
 		D90739AA263BB20800AACA6A /* SmallSliderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90739A9263BB20800AACA6A /* SmallSliderData.swift */; };
 		D90739B0263BB21400AACA6A /* SearchTagData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90739AF263BB21400AACA6A /* SearchTagData.swift */; };
 		D90739B4263BB56800AACA6A /* ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90739B3263BB56800AACA6A /* ModelMapper.swift */; };
+		D91570832643CB3100D8F9BD /* BookTagCollectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91570822643CB3100D8F9BD /* BookTagCollectionData.swift */; };
+		D915708B2643D01700D8F9BD /* BookTagCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915708A2643D01700D8F9BD /* BookTagCollectionCell.swift */; };
+		D91570942643D24E00D8F9BD /* TagCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91570932643D24E00D8F9BD /* TagCollectionView.xib */; };
+		D91570992643D25B00D8F9BD /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91570982643D25B00D8F9BD /* TagCollectionView.swift */; };
+		D915709E2643D26900D8F9BD /* TagCollectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D915709D2643D26900D8F9BD /* TagCollectionData.swift */; };
 		D94D66062637F9D00026BAD4 /* ReusableViewPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94D66052637F9D00026BAD4 /* ReusableViewPool.swift */; };
 		D97929CC2628289B005E6D88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97929CB2628289B005E6D88 /* AppDelegate.swift */; };
 		D97929CE2628289B005E6D88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97929CD2628289B005E6D88 /* SceneDelegate.swift */; };
@@ -67,6 +73,7 @@
 		D986283F26377B7F004DA868 /* PagingScrollDirectionHorizonalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986283E26377B7F004DA868 /* PagingScrollDirectionHorizonalDelegate.swift */; };
 		D986284326377BBE004DA868 /* PagingScrollDirectionVerticalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D986284226377BBE004DA868 /* PagingScrollDirectionVerticalDelegate.swift */; };
 		D99087EC262D71E10031ABAB /* BookCollectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99087EB262D71E10031ABAB /* BookCollectionData.swift */; };
+		D9A1113826413D5A003B5338 /* BookRecommendApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A1113726413D5A003B5338 /* BookRecommendApiError.swift */; };
 		D9EC9568262FB02A00BF7519 /* ButtonNavigationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC9567262FB02A00BF7519 /* ButtonNavigationData.swift */; };
 		D9EC957C262FCFF300BF7519 /* CollectionViewCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC957B262FCFF300BF7519 /* CollectionViewCellData.swift */; };
 		D9EC9580262FD5AA00BF7519 /* StandSlidingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC957F262FD5AA00BF7519 /* StandSlidingData.swift */; };
@@ -77,7 +84,6 @@
 		D9EC95982630F84100BF7519 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC95972630F84100BF7519 /* ImageLoader.swift */; };
 		D9EC959B263142B200BF7519 /* BookScrapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC959A263142B200BF7519 /* BookScrapCell.swift */; };
 		D9EC95A0263142FE00BF7519 /* BookScrapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EC959F263142FE00BF7519 /* BookScrapData.swift */; };
-		EC454EF46806797183E33E18 /* Pods_IamSchoolBookRecommend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED7A1323260A4A16CD6CDBE /* Pods_IamSchoolBookRecommend.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,15 +127,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1ED7A1323260A4A16CD6CDBE /* Pods_IamSchoolBookRecommend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IamSchoolBookRecommend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		257E9D00E36B024C47C7F9F9 /* Pods-IamSchoolBookRecommend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IamSchoolBookRecommend.release.xcconfig"; path = "Target Support Files/Pods-IamSchoolBookRecommend/Pods-IamSchoolBookRecommend.release.xcconfig"; sourceTree = "<group>"; };
 		2C3A9E1FC0DE62CA7C5A701F /* Pods-API.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-API.release.xcconfig"; path = "Target Support Files/Pods-API/Pods-API.release.xcconfig"; sourceTree = "<group>"; };
 		36E892FACF036A2347EAC1B8 /* Pods-BookRecommendData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookRecommendData.debug.xcconfig"; path = "Target Support Files/Pods-BookRecommendData/Pods-BookRecommendData.debug.xcconfig"; sourceTree = "<group>"; };
 		6DEDEEE9A7535D6FD983BA62 /* Pods-IamSchoolBookRecommend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IamSchoolBookRecommend.debug.xcconfig"; path = "Target Support Files/Pods-IamSchoolBookRecommend/Pods-IamSchoolBookRecommend.debug.xcconfig"; sourceTree = "<group>"; };
+		813986E57C2F283AFABA1BA5 /* libPods-IamSchoolBookRecommend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IamSchoolBookRecommend.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86845C21E534DCD569DB6B2C /* Pods-API.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-API.debug.xcconfig"; path = "Target Support Files/Pods-API/Pods-API.debug.xcconfig"; sourceTree = "<group>"; };
+		8B245595CE76FA34C68FBEFB /* libPods-BookRecommendData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookRecommendData.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D159D04B0C9EA8ED5E3354C /* Pods-BookRecommendData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookRecommendData.release.xcconfig"; path = "Target Support Files/Pods-BookRecommendData/Pods-BookRecommendData.release.xcconfig"; sourceTree = "<group>"; };
-		B1B5D9EB9495F2C0A63B2453 /* Pods_API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCAD5F6D1EB1A6B4A758E1FF /* Pods_BookRecommendData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookRecommendData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D907394D263AA84300AACA6A /* API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9073950263AA84300AACA6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9073966263BA8F000AACA6A /* BookRecommendData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BookRecommendData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +150,11 @@
 		D90739A9263BB20800AACA6A /* SmallSliderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSliderData.swift; sourceTree = "<group>"; };
 		D90739AF263BB21400AACA6A /* SearchTagData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagData.swift; sourceTree = "<group>"; };
 		D90739B3263BB56800AACA6A /* ModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMapper.swift; sourceTree = "<group>"; };
+		D91570822643CB3100D8F9BD /* BookTagCollectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTagCollectionData.swift; sourceTree = "<group>"; };
+		D915708A2643D01700D8F9BD /* BookTagCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTagCollectionCell.swift; sourceTree = "<group>"; };
+		D91570932643D24E00D8F9BD /* TagCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionView.xib; sourceTree = "<group>"; };
+		D91570982643D25B00D8F9BD /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
+		D915709D2643D26900D8F9BD /* TagCollectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionData.swift; sourceTree = "<group>"; };
 		D94D66052637F9D00026BAD4 /* ReusableViewPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewPool.swift; sourceTree = "<group>"; };
 		D94D6608263920000026BAD4 /* BookRecommendResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRecommendResponseDto.swift; sourceTree = "<group>"; };
 		D94D660F263925CB0026BAD4 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -190,6 +200,7 @@
 		D986284226377BBE004DA868 /* PagingScrollDirectionVerticalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScrollDirectionVerticalDelegate.swift; sourceTree = "<group>"; };
 		D99087E7262D71850031ABAB /* BookRecommendationCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRecommendationCellData.swift; sourceTree = "<group>"; };
 		D99087EB262D71E10031ABAB /* BookCollectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionData.swift; sourceTree = "<group>"; };
+		D9A1113726413D5A003B5338 /* BookRecommendApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRecommendApiError.swift; sourceTree = "<group>"; };
 		D9D9A97F2641353200CFF5E0 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9EC9567262FB02A00BF7519 /* ButtonNavigationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNavigationData.swift; sourceTree = "<group>"; };
 		D9EC957B262FCFF300BF7519 /* CollectionViewCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellData.swift; sourceTree = "<group>"; };
@@ -201,6 +212,7 @@
 		D9EC95972630F84100BF7519 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		D9EC959A263142B200BF7519 /* BookScrapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookScrapCell.swift; sourceTree = "<group>"; };
 		D9EC959F263142FE00BF7519 /* BookScrapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookScrapData.swift; sourceTree = "<group>"; };
+		F852DE67713492EB41A86805 /* libPods-API.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-API.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E61F59BE7F7B9B58179026C /* Pods_API.framework in Frameworks */,
+				4F9B693BB8215623F8B5B639 /* libPods-API.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E39C8E487E9E3DB5E75C869 /* Pods_BookRecommendData.framework in Frameworks */,
+				819C158B3CB356ED5FCCE032 /* libPods-BookRecommendData.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +239,7 @@
 				D907396D263BA8F000AACA6A /* BookRecommendData.framework in Frameworks */,
 				D9819DE2264118A900BF0D1F /* common.framework in Frameworks */,
 				D9073954263AA84300AACA6A /* API.framework in Frameworks */,
-				EC454EF46806797183E33E18 /* Pods_IamSchoolBookRecommend.framework in Frameworks */,
+				305F027BC0CA10850BA7FA14 /* libPods-IamSchoolBookRecommend.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,9 +257,9 @@
 			isa = PBXGroup;
 			children = (
 				D9D9A97F2641353200CFF5E0 /* Alamofire.framework */,
-				B1B5D9EB9495F2C0A63B2453 /* Pods_API.framework */,
-				CCAD5F6D1EB1A6B4A758E1FF /* Pods_BookRecommendData.framework */,
-				1ED7A1323260A4A16CD6CDBE /* Pods_IamSchoolBookRecommend.framework */,
+				F852DE67713492EB41A86805 /* libPods-API.a */,
+				8B245595CE76FA34C68FBEFB /* libPods-BookRecommendData.a */,
+				813986E57C2F283AFABA1BA5 /* libPods-IamSchoolBookRecommend.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -282,6 +294,7 @@
 			children = (
 				D9073982263BAAC400AACA6A /* BookRecommendAPI.swift */,
 				D94D6608263920000026BAD4 /* BookRecommendResponseDto.swift */,
+				D9A1113726413D5A003B5338 /* BookRecommendApiError.swift */,
 				D9073969263BA8F000AACA6A /* Info.plist */,
 				D9073991263BB18A00AACA6A /* MainSliderData.swift */,
 				D9073995263BB1AA00AACA6A /* ButtonData.swift */,
@@ -295,6 +308,16 @@
 			path = BookRecommendData;
 			sourceTree = "<group>";
 		};
+		D915708F2643D1D800D8F9BD /* tagCollection */ = {
+			isa = PBXGroup;
+			children = (
+				D91570932643D24E00D8F9BD /* TagCollectionView.xib */,
+				D91570982643D25B00D8F9BD /* TagCollectionView.swift */,
+				D915709D2643D26900D8F9BD /* TagCollectionData.swift */,
+			);
+			path = tagCollection;
+			sourceTree = "<group>";
+		};
 		D94D660B2639201C0026BAD4 /* component */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,7 +329,7 @@
 		D94D660C263920330026BAD4 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				D9819DF526411C9800BF0D1F /* TagCollectionCell */,
+				D9819DF526411C9800BF0D1F /* tagCollectionCell */,
 				D9792A88262D42FE005E6D88 /* standSlidingCell */,
 				D9792A97262D4B94005E6D88 /* buttonNavigationCell */,
 				D9792A8D262D4350005E6D88 /* bookGuideCell */,
@@ -429,11 +452,14 @@
 			path = common;
 			sourceTree = "<group>";
 		};
-		D9819DF526411C9800BF0D1F /* TagCollectionCell */ = {
+		D9819DF526411C9800BF0D1F /* tagCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
+				D915708F2643D1D800D8F9BD /* tagCollection */,
+				D91570822643CB3100D8F9BD /* BookTagCollectionData.swift */,
+				D915708A2643D01700D8F9BD /* BookTagCollectionCell.swift */,
 			);
-			path = TagCollectionCell;
+			path = tagCollectionCell;
 			sourceTree = "<group>";
 		};
 		D986272826316048004DA868 /* bookScrollCell */ = {
@@ -594,7 +620,6 @@
 				D97929C52628289B005E6D88 /* Frameworks */,
 				D97929C62628289B005E6D88 /* Resources */,
 				D9073942263AA4F400AACA6A /* Embed Frameworks */,
-				1E25B909A84701A6F27FAE4A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -689,6 +714,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D986273326316083004DA868 /* ScrollTypeCViewCell.xib in Resources */,
+				D91570942643D24E00D8F9BD /* TagCollectionView.xib in Resources */,
 				D97929D82628289D005E6D88 /* LaunchScreen.storyboard in Resources */,
 				D9EC958E2630048600BF7519 /* NavigationButton.xib in Resources */,
 				D986273026316076004DA868 /* ScrollTypeBViewCell.xib in Resources */,
@@ -708,23 +734,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E25B909A84701A6F27FAE4A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IamSchoolBookRecommend/Pods-IamSchoolBookRecommend-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IamSchoolBookRecommend/Pods-IamSchoolBookRecommend-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IamSchoolBookRecommend/Pods-IamSchoolBookRecommend-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		253CED2851EAC15ED3E3C71F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -813,6 +822,7 @@
 				D90739A6263BB1F400AACA6A /* MiddleSliderData.swift in Sources */,
 				D9073996263BB1AA00AACA6A /* ButtonData.swift in Sources */,
 				D90739AA263BB20800AACA6A /* SmallSliderData.swift in Sources */,
+				D9A1113826413D5A003B5338 /* BookRecommendApiError.swift in Sources */,
 				D907399A263BB1B600AACA6A /* GridData.swift in Sources */,
 				D9073983263BAAC400AACA6A /* BookRecommendAPI.swift in Sources */,
 				D9073992263BB18A00AACA6A /* MainSliderData.swift in Sources */,
@@ -831,6 +841,7 @@
 				D9EC9584262FD99800BF7519 /* ServerIdentifierParser.swift in Sources */,
 				D9862739263160A1004DA868 /* ScrollTypeBViewCellData.swift in Sources */,
 				D9792A732629FDC6005E6D88 /* BookGuideData.swift in Sources */,
+				D91570992643D25B00D8F9BD /* TagCollectionView.swift in Sources */,
 				D99087EC262D71E10031ABAB /* BookCollectionData.swift in Sources */,
 				D9EC959526300A3500BF7519 /* NavigationButtonData.swift in Sources */,
 				D9862831263406A4004DA868 /* PagingScrollViewLayoutDelegate.swift in Sources */,
@@ -861,10 +872,13 @@
 				D90739B4263BB56800AACA6A /* ModelMapper.swift in Sources */,
 				D986284326377BBE004DA868 /* PagingScrollDirectionVerticalDelegate.swift in Sources */,
 				D986283F26377B7F004DA868 /* PagingScrollDirectionHorizonalDelegate.swift in Sources */,
+				D915708B2643D01700D8F9BD /* BookTagCollectionCell.swift in Sources */,
 				D9819DBF263FB23300BF0D1F /* ImageLoaderURLSession.swift in Sources */,
+				D915709E2643D26900D8F9BD /* TagCollectionData.swift in Sources */,
 				D9EC9580262FD5AA00BF7519 /* StandSlidingData.swift in Sources */,
 				D97929E52628328E005E6D88 /* StandSlidingCell.swift in Sources */,
 				D986272A26316058004DA868 /* BookScrollCell.swift in Sources */,
+				D91570832643CB3100D8F9BD /* BookTagCollectionData.swift in Sources */,
 				D9EC9568262FB02A00BF7519 /* ButtonNavigationData.swift in Sources */,
 				D9073989263BAB8200AACA6A /* ServerDataSource.swift in Sources */,
 			);

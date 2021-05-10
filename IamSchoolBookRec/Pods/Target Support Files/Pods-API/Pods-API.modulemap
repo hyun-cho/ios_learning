@@ -1,4 +1,4 @@
-framework module Pods_API {
+module Pods_API {
   umbrella header "Pods-API-umbrella.h"
 
   export *

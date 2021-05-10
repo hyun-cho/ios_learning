@@ -7,15 +7,15 @@
 
 import Foundation
 public struct SearchTagData: Decodable {
-    var component: String
-    var title: String
-    var items: [SearchTagData.Item]
-    struct Item: Decodable {
-        var title: String
-        var tags: [Tag]
-        var inputValue: String
+    public private(set) var component: String
+    public private(set) var title: String
+    public private(set) var items: [SearchTagData.Item]
+    public struct Item: Decodable {
+        public private(set) var title: String
+        public private(set) var tags: [Tag]
+        public private(set) var inputValue: String
     }
-    struct Tag: Decodable {
-        var name: String
+    public struct Tag: Decodable {
+        public private(set) var name: String
     }
 }

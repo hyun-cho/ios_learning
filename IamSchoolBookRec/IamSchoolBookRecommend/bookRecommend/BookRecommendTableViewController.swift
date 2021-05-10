@@ -77,6 +77,12 @@ extension BookRecommendTableViewController {
             }
             cell.viewModel = bookScrollData
             return cell
+        case .bookTagCollectionData(let bookTagCollesctionData):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: bookTagCollesctionData.cellIdentifier, for: indexPath) as? BookTagCollectionCell else {
+                return UITableViewCell()
+            }
+            cell.viewModel = bookTagCollesctionData
+            return cell
         case .none:
             return UITableViewCell()
         }
